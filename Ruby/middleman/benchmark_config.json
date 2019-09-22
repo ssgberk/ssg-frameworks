@@ -1,0 +1,29 @@
+{
+  "framework": "middleman",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "Middleman",
+      "language": "Ruby",
+      "display_name": "Middleman",
+      "notes": "",
+      "versus": "ruby"
+    }
+  }],
+  "content": [
+    {
+      "folder": "source/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "layout: post",
+      "build_command": "bundle exec middleman build",
+      "build_verbose": "bundle exec middleman build --verbose"
+    }
+  ]
+}

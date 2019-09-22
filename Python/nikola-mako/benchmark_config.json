@@ -1,0 +1,29 @@
+{
+  "framework": "nikola-mako",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "Nikola",
+      "language": "Python",
+      "display_name": "Nikola + Mako",
+      "notes": "",
+      "versus": "python"
+    }
+  }],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "2dot",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "nikola build",
+      "build_verbose": ""
+    }
+  ]
+}

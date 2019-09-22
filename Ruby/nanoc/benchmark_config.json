@@ -1,0 +1,29 @@
+{
+  "framework": "nanoc",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "nanoc",
+      "language": "Ruby",
+      "display_name": "nanoc",
+      "notes": "",
+      "versus": "ruby"
+    }
+  }],
+  "content": [
+    {
+      "folder": "content/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "created_at",
+      "metadata_layout": "kind: article",
+      "build_command": "bundle exec nanoc",
+      "build_verbose": ""
+    }
+  ]
+}

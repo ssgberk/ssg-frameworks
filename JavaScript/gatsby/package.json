@@ -1,0 +1,23 @@
+{
+  "name": "gatsby-sample",
+  "version": "1.0.0",
+  "description": "gatsby sample site",
+  "license": "UNLICENSED",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "build-verbose": "gatsby build --verbose"
+  },
+  "dependencies": {
+    "eslint": "^6.4.0",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "gatsby": "^2.15.20",
+    "gatsby-link": "^2.2.15",
+    "gatsby-plugin-catch-links": "^2.1.10",
+    "gatsby-source-filesystem": "^2.1.26",
+    "gatsby-transformer-remark": "^2.6.24",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "typescript": "^3.6.3"
+  }
+}

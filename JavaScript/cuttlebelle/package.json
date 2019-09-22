@@ -1,0 +1,15 @@
+{
+  "name": "cuttlebelle-sample",
+  "version": "1.0.0",
+  "description": "cuttlebele sample site",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "cuttlebelle",
+    "build-verbose": "cuttlebelle --verbose"
+  },
+  "dependencies": {
+    "cuttlebelle": "^1.0.0-alpha.67",
+    "moment": "^2.22.0",
+    "slugify": "^1.2.9"
+  }
+}

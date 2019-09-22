@@ -1,0 +1,29 @@
+{
+  "framework": "gatsby",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "Gatsby",
+      "language": "JavaScript",
+      "display_name": "Gatsby",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "src/pages/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "yarn run build",
+      "build_verbose": "yarn run build-verbose"
+    }
+  ]
+}

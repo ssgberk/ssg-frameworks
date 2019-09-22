@@ -1,0 +1,29 @@
+{
+  "framework": "harp-jade",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "Harp",
+      "language": "JavaScript",
+      "display_name": "Harp + Jade",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "datajson",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "harp compile",
+      "build_verbose": ""
+    }
+  ]
+}

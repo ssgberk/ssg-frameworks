@@ -1,0 +1,29 @@
+{
+  "framework": "cuttlebelle",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "Cuttlebelle",
+      "language": "JavaScript",
+      "display_name": "Cuttlebelle",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "content/posts",
+      "type": "external",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "yarn run build",
+      "build_verbose": "yarn run build-verbose"
+    }
+  ]
+}

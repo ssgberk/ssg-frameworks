@@ -1,0 +1,29 @@
+{
+  "framework": "jigsaw",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "Jigsaw",
+      "language": "PHP",
+      "display_name": "Jigsaw",
+      "notes": "",
+      "versus": "php"
+    }
+  }],
+  "content": [
+    {
+      "folder": "source/_posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "extends: _layouts.post",
+      "build_command": "jigsaw build",
+      "build_verbose": "jigsaw build -v"
+    }
+  ]
+}

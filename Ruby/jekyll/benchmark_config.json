@@ -1,0 +1,31 @@
+{
+  "framework": "jekyll",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "jekyll",
+        "language": "Ruby",
+        "display_name": "jekyll",
+        "notes": "",
+        "versus": "ruby"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "_posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "layout: post",
+      "build_command": "jekyll build",
+      "build_verbose": "jekyll build --verbose"
+    }
+  ]
+}

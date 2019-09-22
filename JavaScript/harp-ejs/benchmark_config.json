@@ -1,0 +1,29 @@
+{
+  "framework": "harp-ejs",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "Harp",
+      "language": "JavaScript",
+      "display_name": "Harp + EJS",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "datajson",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "yarn run build",
+      "build_verbose": ""
+    }
+  ]
+}

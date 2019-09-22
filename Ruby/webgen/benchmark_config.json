@@ -1,0 +1,29 @@
+{
+  "framework": "webgen",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "Webgen",
+      "language": "Ruby",
+      "display_name": "Webgen",
+      "notes": "",
+      "versus": "ruby"
+    }
+  }],
+  "content": [
+    {
+      "folder": "src/posts",
+      "type": "3minus",
+      "extension": "page"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "created_at",
+      "metadata_layout": "",
+      "build_command": "webgen generate",
+      "build_verbose": "webgen generate -v"
+    }
+  ]
+}

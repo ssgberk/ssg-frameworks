@@ -1,0 +1,12 @@
+{
+  "name": "harp-ejs-sample",
+  "version": "1.0.0",
+  "description": "harp ejs sample site",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "harp compile"
+  },
+  "dependencies": {
+    "harp": "^0.30.1"
+  }
+}

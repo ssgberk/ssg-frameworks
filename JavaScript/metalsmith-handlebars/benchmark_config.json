@@ -1,0 +1,29 @@
+{
+  "framework": "metalsmith-handlebars",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "Metalsmith",
+      "language": "JavaScript",
+      "display_name": "Metalsmith + Handlebars",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "src/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "layout: post.html",
+      "build_command": "make build",
+      "build_verbose": ""
+    }
+  ]
+}

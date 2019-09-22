@@ -1,0 +1,29 @@
+{
+  "framework": "phenomic-react",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "Phenomic",
+      "language": "JavaScript",
+      "display_name": "Phenomic + React",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "src/content/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "yarn run build",
+      "build_verbose": ""
+    }
+  ]
+}

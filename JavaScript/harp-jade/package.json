@@ -1,0 +1,13 @@
+{
+  "name": "harp-jade-sample",
+  "version": "1.0.0",
+  "description": "harp jade sample site",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "harp compile"
+  },
+  "dependencies": {
+    "harp": "^0.30.1",
+    "jade": "^1.11.0"
+  }
+}

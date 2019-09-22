@@ -1,0 +1,29 @@
+{
+  "framework": "hugo",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "hugo",
+      "language": "Go",
+      "display_name": "hugo",
+      "notes": "",
+      "versus": "go"
+    }
+  }],
+  "content": [
+    {
+      "folder": "content/post",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "layout: post",
+      "build_command": "hugo --verbose --debug",
+      "build_verbose": "hugo"
+    }
+  ]
+}
