@@ -24,13 +24,4 @@
     </ul>
 </div>
 
-<!-- debug -->
-<!--
-<div class="debug">
-  <p>Dump of <code>$page</code>
-      (can also be accessed as singular version of collection name, i.e. <code>$post</code>)</p>
-  <pre><code>{{ $page->dump() }}</code></pre>
-</div>
--->
-
 @endsection
