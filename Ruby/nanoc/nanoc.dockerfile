@@ -16,7 +16,7 @@ RUN wget https://github.com/sharkdp/hyperfine/releases/download/v1.7.0/hyperfine
 # Generator Dir
 RUN mkdir /opt/nanoc
 COPY . /opt/nanoc/
-COPY build.sh benchmark_config.json /opt/nanoc/src/
+COPY build.sh benchmark_config.json Gemfile /opt/nanoc/src/
 WORKDIR /opt/nanoc/src
 
 # Install Nanoc
