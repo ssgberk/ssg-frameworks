@@ -25,7 +25,7 @@
     {
       "metadata_dateslug": "date",
       "metadata_layout": "layout: post.html",
-      "build_command": "cd /src && make build",
+      "build_command": "make build",
       "build_verbose": ""
     }
   ]
