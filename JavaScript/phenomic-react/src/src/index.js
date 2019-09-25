@@ -1,5 +1,5 @@
 import React from "react";
-import { createContainer, query } from "@phenomic/preset-react-app/lib/client";
+import { withPhenomicApi, query } from "@phenomic/preset-react-app/lib/client";
 
 import PostList from "./components/PostList";
 import LinkList from "./components/LinkList";
@@ -39,7 +39,7 @@ const Home = ({ isLoading, hasError, posts, links }) => (
   </DefaultLayout>
 );
 
-const HomeContainer = createContainer(Home, (/*props*/) => ({
+const HomeContainer = withPhenomicApi(Home, (/*props*/) => ({
   posts: query({
     path: "posts"
     // want to add pagination?

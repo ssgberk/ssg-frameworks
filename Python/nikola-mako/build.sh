@@ -1,4 +1,6 @@
 #!/bin/bash
+export LANG=C.UTF-8
+
 if [ -z "$(command -v jq)" ] || [ -z "$(command -v sponge)" ]; then
     printf "\n [ ERROR ] Command jq or sponge (moreutils) was not instaled sucessful. Restart script."
     kill $$
@@ -40,7 +42,6 @@ delete_post()
   mkdir "${content_folder}"
   return 0
 }
-delete_post
 
 # Create content
 resolve_filename()

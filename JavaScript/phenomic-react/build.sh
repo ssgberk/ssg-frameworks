@@ -1,4 +1,6 @@
 #!/bin/bash
+export LANG=C.UTF-8
+
 if [ -z "$(command -v jq)" ] || [ -z "$(command -v sponge)" ]; then
     printf "\n [ ERROR ] Command jq or sponge (moreutils) was not instaled sucessful. Restart script."
     kill $$
@@ -40,7 +42,6 @@ delete_post()
   mkdir "${content_folder}"
   return 0
 }
-delete_post
 
 # Create content
 resolve_filename()
@@ -183,26 +184,6 @@ case "${content_type}" in
     if [ "${verbose_build}" == true ] ; then
         printf "\n%s/%s.%s" "${content_folder}" "${filename}" "${content_extension}"
         cat "${content_folder}/${filename}.${content_extension}"
-    fi
-;;
-esac
-
-# run benchmark
-if [ "${verbose_build}" == true ] ; then
-    ls -sh "${content_folder}"
-    echo "Number of File: ${number_of_files} with Content Size: ${content_size} and Min Runs: ${min_runs}"
-    command="hyperfine --min-runs ${min_runs} --show-output '${framework_build_verbose}'"
-    echo "${command}"
-    eval "${command}"
-else
-    du -sh "${content_folder}"
-    echo "Number of File: ${number_of_files} with Content Size: ${content_size} and Min Runs: ${min_runs}"
-    command="hyperfine --min-runs ${min_runs} --show-output '${framework_build_command}'"
-    eval "${command}"
-fi
-
-# delete content
-delete_post
     fi
 ;;
 esac

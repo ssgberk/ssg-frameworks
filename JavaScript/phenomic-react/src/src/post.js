@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "react-helmet";
 import {
-  createContainer,
+  withPhenomicApi,
   query,
   BodyRenderer
 } from "@phenomic/preset-react-app/lib/client";
@@ -38,7 +38,7 @@ const Page = ({ isLoading, hasError, page, posts }) => {
   );
 };
 
-const PageContainer = createContainer(Page, props => ({
+const PageContainer = withPhenomicApi(Page, props => ({
   page: query({ path: "posts", id: props.params.splat }),
   posts: query({
     path: "posts",
