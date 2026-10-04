@@ -16,8 +16,9 @@ RUN ARCH="$(dpkg --print-architecture)" \
 RUN apt-get -yqq update && apt-get -yqq install --no-install-recommends software-properties-common gpg-agent \
  && add-apt-repository -y ppa:ondrej/php && apt-get -yqq update \
  && apt-get -yqq install --no-install-recommends php8.4-cli php8.4-mbstring php8.4-xml php8.4-curl php8.4-zip unzip \
- && rm -rf /var/lib/apt/lists/* \
- && curl -fsSL https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+ && rm -rf /var/lib/apt/lists/*
+
+COPY --from=composer:2.8 /usr/bin/composer /usr/local/bin/composer
 
 WORKDIR /opt/jigsaw/src
 
