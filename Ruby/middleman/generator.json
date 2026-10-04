@@ -1,0 +1,27 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "middleman",
+  "name": "Middleman",
+  "description": "Middleman is a Ruby static site generator that builds sites from templates, with blogging via middleman-blog.",
+  "homepage": "https://middlemanapp.com",
+  "repository": "https://github.com/middleman/middleman",
+  "license": "MIT",
+  "language": "Ruby",
+  "runtime": "Ruby 3.2 (Ubuntu 24.04 apt)",
+  "templateEngines": [
+    "ERB"
+  ],
+  "contentFormats": [
+    "markdown",
+    "html",
+    "erb",
+    "haml"
+  ],
+  "category": "general",
+  "firstRelease": 2009,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Posts via middleman-blog; Markdown via kramdown. The repo has no GitHub Releases; 4.6.3 was published to RubyGems on 2026-02-16."
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "nikola-mako",
+  "name": "Nikola + Mako",
+  "description": "Nikola is a Python static website and blog generator, benchmarked here with Mako templates.",
+  "homepage": "https://getnikola.com",
+  "repository": "https://github.com/getnikola/nikola",
+  "license": "MIT",
+  "language": "Python",
+  "runtime": "Python 3.12 (Ubuntu 24.04 apt, venv)",
+  "templateEngines": [
+    "Mako"
+  ],
+  "contentFormats": [
+    "restructuredtext",
+    "markdown",
+    "html",
+    "ipynb"
+  ],
+  "category": "blog",
+  "firstRelease": 2012,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Nikola also supports Jinja2 themes; this variant uses Mako. firstRelease from the 1.1 git tag (2012-03-31); PyPI uploads start at 5.5 (2013)."
+}

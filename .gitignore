@@ -2,3 +2,5 @@ node_modules/
 public/
 _site/
 .DS_Store
+__pycache__/
+.pytest_cache/

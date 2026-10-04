@@ -1,0 +1,828 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedFrom": "01f377d65d876973e7782a0b20cfe8084af0eaf7",
+  "source": "https://github.com/ssgberk/ssg-frameworks",
+  "generators": [
+    {
+      "id": "gatsby",
+      "path": "JavaScript/gatsby",
+      "version": "5.16.1",
+      "name": "Gatsby",
+      "description": "Gatsby is a React-based framework that builds static sites from data sources through a GraphQL data layer.",
+      "homepage": "https://www.gatsbyjs.com",
+      "repository": "https://github.com/gatsbyjs/gatsby",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "React (JSX)"
+      ],
+      "contentFormats": [
+        "markdown",
+        "mdx"
+      ],
+      "category": "framework",
+      "firstRelease": 2015,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "gatsby",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "src/pages/posts",
+        "buildCommand": "npm run --silent build",
+        "outputFolder": "public",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          ".cache"
+        ]
+      },
+      "notes": "Markdown is handled by the official gatsby-transformer-remark plugin (used here); MDX by gatsby-plugin-mdx.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/gatsby/gatsby.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/gatsby/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/gatsby/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/gatsby/generator.json"
+      }
+    },
+    {
+      "id": "hugo",
+      "path": "Go/hugo",
+      "version": "0.167.0",
+      "name": "Hugo",
+      "description": "Hugo is a static site generator written in Go that renders Markdown content through Go templates.",
+      "homepage": "https://gohugo.io",
+      "repository": "https://github.com/gohugoio/hugo",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "runtime": "Go binary (Hugo extended .deb)",
+      "templateEngines": [
+        "Go html/template"
+      ],
+      "contentFormats": [
+        "markdown",
+        "html",
+        "org"
+      ],
+      "category": "general",
+      "firstRelease": 2013,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "hugo",
+        "versus": "go",
+        "contentType": "3minus",
+        "contentFolder": "content/post",
+        "buildCommand": "hugo --quiet",
+        "outputFolder": "public",
+        "outputGlob": "post/*/index.html",
+        "cacheFolders": [
+          "resources/_gen"
+        ]
+      },
+      "notes": "contentFormats lists formats Hugo renders without external helpers; AsciiDoc, Pandoc and reStructuredText need external executables.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/hugo/hugo.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/hugo/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/hugo/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/hugo/generator.json"
+      }
+    },
+    {
+      "id": "jekyll",
+      "path": "Ruby/jekyll",
+      "version": "4.4.1",
+      "name": "Jekyll",
+      "description": "Jekyll is a blog-aware Ruby static site generator that renders Markdown with Liquid templates.",
+      "homepage": "https://jekyllrb.com",
+      "repository": "https://github.com/jekyll/jekyll",
+      "license": "MIT",
+      "language": "Ruby",
+      "runtime": "Ruby 3.2 (Ubuntu 24.04 apt)",
+      "templateEngines": [
+        "Liquid"
+      ],
+      "contentFormats": [
+        "markdown",
+        "html"
+      ],
+      "category": "blog",
+      "firstRelease": 2008,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "jekyll",
+        "versus": "ruby",
+        "contentType": "3minus",
+        "contentFolder": "_posts",
+        "buildCommand": "bundle exec jekyll build --quiet",
+        "outputFolder": "_site",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          ".jekyll-cache",
+          ".jekyll-metadata"
+        ]
+      },
+      "notes": "firstRelease from the oldest git tag v0.1.3 (2008-12-07).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/jekyll/jekyll.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/jekyll/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/jekyll/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/jekyll/generator.json"
+      }
+    },
+    {
+      "id": "jigsaw",
+      "path": "PHP/jigsaw",
+      "version": "1.8.8",
+      "name": "Jigsaw",
+      "description": "Jigsaw is a PHP static site generator by Tighten that builds sites with Laravel's Blade templates and Markdown.",
+      "homepage": "https://jigsaw.tighten.com",
+      "repository": "https://github.com/tighten/jigsaw",
+      "license": "MIT",
+      "language": "PHP",
+      "runtime": "PHP 8.4 (ondrej/php PPA)",
+      "templateEngines": [
+        "Blade"
+      ],
+      "contentFormats": [
+        "markdown",
+        "blade"
+      ],
+      "category": "general",
+      "firstRelease": 2015,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Jigsaw",
+        "versus": "php",
+        "contentType": "3minus",
+        "contentFolder": "source/_posts",
+        "buildCommand": "vendor/bin/jigsaw build --quiet",
+        "outputFolder": "build_local",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          "cache"
+        ]
+      },
+      "notes": "Installed from Packagist as tightenco/jigsaw.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/jigsaw.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/generator.json"
+      }
+    },
+    {
+      "id": "metalsmith-handlebars",
+      "path": "JavaScript/metalsmith-handlebars",
+      "version": "2.7.0",
+      "name": "Metalsmith + Handlebars",
+      "description": "Metalsmith is a pluggable Node.js static site generator, benchmarked here with Handlebars layouts.",
+      "homepage": "https://metalsmith.io",
+      "repository": "https://github.com/metalsmith/metalsmith",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "Handlebars"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "general",
+      "firstRelease": 2014,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Metalsmith + Handlebars",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "content/posts",
+        "buildCommand": "node index.js",
+        "outputFolder": "build",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": []
+      },
+      "notes": "Uses @metalsmith/markdown, @metalsmith/layouts and @metalsmith/permalinks with jstransformer-handlebars (Handlebars: https://github.com/handlebars-lang/handlebars.js, MIT).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/metalsmith-handlebars/metalsmith-handlebars.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/metalsmith-handlebars/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/metalsmith-handlebars/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/metalsmith-handlebars/generator.json"
+      }
+    },
+    {
+      "id": "metalsmith-nunjucks",
+      "path": "JavaScript/metalsmith-nunjucks",
+      "version": "2.7.0",
+      "name": "Metalsmith + Nunjucks",
+      "description": "Metalsmith is a pluggable Node.js static site generator, benchmarked here with Nunjucks layouts.",
+      "homepage": "https://metalsmith.io",
+      "repository": "https://github.com/metalsmith/metalsmith",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "Nunjucks"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "general",
+      "firstRelease": 2014,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Metalsmith + Nunjucks",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "content/posts",
+        "buildCommand": "node index.js",
+        "outputFolder": "build",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": []
+      },
+      "notes": "Uses @metalsmith/markdown, @metalsmith/layouts and @metalsmith/permalinks with jstransformer-nunjucks (Nunjucks: https://github.com/mozilla/nunjucks, BSD-2-Clause).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/metalsmith-nunjucks/metalsmith-nunjucks.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/metalsmith-nunjucks/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/metalsmith-nunjucks/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/metalsmith-nunjucks/generator.json"
+      }
+    },
+    {
+      "id": "middleman",
+      "path": "Ruby/middleman",
+      "version": "4.6.3",
+      "name": "Middleman",
+      "description": "Middleman is a Ruby static site generator that builds sites from templates, with blogging via middleman-blog.",
+      "homepage": "https://middlemanapp.com",
+      "repository": "https://github.com/middleman/middleman",
+      "license": "MIT",
+      "language": "Ruby",
+      "runtime": "Ruby 3.2 (Ubuntu 24.04 apt)",
+      "templateEngines": [
+        "ERB"
+      ],
+      "contentFormats": [
+        "markdown",
+        "html",
+        "erb",
+        "haml"
+      ],
+      "category": "general",
+      "firstRelease": 2009,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Middleman",
+        "versus": "ruby",
+        "contentType": "3minus",
+        "contentFolder": "source/posts",
+        "buildCommand": "bundle exec middleman build",
+        "outputFolder": "build",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          ".sass-cache"
+        ]
+      },
+      "notes": "Posts via middleman-blog; Markdown via kramdown. The repo has no GitHub Releases; 4.6.3 was published to RubyGems on 2026-02-16.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/middleman/middleman.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/middleman/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/middleman/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/middleman/generator.json"
+      }
+    },
+    {
+      "id": "nanoc",
+      "path": "Ruby/nanoc",
+      "version": "4.14.8",
+      "name": "Nanoc",
+      "description": "Nanoc is a flexible Ruby static site generator driven by a Rules file of filters and layouts.",
+      "homepage": "https://nanoc.denisdefreyne.com",
+      "repository": "https://github.com/nanoc/nanoc",
+      "license": "MIT",
+      "language": "Ruby",
+      "runtime": "Ruby 3.2 (Ubuntu 24.04 apt)",
+      "templateEngines": [
+        "ERB"
+      ],
+      "contentFormats": [
+        "markdown",
+        "html",
+        "erb"
+      ],
+      "category": "general",
+      "firstRelease": 2007,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "nanoc",
+        "versus": "ruby",
+        "contentType": "3minus",
+        "contentFolder": "content/posts",
+        "buildCommand": "bundle exec nanoc compile",
+        "outputFolder": "output",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          "tmp"
+        ]
+      },
+      "notes": "Markdown via the kramdown filter. firstRelease from the official release notes (1.0, 2007-05-03); nanoc.app redirects to the homepage.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/nanoc/nanoc.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/nanoc/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/nanoc/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/nanoc/generator.json"
+      }
+    },
+    {
+      "id": "nikola-mako",
+      "path": "Python/nikola-mako",
+      "version": "8.3.3",
+      "name": "Nikola + Mako",
+      "description": "Nikola is a Python static website and blog generator, benchmarked here with Mako templates.",
+      "homepage": "https://getnikola.com",
+      "repository": "https://github.com/getnikola/nikola",
+      "license": "MIT",
+      "language": "Python",
+      "runtime": "Python 3.12 (Ubuntu 24.04 apt, venv)",
+      "templateEngines": [
+        "Mako"
+      ],
+      "contentFormats": [
+        "restructuredtext",
+        "markdown",
+        "html",
+        "ipynb"
+      ],
+      "category": "blog",
+      "firstRelease": 2012,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Nikola + Mako",
+        "versus": "python",
+        "contentType": "2dot",
+        "contentFolder": "posts",
+        "buildCommand": "nikola build -q",
+        "outputFolder": "output",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          "cache",
+          ".doit.db",
+          ".doit.db.dat",
+          ".doit.db.dir",
+          ".doit.db.bak",
+          ".doit.db.db"
+        ]
+      },
+      "notes": "Nikola also supports Jinja2 themes; this variant uses Mako. firstRelease from the 1.1 git tag (2012-03-31); PyPI uploads start at 5.5 (2013).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/nikola-mako/nikola-mako.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/nikola-mako/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/nikola-mako/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/nikola-mako/generator.json"
+      }
+    }
+  ],
+  "proposed": [
+    {
+      "id": "analog",
+      "name": "Analog",
+      "language": "TypeScript",
+      "repository": "https://github.com/analogjs/analog",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/124"
+    },
+    {
+      "id": "antora",
+      "name": "Antora",
+      "language": "JavaScript",
+      "repository": "https://gitlab.com/antora/antora",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/112"
+    },
+    {
+      "id": "astro",
+      "name": "Astro",
+      "language": "JavaScript",
+      "repository": "https://github.com/withastro/astro",
+      "status": "planned",
+      "spec": "docs/specs/003-new-generators"
+    },
+    {
+      "id": "bridgetown",
+      "name": "Bridgetown",
+      "language": "Ruby",
+      "repository": "https://github.com/bridgetownrb/bridgetown",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/108"
+    },
+    {
+      "id": "cecil",
+      "name": "Cecil",
+      "language": "PHP",
+      "repository": "https://github.com/Cecilapp/Cecil",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/113"
+    },
+    {
+      "id": "cobalt",
+      "name": "Cobalt",
+      "language": "Rust",
+      "repository": "https://github.com/cobalt-org/cobalt.rs",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/128"
+    },
+    {
+      "id": "cryogen",
+      "name": "Cryogen",
+      "language": "Clojure",
+      "repository": "https://github.com/cryogen-project/cryogen",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/110"
+    },
+    {
+      "id": "docfx",
+      "name": "DocFX",
+      "language": "C#",
+      "repository": "https://github.com/dotnet/docfx",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/101"
+    },
+    {
+      "id": "docmd",
+      "name": "docmd",
+      "language": "JavaScript",
+      "repository": "https://github.com/docmd-io/docmd",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/125"
+    },
+    {
+      "id": "docusaurus",
+      "name": "Docusaurus",
+      "language": "JavaScript",
+      "repository": "https://github.com/facebook/docusaurus",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/92"
+    },
+    {
+      "id": "dumi",
+      "name": "dumi",
+      "language": "JavaScript",
+      "repository": "https://github.com/umijs/dumi",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/122"
+    },
+    {
+      "id": "eleventy",
+      "name": "Eleventy",
+      "language": "JavaScript",
+      "repository": "https://github.com/11ty/buildawesome",
+      "status": "planned",
+      "spec": "docs/specs/003-new-generators",
+      "notes": "GitHub redirects 11ty/eleventy to 11ty/buildawesome (checked 2026-10-04)."
+    },
+    {
+      "id": "emanote",
+      "name": "Emanote",
+      "language": "Haskell",
+      "repository": "https://github.com/srid/emanote",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/132"
+    },
+    {
+      "id": "franklin",
+      "name": "Franklin",
+      "language": "Julia",
+      "repository": "https://github.com/JuliaDocs/Franklin.jl",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/111",
+      "notes": "The issue links tlienart/Franklin.jl; GitHub redirects it to JuliaDocs/Franklin.jl (checked 2026-10-04)."
+    },
+    {
+      "id": "hakyll",
+      "name": "Hakyll",
+      "language": "Haskell",
+      "repository": "https://github.com/jaspervdj/hakyll",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/103"
+    },
+    {
+      "id": "hexo",
+      "name": "Hexo",
+      "language": "JavaScript",
+      "repository": "https://github.com/hexojs/hexo",
+      "status": "planned",
+      "spec": "docs/specs/003-new-generators"
+    },
+    {
+      "id": "iles",
+      "name": "îles",
+      "language": "JavaScript",
+      "repository": "https://github.com/ElMassimo/iles",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/129"
+    },
+    {
+      "id": "ink",
+      "name": "Ink",
+      "language": "Go",
+      "repository": "https://github.com/InkProject/ink",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/130"
+    },
+    {
+      "id": "jbake",
+      "name": "JBake",
+      "language": "Java",
+      "repository": "https://github.com/jbake-org/jbake",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/109"
+    },
+    {
+      "id": "laika",
+      "name": "Laika",
+      "language": "Scala",
+      "repository": "https://github.com/typelevel/Laika",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/135"
+    },
+    {
+      "id": "lektor",
+      "name": "Lektor",
+      "language": "Python",
+      "repository": "https://github.com/lektor/lektor",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/102"
+    },
+    {
+      "id": "lume",
+      "name": "Lume",
+      "language": "JavaScript (Deno)",
+      "repository": "https://github.com/lumeland/lume",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/104"
+    },
+    {
+      "id": "lustre-ssg",
+      "name": "Lustre SSG",
+      "language": "Gleam",
+      "repository": "https://github.com/lustre-labs/ssg",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/138"
+    },
+    {
+      "id": "marmite",
+      "name": "Marmite",
+      "language": "Rust",
+      "repository": "https://github.com/rochacbruno/marmite",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/133"
+    },
+    {
+      "id": "mdbook",
+      "name": "mdBook",
+      "language": "Rust",
+      "repository": "https://github.com/rust-lang/mdBook",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/95"
+    },
+    {
+      "id": "mkdocs",
+      "name": "MkDocs",
+      "language": "Python",
+      "repository": "https://github.com/mkdocs/mkdocs",
+      "status": "planned",
+      "spec": "docs/specs/003-new-generators"
+    },
+    {
+      "id": "nesta",
+      "name": "Nesta",
+      "language": "Ruby",
+      "repository": "https://github.com/gma/nesta",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/134"
+    },
+    {
+      "id": "nextjs-export",
+      "name": "Next.js (static export)",
+      "language": "JavaScript",
+      "repository": "https://github.com/vercel/next.js",
+      "status": "planned",
+      "spec": "docs/specs/003-new-generators"
+    },
+    {
+      "id": "nextra",
+      "name": "Nextra",
+      "language": "JavaScript",
+      "repository": "https://github.com/shuding/nextra",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/118"
+    },
+    {
+      "id": "nimib",
+      "name": "nimib",
+      "language": "Nim",
+      "repository": "https://github.com/pietroppeter/nimib",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/137"
+    },
+    {
+      "id": "nuxt",
+      "name": "Nuxt",
+      "language": "JavaScript",
+      "repository": "https://github.com/nuxt/nuxt",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/93"
+    },
+    {
+      "id": "observable-framework",
+      "name": "Observable Framework",
+      "language": "JavaScript",
+      "repository": "https://github.com/observablehq/framework",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/123"
+    },
+    {
+      "id": "pelican",
+      "name": "Pelican",
+      "language": "Python",
+      "repository": "https://github.com/getpelican/pelican",
+      "status": "planned",
+      "spec": "docs/specs/003-new-generators"
+    },
+    {
+      "id": "plenti",
+      "name": "Plenti",
+      "language": "Go",
+      "repository": "https://github.com/plentico/plenti",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/131"
+    },
+    {
+      "id": "publish",
+      "name": "Publish",
+      "language": "Swift",
+      "repository": "https://github.com/JohnSundell/Publish",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/99"
+    },
+    {
+      "id": "quarkdown",
+      "name": "Quarkdown",
+      "language": "Kotlin",
+      "repository": "https://github.com/iamgio/quarkdown",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/117"
+    },
+    {
+      "id": "quarto",
+      "name": "Quarto",
+      "language": "TypeScript",
+      "repository": "https://github.com/quarto-dev/quarto-cli",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/100"
+    },
+    {
+      "id": "quartz",
+      "name": "Quartz",
+      "language": "TypeScript",
+      "repository": "https://github.com/jackyzha0/quartz",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/119"
+    },
+    {
+      "id": "rspress",
+      "name": "rspress",
+      "language": "JavaScript",
+      "repository": "https://github.com/web-infra-dev/rspress",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/105"
+    },
+    {
+      "id": "sculpin",
+      "name": "Sculpin",
+      "language": "PHP",
+      "repository": "https://github.com/sculpin/sculpin",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/107"
+    },
+    {
+      "id": "soupault",
+      "name": "soupault",
+      "language": "OCaml",
+      "repository": "https://github.com/PataphysicalSociety/soupault",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
+    },
+    {
+      "id": "sphinx",
+      "name": "Sphinx",
+      "language": "Python",
+      "repository": "https://github.com/sphinx-doc/sphinx",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/97"
+    },
+    {
+      "id": "starlight",
+      "name": "Starlight",
+      "language": "JavaScript",
+      "repository": "https://github.com/withastro/starlight",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/98"
+    },
+    {
+      "id": "statiq",
+      "name": "Statiq",
+      "language": "C#",
+      "repository": "https://github.com/statiqdev/Statiq",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/106",
+      "notes": "The issue links statiqdev/Statiq.Web; GitHub redirects it to statiqdev/Statiq (checked 2026-10-04)."
+    },
+    {
+      "id": "sveltekit",
+      "name": "SvelteKit",
+      "language": "JavaScript",
+      "repository": "https://github.com/sveltejs/kit",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/96"
+    },
+    {
+      "id": "tableau",
+      "name": "Tableau",
+      "language": "Elixir",
+      "repository": "https://github.com/elixir-tools/tableau",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/136"
+    },
+    {
+      "id": "tanstack-start",
+      "name": "TanStack Start",
+      "language": "JavaScript",
+      "repository": "https://github.com/TanStack/router",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/115"
+    },
+    {
+      "id": "vike",
+      "name": "Vike",
+      "language": "JavaScript",
+      "repository": "https://github.com/vikejs/vike",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/121"
+    },
+    {
+      "id": "vite-ssg",
+      "name": "vite-ssg",
+      "language": "JavaScript",
+      "repository": "https://github.com/antfu-collective/vite-ssg",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/127"
+    },
+    {
+      "id": "vitepress",
+      "name": "VitePress",
+      "language": "JavaScript",
+      "repository": "https://github.com/vuejs/vitepress",
+      "status": "planned",
+      "spec": "docs/specs/003-new-generators"
+    },
+    {
+      "id": "vuepress",
+      "name": "VuePress",
+      "language": "JavaScript",
+      "repository": "https://github.com/vuepress/core",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/94"
+    },
+    {
+      "id": "zensical",
+      "name": "Zensical",
+      "language": "Rust",
+      "repository": "https://github.com/zensical/zensical",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/120"
+    },
+    {
+      "id": "zine",
+      "name": "Zine",
+      "language": "Zig",
+      "repository": "https://github.com/kristoff-it/zine",
+      "status": "proposed",
+      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/126"
+    },
+    {
+      "id": "zola",
+      "name": "Zola",
+      "language": "Rust",
+      "repository": "https://github.com/getzola/zola",
+      "status": "planned",
+      "spec": "docs/specs/003-new-generators"
+    }
+  ]
+}

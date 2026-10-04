@@ -1,0 +1,26 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "hugo",
+  "name": "Hugo",
+  "description": "Hugo is a static site generator written in Go that renders Markdown content through Go templates.",
+  "homepage": "https://gohugo.io",
+  "repository": "https://github.com/gohugoio/hugo",
+  "license": "Apache-2.0",
+  "language": "Go",
+  "runtime": "Go binary (Hugo extended .deb)",
+  "templateEngines": [
+    "Go html/template"
+  ],
+  "contentFormats": [
+    "markdown",
+    "html",
+    "org"
+  ],
+  "category": "general",
+  "firstRelease": 2013,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "contentFormats lists formats Hugo renders without external helpers; AsciiDoc, Pandoc and reStructuredText need external executables."
+}
