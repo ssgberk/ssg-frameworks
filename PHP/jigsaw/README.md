@@ -1,91 +1,16 @@
-# Jigsaw Static Site Sample
+# Jigsaw
 
-> Static sites for Laravel developers.
-> Jigsaw is a framework for rapidly building static sites
-> using the same modern tooling that powers your web applications.
->
-> -- jigsaw.tighten.co
+> Static sites for Laravel developers. -- jigsaw.tighten.co
 
+- Version: `tightenco/jigsaw` 1.8.8, installed with Composer (see `composer.json` / `composer.lock`).
+- Runtime: PHP 8.4 (ondrej PPA) on `ubuntu:24.04`; Jigsaw 1.8.8 supports PHP 8.4. No Node or mix assets.
+- Site: base layout + post layout + index listing posts (`src/source`); `posts` collection with `path => posts/{filename}`.
+- Content folder: `source/_posts` (`3minus` front matter, `.md`).
+- Output folder: `build_local`; output glob: `posts/*/index.html`; cache folder: `cache`.
+- Run command: `vendor/bin/jigsaw build --quiet` (verbose: `vendor/bin/jigsaw build -v`).
 
-
-Shows how to use:
-
-1. Pages
-2. Posts
-3. Custom Content Types (e.g. Bookmarks 'n' Links)
-
-See the live version @ [`sites/jigsaw`](http://staystatic.github.io/sites/jigsaw)
+Run from the benchmark toolset:
 
 ```
-|   config.php
-|
-\---source
-    |   about.md
-    |   index.blade.php
-    |
-    +---css
-    |       style.css
-    |
-    +---_includes
-    |       footer.blade.php
-    |       github.blade.php
-    |       header.blade.php
-    |
-    +---_layouts
-    |       master.blade.php
-    |       page.blade.php
-    |       post.blade.php
-    |
-    \---_posts
-            new-build-system.md
-            new-repo-maps.md
-            new-season.md
+./ssgberk --test jigsaw -nf 10 -cs 0.500 -mr 1
 ```
-
-will result in:
-
-```
-|   index.html
-|
-+---about
-|       index.html
-|
-+---css
-|       style.css
-|
-\---posts
-    +---new-build-system
-    |       index.html
-    |
-    +---new-repo-maps
-    |       index.html
-    |
-    \---new-season
-            index.html
-```
-
-
-## Install & Build Notes
-
-To install use:
-
-```
-$ composer global require tightenco/jigsaw
-```
-
-To build  use:
-
-```
-$ cd staystatic/jigsaw
-$ jigsaw build
-```
-
-Find the compiled static site in the `build_local` folder.
-
-
-
-## Todos
-
-- [ ] "official" support for datafiles?
-  - for now links added to config.php
-- [ ] "better" way to format dates (see dateFormatted helper in posts collection)??

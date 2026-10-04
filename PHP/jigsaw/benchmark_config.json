@@ -1,16 +1,18 @@
 {
   "framework": "jigsaw",
-  "tests": [{
-    "default": {
-      "approach": "Realistic",
-      "classification": "Micro",
-      "framework": "Jigsaw",
-      "language": "PHP",
-      "display_name": "Jigsaw",
-      "notes": "",
-      "versus": "php"
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "Jigsaw",
+        "language": "PHP",
+        "display_name": "Jigsaw",
+        "notes": "",
+        "versus": "php"
+      }
     }
-  }],
+  ],
   "content": [
     {
       "folder": "source/_posts",
@@ -22,8 +24,13 @@
     {
       "metadata_dateslug": "date",
       "metadata_layout": "extends: _layouts.post",
-      "build_command": "jigsaw build",
-      "build_verbose": "jigsaw build -v"
+      "build_command": "vendor/bin/jigsaw build --quiet",
+      "build_verbose": "vendor/bin/jigsaw build -v",
+      "output_folder": "build_local",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [
+        "cache"
+      ]
     }
   ]
 }

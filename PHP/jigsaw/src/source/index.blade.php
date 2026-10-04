@@ -9,7 +9,7 @@ title:   Welcome
   <b>News 'n' Updates</b>
   <ul class="news">
     @foreach($posts as $post)
-        <li><a href="{{ $page->baseUrl }}{{ $post->getPath() }}">{{ $post->title }}</a></li>
+        <li><a href="{{ $post->getPath() }}">{{ $post->title }}</a></li>
     @endforeach
   </ul>
 </div>

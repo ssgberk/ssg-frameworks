@@ -2,7 +2,6 @@
 
 return [
     'siteTitle' => 'Jigsaw Stay Static Sample Site',
-    'baseUrl'   => '/sites/jigsaw',
     'production' => false,
 
     /** todo: check if we can use "datafiles" ???
@@ -22,6 +21,7 @@ return [
 
     'collections' => [
        'posts' => [
+            'path' => 'posts/{filename}',
             /**
              * Sorting:
              *     - can be a single criterion, or array
