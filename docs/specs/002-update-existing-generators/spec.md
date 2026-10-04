@@ -2,7 +2,7 @@
 
 - **Repo:** `ssgberk/ssg-frameworks`
 - **Date:** 2026-10-04
-- **Status:** proposed, awaiting review (approved design redistributed from `2026-10-04-modernize-ssgberk-design.md`)
+- **Status:** concluído (2026-10-04)
 - **Siblings:** `plan.md` (how), `tasks.md` (executable task list) in this directory; roadmap in `benchmark-tool/docs/specs/ROADMAP.md`
 
 ## Context
@@ -39,6 +39,14 @@
 - Every generator in this spec passes the smoke test defined in `docs/specs/001-canonical-build-runner/spec.md` (design 6.2): `./ssgberk --test <name> -nf 10 -cs 500 -mr 1`, with `SSGBERK_VERIFY_OK expected=10 got=10`.
 - `tools/check-build-sh.sh` exits 0 after the removals.
 - **Gems nativas em Ruby 3.2 (Middleman, Nanoc):** se não compilarem, o gerador volta para `frameworks_WIP/` com o motivo no README dele, sem bloquear os demais. O critério de sucesso 1 passa a contar os geradores restantes, e a exceção é registrada no PR.
+
+## Deviations
+
+- middleman: `blog.sources` is configured without a file extension so that the `YYYY-MM-DD-NNN` post names match.
+- nikola-mako: Doit state file is `.doit.db.db` (cleared between runs) and `DOIT_CONFIG` selects the `sqlite3` backend so the cache file name is predictable.
+- nikola-mako: single index page via a huge `INDEX_DISPLAY_POST_COUNT`; the archive, categories, tags, authors and page-index classifier plugins are disabled (final review fix wave) so only the index lists all posts.
+- Added mid-spec (binding for every generator): post-only templates (a post page never lists other posts), a single index page listing all posts, `pip freeze` full pinning for Python generators, and cold-build rules (cache/state cleared before every timed run).
+- Final review fix wave: Ruby/nanoc lock gained the `x86_64-linux` platform, Ruby dockerfiles set `BUNDLE_FROZEN=true`, jigsaw copies composer from `composer:2.8` instead of `curl | php`, nikola-mako uses plain `Nikola==8.3.3` with a full freeze, the 9 generators were re-smoked at `-cs 500`, and Ruby/gatsby READMEs document that the timed command includes wrapper startup.
 
 ## Out of scope
 
