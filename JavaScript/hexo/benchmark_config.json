@@ -1,0 +1,32 @@
+{
+  "framework": "hexo",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "hexo",
+      "language": "JavaScript",
+      "display_name": "Hexo",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "source/_posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx hexo generate --silent",
+      "build_verbose": "npx hexo generate --debug",
+      "output_folder": "public",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": ["db.json"]
+    }
+  ]
+}

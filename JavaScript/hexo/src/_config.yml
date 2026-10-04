@@ -1,0 +1,9 @@
+title: SSGBerk Hexo
+url: http://localhost
+permalink: posts/:title/
+source_dir: source
+public_dir: public
+theme: minimal
+new_post_name: :title.md
+index_generator:
+  per_page: 0
