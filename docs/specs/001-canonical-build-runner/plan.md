@@ -40,6 +40,10 @@ Verification markers (design 5.4): `SSGBERK_VERIFY_FAIL expected=<n> got=<m>` (a
   ```
   `output_glob` is matched with `find <output_folder> -type f -path "<output_folder>/<output_glob>"`. `cache_folders` is optional.
 
+### `generator.json`
+
+- Every generator directory must include a `generator.json`. It holds curated metadata only and is validated against `schema/generator.schema.json`; see `docs/specs/004-generator-metadata`. After adding or changing a generator, regenerate the root `generators.json` with `python3 tools/build_index.py`. `python3 tools/build_index.py --check` must pass.
+
 ### Generator image and architecture
 
 - Generator base image `ubuntu:24.04`; architecture detected **inside `RUN`** with `ARCH="$(dpkg --print-architecture)"` (`amd64`|`arm64`). Never rely on `TARGETARCH` (empty under the legacy builder docker-py uses — verified on Docker 29).
