@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "metalsmith-handlebars",
+  "name": "Metalsmith + Handlebars",
+  "description": "Metalsmith is a pluggable Node.js static site generator, benchmarked here with Handlebars layouts.",
+  "homepage": "https://metalsmith.io",
+  "repository": "https://github.com/metalsmith/metalsmith",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Handlebars"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "general",
+  "firstRelease": 2014,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Uses @metalsmith/markdown, @metalsmith/layouts and @metalsmith/permalinks with jstransformer-handlebars (Handlebars: https://github.com/handlebars-lang/handlebars.js, MIT)."
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "nanoc",
+  "name": "Nanoc",
+  "description": "Nanoc is a flexible Ruby static site generator driven by a Rules file of filters and layouts.",
+  "homepage": "https://nanoc.denisdefreyne.com",
+  "repository": "https://github.com/nanoc/nanoc",
+  "license": "MIT",
+  "language": "Ruby",
+  "runtime": "Ruby 3.2 (Ubuntu 24.04 apt)",
+  "templateEngines": [
+    "ERB"
+  ],
+  "contentFormats": [
+    "markdown",
+    "html",
+    "erb"
+  ],
+  "category": "general",
+  "firstRelease": 2007,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Markdown via the kramdown filter. firstRelease from the official release notes (1.0, 2007-05-03); nanoc.app redirects to the homepage."
+}

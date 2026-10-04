@@ -1,0 +1,25 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "gatsby",
+  "name": "Gatsby",
+  "description": "Gatsby is a React-based framework that builds static sites from data sources through a GraphQL data layer.",
+  "homepage": "https://www.gatsbyjs.com",
+  "repository": "https://github.com/gatsbyjs/gatsby",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "React (JSX)"
+  ],
+  "contentFormats": [
+    "markdown",
+    "mdx"
+  ],
+  "category": "framework",
+  "firstRelease": 2015,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Markdown is handled by the official gatsby-transformer-remark plugin (used here); MDX by gatsby-plugin-mdx."
+}

@@ -1,0 +1,437 @@
+[
+  {
+    "id": "analog",
+    "name": "Analog",
+    "language": "TypeScript",
+    "repository": "https://github.com/analogjs/analog",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/124"
+  },
+  {
+    "id": "antora",
+    "name": "Antora",
+    "language": "JavaScript",
+    "repository": "https://gitlab.com/antora/antora",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/112"
+  },
+  {
+    "id": "astro",
+    "name": "Astro",
+    "language": "JavaScript",
+    "repository": "https://github.com/withastro/astro",
+    "status": "planned",
+    "spec": "docs/specs/003-new-generators"
+  },
+  {
+    "id": "bridgetown",
+    "name": "Bridgetown",
+    "language": "Ruby",
+    "repository": "https://github.com/bridgetownrb/bridgetown",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/108"
+  },
+  {
+    "id": "cecil",
+    "name": "Cecil",
+    "language": "PHP",
+    "repository": "https://github.com/Cecilapp/Cecil",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/113"
+  },
+  {
+    "id": "cobalt",
+    "name": "Cobalt",
+    "language": "Rust",
+    "repository": "https://github.com/cobalt-org/cobalt.rs",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/128"
+  },
+  {
+    "id": "cryogen",
+    "name": "Cryogen",
+    "language": "Clojure",
+    "repository": "https://github.com/cryogen-project/cryogen",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/110"
+  },
+  {
+    "id": "docfx",
+    "name": "DocFX",
+    "language": "C#",
+    "repository": "https://github.com/dotnet/docfx",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/101"
+  },
+  {
+    "id": "docmd",
+    "name": "docmd",
+    "language": "JavaScript",
+    "repository": "https://github.com/docmd-io/docmd",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/125"
+  },
+  {
+    "id": "docusaurus",
+    "name": "Docusaurus",
+    "language": "JavaScript",
+    "repository": "https://github.com/facebook/docusaurus",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/92"
+  },
+  {
+    "id": "dumi",
+    "name": "dumi",
+    "language": "JavaScript",
+    "repository": "https://github.com/umijs/dumi",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/122"
+  },
+  {
+    "id": "eleventy",
+    "name": "Eleventy",
+    "language": "JavaScript",
+    "repository": "https://github.com/11ty/buildawesome",
+    "status": "planned",
+    "spec": "docs/specs/003-new-generators",
+    "notes": "GitHub redirects 11ty/eleventy to 11ty/buildawesome (checked 2026-10-04)."
+  },
+  {
+    "id": "emanote",
+    "name": "Emanote",
+    "language": "Haskell",
+    "repository": "https://github.com/srid/emanote",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/132"
+  },
+  {
+    "id": "franklin",
+    "name": "Franklin",
+    "language": "Julia",
+    "repository": "https://github.com/JuliaDocs/Franklin.jl",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/111",
+    "notes": "The issue links tlienart/Franklin.jl; GitHub redirects it to JuliaDocs/Franklin.jl (checked 2026-10-04)."
+  },
+  {
+    "id": "hakyll",
+    "name": "Hakyll",
+    "language": "Haskell",
+    "repository": "https://github.com/jaspervdj/hakyll",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/103"
+  },
+  {
+    "id": "hexo",
+    "name": "Hexo",
+    "language": "JavaScript",
+    "repository": "https://github.com/hexojs/hexo",
+    "status": "planned",
+    "spec": "docs/specs/003-new-generators"
+  },
+  {
+    "id": "iles",
+    "name": "îles",
+    "language": "JavaScript",
+    "repository": "https://github.com/ElMassimo/iles",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/129"
+  },
+  {
+    "id": "ink",
+    "name": "Ink",
+    "language": "Go",
+    "repository": "https://github.com/InkProject/ink",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/130"
+  },
+  {
+    "id": "jbake",
+    "name": "JBake",
+    "language": "Java",
+    "repository": "https://github.com/jbake-org/jbake",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/109"
+  },
+  {
+    "id": "laika",
+    "name": "Laika",
+    "language": "Scala",
+    "repository": "https://github.com/typelevel/Laika",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/135"
+  },
+  {
+    "id": "lektor",
+    "name": "Lektor",
+    "language": "Python",
+    "repository": "https://github.com/lektor/lektor",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/102"
+  },
+  {
+    "id": "lume",
+    "name": "Lume",
+    "language": "JavaScript (Deno)",
+    "repository": "https://github.com/lumeland/lume",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/104"
+  },
+  {
+    "id": "lustre-ssg",
+    "name": "Lustre SSG",
+    "language": "Gleam",
+    "repository": "https://github.com/lustre-labs/ssg",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/138"
+  },
+  {
+    "id": "marmite",
+    "name": "Marmite",
+    "language": "Rust",
+    "repository": "https://github.com/rochacbruno/marmite",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/133"
+  },
+  {
+    "id": "mdbook",
+    "name": "mdBook",
+    "language": "Rust",
+    "repository": "https://github.com/rust-lang/mdBook",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/95"
+  },
+  {
+    "id": "mkdocs",
+    "name": "MkDocs",
+    "language": "Python",
+    "repository": "https://github.com/mkdocs/mkdocs",
+    "status": "planned",
+    "spec": "docs/specs/003-new-generators"
+  },
+  {
+    "id": "nesta",
+    "name": "Nesta",
+    "language": "Ruby",
+    "repository": "https://github.com/gma/nesta",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/134"
+  },
+  {
+    "id": "nextjs-export",
+    "name": "Next.js (static export)",
+    "language": "JavaScript",
+    "repository": "https://github.com/vercel/next.js",
+    "status": "planned",
+    "spec": "docs/specs/003-new-generators"
+  },
+  {
+    "id": "nextra",
+    "name": "Nextra",
+    "language": "JavaScript",
+    "repository": "https://github.com/shuding/nextra",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/118"
+  },
+  {
+    "id": "nimib",
+    "name": "nimib",
+    "language": "Nim",
+    "repository": "https://github.com/pietroppeter/nimib",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/137"
+  },
+  {
+    "id": "nuxt",
+    "name": "Nuxt",
+    "language": "JavaScript",
+    "repository": "https://github.com/nuxt/nuxt",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/93"
+  },
+  {
+    "id": "observable-framework",
+    "name": "Observable Framework",
+    "language": "JavaScript",
+    "repository": "https://github.com/observablehq/framework",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/123"
+  },
+  {
+    "id": "pelican",
+    "name": "Pelican",
+    "language": "Python",
+    "repository": "https://github.com/getpelican/pelican",
+    "status": "planned",
+    "spec": "docs/specs/003-new-generators"
+  },
+  {
+    "id": "plenti",
+    "name": "Plenti",
+    "language": "Go",
+    "repository": "https://github.com/plentico/plenti",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/131"
+  },
+  {
+    "id": "publish",
+    "name": "Publish",
+    "language": "Swift",
+    "repository": "https://github.com/JohnSundell/Publish",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/99"
+  },
+  {
+    "id": "quarkdown",
+    "name": "Quarkdown",
+    "language": "Kotlin",
+    "repository": "https://github.com/iamgio/quarkdown",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/117"
+  },
+  {
+    "id": "quarto",
+    "name": "Quarto",
+    "language": "TypeScript",
+    "repository": "https://github.com/quarto-dev/quarto-cli",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/100"
+  },
+  {
+    "id": "quartz",
+    "name": "Quartz",
+    "language": "TypeScript",
+    "repository": "https://github.com/jackyzha0/quartz",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/119"
+  },
+  {
+    "id": "rspress",
+    "name": "rspress",
+    "language": "JavaScript",
+    "repository": "https://github.com/web-infra-dev/rspress",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/105"
+  },
+  {
+    "id": "sculpin",
+    "name": "Sculpin",
+    "language": "PHP",
+    "repository": "https://github.com/sculpin/sculpin",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/107"
+  },
+  {
+    "id": "soupault",
+    "name": "soupault",
+    "language": "OCaml",
+    "repository": "https://github.com/PataphysicalSociety/soupault",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
+  },
+  {
+    "id": "sphinx",
+    "name": "Sphinx",
+    "language": "Python",
+    "repository": "https://github.com/sphinx-doc/sphinx",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/97"
+  },
+  {
+    "id": "starlight",
+    "name": "Starlight",
+    "language": "JavaScript",
+    "repository": "https://github.com/withastro/starlight",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/98"
+  },
+  {
+    "id": "statiq",
+    "name": "Statiq",
+    "language": "C#",
+    "repository": "https://github.com/statiqdev/Statiq",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/106",
+    "notes": "The issue links statiqdev/Statiq.Web; GitHub redirects it to statiqdev/Statiq (checked 2026-10-04)."
+  },
+  {
+    "id": "sveltekit",
+    "name": "SvelteKit",
+    "language": "JavaScript",
+    "repository": "https://github.com/sveltejs/kit",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/96"
+  },
+  {
+    "id": "tableau",
+    "name": "Tableau",
+    "language": "Elixir",
+    "repository": "https://github.com/elixir-tools/tableau",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/136"
+  },
+  {
+    "id": "tanstack-start",
+    "name": "TanStack Start",
+    "language": "JavaScript",
+    "repository": "https://github.com/TanStack/router",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/115"
+  },
+  {
+    "id": "vike",
+    "name": "Vike",
+    "language": "JavaScript",
+    "repository": "https://github.com/vikejs/vike",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/121"
+  },
+  {
+    "id": "vite-ssg",
+    "name": "vite-ssg",
+    "language": "JavaScript",
+    "repository": "https://github.com/antfu-collective/vite-ssg",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/127"
+  },
+  {
+    "id": "vitepress",
+    "name": "VitePress",
+    "language": "JavaScript",
+    "repository": "https://github.com/vuejs/vitepress",
+    "status": "planned",
+    "spec": "docs/specs/003-new-generators"
+  },
+  {
+    "id": "vuepress",
+    "name": "VuePress",
+    "language": "JavaScript",
+    "repository": "https://github.com/vuepress/core",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/94"
+  },
+  {
+    "id": "zensical",
+    "name": "Zensical",
+    "language": "Rust",
+    "repository": "https://github.com/zensical/zensical",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/120"
+  },
+  {
+    "id": "zine",
+    "name": "Zine",
+    "language": "Zig",
+    "repository": "https://github.com/kristoff-it/zine",
+    "status": "proposed",
+    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/126"
+  },
+  {
+    "id": "zola",
+    "name": "Zola",
+    "language": "Rust",
+    "repository": "https://github.com/getzola/zola",
+    "status": "planned",
+    "spec": "docs/specs/003-new-generators"
+  }
+]

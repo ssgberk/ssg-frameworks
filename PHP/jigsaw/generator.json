@@ -1,0 +1,25 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "jigsaw",
+  "name": "Jigsaw",
+  "description": "Jigsaw is a PHP static site generator by Tighten that builds sites with Laravel's Blade templates and Markdown.",
+  "homepage": "https://jigsaw.tighten.com",
+  "repository": "https://github.com/tighten/jigsaw",
+  "license": "MIT",
+  "language": "PHP",
+  "runtime": "PHP 8.4 (ondrej/php PPA)",
+  "templateEngines": [
+    "Blade"
+  ],
+  "contentFormats": [
+    "markdown",
+    "blade"
+  ],
+  "category": "general",
+  "firstRelease": 2015,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Installed from Packagist as tightenco/jigsaw."
+}

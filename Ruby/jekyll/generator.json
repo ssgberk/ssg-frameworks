@@ -1,0 +1,25 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "jekyll",
+  "name": "Jekyll",
+  "description": "Jekyll is a blog-aware Ruby static site generator that renders Markdown with Liquid templates.",
+  "homepage": "https://jekyllrb.com",
+  "repository": "https://github.com/jekyll/jekyll",
+  "license": "MIT",
+  "language": "Ruby",
+  "runtime": "Ruby 3.2 (Ubuntu 24.04 apt)",
+  "templateEngines": [
+    "Liquid"
+  ],
+  "contentFormats": [
+    "markdown",
+    "html"
+  ],
+  "category": "blog",
+  "firstRelease": 2008,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "firstRelease from the oldest git tag v0.1.3 (2008-12-07)."
+}

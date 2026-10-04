@@ -430,3 +430,8 @@ def test_validate_mode(repo):
     (repo / "Go" / "alpha" / "generator.json").write_text(json.dumps(meta("alpha", license="??")))
     assert run(repo, "--validate") == 1
 
+
+
+def test_real_repo_index_is_current():
+    """The committed generators.json must match the generator.json files in this checkout."""
+    assert bi.main(["--root", str(REPO), "--check"]) == 0

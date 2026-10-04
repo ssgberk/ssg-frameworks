@@ -76,6 +76,11 @@
           "type": "string",
           "pattern": "^[A-Za-z0-9+#._-]+/[a-z0-9][a-z0-9-]*$"
         },
+        "version": {
+          "description": "Derived: pinned generator version (dockerfile ARG or lockfile), without a leading 'v'.",
+          "type": "string",
+          "pattern": "^[0-9A-Za-z][0-9A-Za-z.+-]*$"
+        },
         "name": {
           "description": "Human-readable name.",
           "$ref": "#/$defs/nonEmptyString"
@@ -244,11 +249,6 @@
           "description": "Free text, including fields that could not be verified.",
           "$ref": "#/$defs/nonEmptyString"
         },
-        "version": {
-          "description": "Derived: pinned generator version (dockerfile ARG or lockfile), without a leading 'v'.",
-          "type": "string",
-          "pattern": "^[0-9A-Za-z][0-9A-Za-z.+-]*$"
-        },
         "files": {
           "description": "Derived: raw URLs of the generator's files.",
           "type": "object",
@@ -282,6 +282,7 @@
       "required": [
         "id",
         "path",
+        "version",
         "name",
         "description",
         "homepage",
@@ -294,7 +295,6 @@
         "category",
         "maintained",
         "benchmark",
-        "version",
         "files"
       ],
       "additionalProperties": false
