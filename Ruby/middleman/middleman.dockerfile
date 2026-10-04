@@ -21,6 +21,7 @@ RUN apt-get -yqq update \
 WORKDIR /opt/middleman/src
 
 COPY Gemfile Gemfile.lock /opt/middleman/src/
+ENV BUNDLE_FROZEN=true
 RUN bundle install
 
 COPY src/ /opt/middleman/src/

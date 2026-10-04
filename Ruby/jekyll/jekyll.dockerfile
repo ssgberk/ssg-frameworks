@@ -21,6 +21,7 @@ RUN apt-get -yqq update \
 WORKDIR /opt/jekyll/src
 
 COPY Gemfile Gemfile.lock /opt/jekyll/src/
+ENV BUNDLE_FROZEN=true
 RUN bundle install
 
 COPY src/ /opt/jekyll/src/

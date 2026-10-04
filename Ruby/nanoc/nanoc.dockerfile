@@ -21,6 +21,7 @@ RUN apt-get -yqq update \
 WORKDIR /opt/nanoc/src
 
 COPY Gemfile Gemfile.lock /opt/nanoc/src/
+ENV BUNDLE_FROZEN=true
 RUN bundle install
 
 COPY src/ /opt/nanoc/src/
