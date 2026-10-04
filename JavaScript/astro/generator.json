@@ -1,0 +1,25 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "astro",
+  "name": "Astro",
+  "description": "Astro is a web framework that renders component-based pages to static HTML at build time.",
+  "homepage": "https://astro.build/",
+  "repository": "https://github.com/withastro/astro",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Astro components"
+  ],
+  "contentFormats": [
+    "markdown",
+    "mdx"
+  ],
+  "category": "framework",
+  "firstRelease": 2021,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "GitHub's license API returns NOASSERTION; MIT verified from the LICENSE file, packages/astro/package.json and the npm registry. firstRelease from npm astro creation (2021-03-13); the oldest GitHub release is 2021-08-05. MDX is the official @astrojs/mdx integration; this setup uses Markdown only."
+}

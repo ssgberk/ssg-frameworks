@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "hexo",
+  "name": "Hexo",
+  "description": "Hexo is a Node.js static blog framework that renders Markdown posts with themeable templates.",
+  "homepage": "https://hexo.io/",
+  "repository": "https://github.com/hexojs/hexo",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "EJS"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "blog",
+  "firstRelease": 2012,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "firstRelease from npm hexo creation (2012-10-07); the oldest GitHub release is 1.0.0 (2013-07-04). Markdown via hexo-renderer-marked and EJS via hexo-renderer-ejs, both first-party plugins."
+}

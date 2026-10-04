@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "zola",
+  "name": "Zola",
+  "description": "Zola is a single-binary static site generator written in Rust that renders Markdown with Tera templates.",
+  "homepage": "https://www.getzola.org/",
+  "repository": "https://github.com/getzola/zola",
+  "license": "EUPL-1.2",
+  "language": "Rust",
+  "runtime": "Rust binary (release tarball)",
+  "templateEngines": [
+    "Tera"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "general",
+  "firstRelease": 2017,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "firstRelease from the oldest GitHub release (v0.0.2, 2017-03-24); crates.io only starts in 2022."
+}

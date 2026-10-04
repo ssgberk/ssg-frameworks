@@ -16,14 +16,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/112"
   },
   {
-    "id": "astro",
-    "name": "Astro",
-    "language": "JavaScript",
-    "repository": "https://github.com/withastro/astro",
-    "status": "planned",
-    "spec": "docs/specs/003-new-generators"
-  },
-  {
     "id": "bridgetown",
     "name": "Bridgetown",
     "language": "Ruby",
@@ -88,15 +80,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/122"
   },
   {
-    "id": "eleventy",
-    "name": "Eleventy",
-    "language": "JavaScript",
-    "repository": "https://github.com/11ty/buildawesome",
-    "status": "planned",
-    "spec": "docs/specs/003-new-generators",
-    "notes": "GitHub redirects 11ty/eleventy to 11ty/buildawesome (checked 2026-10-04)."
-  },
-  {
     "id": "emanote",
     "name": "Emanote",
     "language": "Haskell",
@@ -120,14 +103,6 @@
     "repository": "https://github.com/jaspervdj/hakyll",
     "status": "proposed",
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/103"
-  },
-  {
-    "id": "hexo",
-    "name": "Hexo",
-    "language": "JavaScript",
-    "repository": "https://github.com/hexojs/hexo",
-    "status": "planned",
-    "spec": "docs/specs/003-new-generators"
   },
   {
     "id": "iles",
@@ -425,13 +400,5 @@
     "repository": "https://github.com/kristoff-it/zine",
     "status": "proposed",
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/126"
-  },
-  {
-    "id": "zola",
-    "name": "Zola",
-    "language": "Rust",
-    "repository": "https://github.com/getzola/zola",
-    "status": "planned",
-    "spec": "docs/specs/003-new-generators"
   }
 ]

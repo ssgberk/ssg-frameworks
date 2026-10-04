@@ -1,8 +1,100 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "01f377d65d876973e7782a0b20cfe8084af0eaf7",
+  "generatedFrom": "db937ec1e2097c714a9556a73906b499d81e5d59",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
+    {
+      "id": "astro",
+      "path": "JavaScript/astro",
+      "version": "7.3.5",
+      "name": "Astro",
+      "description": "Astro is a web framework that renders component-based pages to static HTML at build time.",
+      "homepage": "https://astro.build/",
+      "repository": "https://github.com/withastro/astro",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "Astro components"
+      ],
+      "contentFormats": [
+        "markdown",
+        "mdx"
+      ],
+      "category": "framework",
+      "firstRelease": 2021,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "astro",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "src/content/posts",
+        "buildCommand": "npx astro build --silent",
+        "outputFolder": "dist",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          ".astro",
+          "node_modules/.astro",
+          "node_modules/.vite"
+        ]
+      },
+      "notes": "GitHub's license API returns NOASSERTION; MIT verified from the LICENSE file, packages/astro/package.json and the npm registry. firstRelease from npm astro creation (2021-03-13); the oldest GitHub release is 2021-08-05. MDX is the official @astrojs/mdx integration; this setup uses Markdown only.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/astro.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/generator.json"
+      }
+    },
+    {
+      "id": "eleventy",
+      "path": "JavaScript/eleventy",
+      "version": "3.1.6",
+      "name": "Eleventy",
+      "description": "Eleventy is a simpler static site generator that transforms a directory of templates into HTML.",
+      "homepage": "https://www.11ty.dev/",
+      "repository": "https://github.com/11ty/buildawesome",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "Nunjucks"
+      ],
+      "contentFormats": [
+        "markdown",
+        "html",
+        "liquid",
+        "nunjucks"
+      ],
+      "category": "general",
+      "firstRelease": 2018,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "@11ty/eleventy"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "Eleventy",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "posts",
+        "buildCommand": "npx @11ty/eleventy --quiet",
+        "outputFolder": "_site",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          ".cache"
+        ]
+      },
+      "notes": "The upstream repository was renamed from 11ty/eleventy to 11ty/buildawesome (the project is now branded Build Awesome (Eleventy)); the npm package is still @11ty/eleventy. GitHub's homepage field is https://build.awesome.me/; the Eleventy docs site 11ty.dev, also listed in the package.json homepage, is used here. firstRelease from the oldest GitHub release (v0.2.2, 2018-01-09) and npm 0.2.0 (2018-01-09). Nunjucks is used here; Eleventy also supports other template languages.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/eleventy/eleventy.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/eleventy/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/eleventy/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/eleventy/generator.json"
+      }
+    },
     {
       "id": "gatsby",
       "path": "JavaScript/gatsby",
@@ -43,6 +135,47 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/gatsby/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/gatsby/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/gatsby/generator.json"
+      }
+    },
+    {
+      "id": "hexo",
+      "path": "JavaScript/hexo",
+      "version": "8.1.2",
+      "name": "Hexo",
+      "description": "Hexo is a Node.js static blog framework that renders Markdown posts with themeable templates.",
+      "homepage": "https://hexo.io/",
+      "repository": "https://github.com/hexojs/hexo",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "EJS"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "blog",
+      "firstRelease": 2012,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Hexo",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "source/_posts",
+        "buildCommand": "npx hexo generate --silent",
+        "outputFolder": "public",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          "db.json"
+        ]
+      },
+      "notes": "firstRelease from npm hexo creation (2012-10-07); the oldest GitHub release is 1.0.0 (2013-07-04). Markdown via hexo-renderer-marked and EJS via hexo-renderer-ejs, both first-party plugins.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/hexo/hexo.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/hexo/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/hexo/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/hexo/generator.json"
       }
     },
     {
@@ -344,7 +477,7 @@
       "version": "8.3.3",
       "name": "Nikola + Mako",
       "description": "Nikola is a Python static website and blog generator, benchmarked here with Mako templates.",
-      "homepage": "https://getnikola.com",
+      "homepage": "https://getnikola.com/",
       "repository": "https://github.com/getnikola/nikola",
       "license": "MIT",
       "language": "Python",
@@ -386,6 +519,45 @@
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/nikola-mako/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/nikola-mako/generator.json"
       }
+    },
+    {
+      "id": "zola",
+      "path": "Rust/zola",
+      "version": "0.23.6",
+      "name": "Zola",
+      "description": "Zola is a single-binary static site generator written in Rust that renders Markdown with Tera templates.",
+      "homepage": "https://www.getzola.org/",
+      "repository": "https://github.com/getzola/zola",
+      "license": "EUPL-1.2",
+      "language": "Rust",
+      "runtime": "Rust binary (release tarball)",
+      "templateEngines": [
+        "Tera"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "general",
+      "firstRelease": 2017,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "zola",
+        "versus": "rust",
+        "contentType": "3plus",
+        "contentFolder": "content/posts",
+        "buildCommand": "zola build",
+        "outputFolder": "public",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": []
+      },
+      "notes": "firstRelease from the oldest GitHub release (v0.0.2, 2017-03-24); crates.io only starts in 2022.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/zola/zola.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/zola/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/zola/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/zola/generator.json"
+      }
     }
   ],
   "proposed": [
@@ -404,14 +576,6 @@
       "repository": "https://gitlab.com/antora/antora",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/112"
-    },
-    {
-      "id": "astro",
-      "name": "Astro",
-      "language": "JavaScript",
-      "repository": "https://github.com/withastro/astro",
-      "status": "planned",
-      "spec": "docs/specs/003-new-generators"
     },
     {
       "id": "bridgetown",
@@ -478,15 +642,6 @@
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/122"
     },
     {
-      "id": "eleventy",
-      "name": "Eleventy",
-      "language": "JavaScript",
-      "repository": "https://github.com/11ty/buildawesome",
-      "status": "planned",
-      "spec": "docs/specs/003-new-generators",
-      "notes": "GitHub redirects 11ty/eleventy to 11ty/buildawesome (checked 2026-10-04)."
-    },
-    {
       "id": "emanote",
       "name": "Emanote",
       "language": "Haskell",
@@ -510,14 +665,6 @@
       "repository": "https://github.com/jaspervdj/hakyll",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/103"
-    },
-    {
-      "id": "hexo",
-      "name": "Hexo",
-      "language": "JavaScript",
-      "repository": "https://github.com/hexojs/hexo",
-      "status": "planned",
-      "spec": "docs/specs/003-new-generators"
     },
     {
       "id": "iles",
@@ -815,14 +962,6 @@
       "repository": "https://github.com/kristoff-it/zine",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/126"
-    },
-    {
-      "id": "zola",
-      "name": "Zola",
-      "language": "Rust",
-      "repository": "https://github.com/getzola/zola",
-      "status": "planned",
-      "spec": "docs/specs/003-new-generators"
     }
   ]
 }

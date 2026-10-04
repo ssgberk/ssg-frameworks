@@ -1,0 +1,31 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "eleventy",
+  "name": "Eleventy",
+  "description": "Eleventy is a simpler static site generator that transforms a directory of templates into HTML.",
+  "homepage": "https://www.11ty.dev/",
+  "repository": "https://github.com/11ty/buildawesome",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Nunjucks"
+  ],
+  "contentFormats": [
+    "markdown",
+    "html",
+    "liquid",
+    "nunjucks"
+  ],
+  "category": "general",
+  "firstRelease": 2018,
+  "maintained": true,
+  "versionFrom": {
+    "source": "npm",
+    "name": "@11ty/eleventy"
+  },
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "The upstream repository was renamed from 11ty/eleventy to 11ty/buildawesome (the project is now branded Build Awesome (Eleventy)); the npm package is still @11ty/eleventy. GitHub's homepage field is https://build.awesome.me/; the Eleventy docs site 11ty.dev, also listed in the package.json homepage, is used here. firstRelease from the oldest GitHub release (v0.2.2, 2018-01-09) and npm 0.2.0 (2018-01-09). Nunjucks is used here; Eleventy also supports other template languages."
+}
