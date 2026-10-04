@@ -1,16 +1,18 @@
 {
   "framework": "nikola-mako",
-  "tests": [{
-    "default": {
-      "approach": "Realistic",
-      "classification": "Micro",
-      "framework": "Nikola",
-      "language": "Python",
-      "display_name": "Nikola + Mako",
-      "notes": "",
-      "versus": "python"
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "Nikola",
+        "language": "Python",
+        "display_name": "Nikola + Mako",
+        "notes": "",
+        "versus": "python"
+      }
     }
-  }],
+  ],
   "content": [
     {
       "folder": "posts",
@@ -22,8 +24,18 @@
     {
       "metadata_dateslug": "date",
       "metadata_layout": "",
-      "build_command": "nikola build",
-      "build_verbose": ""
+      "build_command": "nikola build -q",
+      "build_verbose": "nikola build -v 2",
+      "output_folder": "output",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [
+        "cache",
+        ".doit.db",
+        ".doit.db.dat",
+        ".doit.db.dir",
+        ".doit.db.bak",
+        ".doit.db.db"
+      ]
     }
   ]
 }

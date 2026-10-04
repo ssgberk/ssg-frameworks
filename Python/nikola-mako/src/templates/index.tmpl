@@ -1,0 +1,9 @@
+<%inherit file="base.tmpl"/>
+<%block name="content">
+<h1>${blog_title|h}</h1>
+<ul>
+% for post in posts:
+<li><a href="${post.permalink()}">${post.title()|h}</a></li>
+% endfor
+</ul>
+</%block>
