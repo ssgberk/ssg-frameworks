@@ -1,0 +1,70 @@
+name: ci
+
+on:
+  push:
+    branches: [master, chore/modernize-2026]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: tools/check-build-sh.sh
+      - run: tests/build_sh/test_build_sh.sh
+
+  changed:
+    runs-on: ubuntu-24.04
+    outputs:
+      tests: ${{ steps.diff.outputs.tests }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          path: frameworks
+      - uses: actions/checkout@v4
+        with:
+          repository: ssgberk/benchmark-tool
+          path: bt
+      - id: diff
+        env:
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          base="${PR_BASE_SHA:-$PUSH_BEFORE_SHA}"
+          # New branches report an all-zero "before"; fall back to the parent commit.
+          case "$base" in ""|0000000000000000000000000000000000000000) base="HEAD~1" ;; esac
+          tests=$(python3 bt/toolset/github_actions/github_actions_diff.py --base "$base" --repo frameworks \
+                  | xargs -r -n1 basename | jq -R . | jq -cs .)
+          echo "changed generators: $tests"
+          echo "tests=$tests" >> "$GITHUB_OUTPUT"
+
+  # Parallelism: every matrix job runs on its own runner (own Docker daemon), so the
+  # toolset's fixed container name cannot collide and no max-parallel is needed.
+  # Revisit once benchmark-tool PR #11 (concurrency-safe runs) is merged.
+  smoke:
+    needs: changed
+    if: needs.changed.outputs.tests != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        test: ${{ fromJson(needs.changed.outputs.tests) }}
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.runner }}
+    env:
+      TEST_NAME: ${{ matrix.test }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: ssgberk/benchmark-tool
+      - uses: actions/checkout@v4
+        with:
+          path: frameworks
+      - run: ./ssgberk --test "$TEST_NAME" -nf 10 -cs 0.500 -mr 1
+      - run: |
+          R=$(ls -td results/*/ | head -1)
+          jq -e --arg t "$TEST_NAME" '.succeeded.datarate | index($t)' "$R/results.json"
+          jq -e --arg t "$TEST_NAME" '.rawData.datarate[$t][0].mean > 0' "$R/results.json"
