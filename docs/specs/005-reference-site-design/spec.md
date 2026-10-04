@@ -108,5 +108,10 @@ The reference site supersedes the "minimal site" rule of `001`/`002`/`003` (Glob
 6. **VitePress structure.** The reference markup needs a custom theme (`.vitepress/theme/index.js` exporting a `Layout` component) instead of the default theme. Custom themes are native in VitePress. Whether the `div#app` wrapper and the injected header anchors stay within 006's normalizations is to be confirmed by the VitePress migration task in 006.
 7. **MkDocs index.** The index loops over the `pages` template global (`File` objects; `file.page.meta`) and sorts with Jinja `sort(attribute='page.meta.date', reverse=True)`. MkDocs documents `pages` as including all pages. Whether `meta` is populated for every page when the index renders depends on MkDocs reading all pages before rendering any. MkDocs 1.6 does this, but the docs do not promise it.
 8. **Zola top-level keys.** `3plus` puts `summary`, `author` and `tags` under `[extra]` because Zola reserves top-level keys and has `[taxonomies]` for tags. Zola also has a native `authors` list. *Proposal:* keep `[extra]` so that one TOML layout serves Core. Extended `E1-tag-pages` in Zola adds `[taxonomies]` through a Zola-only config (`--config`).
-9. **Default markdown pre-processing.** Jekyll (Liquid), Eleventy (`markdownTemplateEngine: liquid`), Hexo (Nunjucks tags) and VitePress (Vue compilation) pre-process every post by default. Other generators do not. *Proposal:* keep these defaults, because they are the generators' real behaviour and R-12 keeps the text unchanged. Disabling them would be a speed tweak. A second opinion is welcome.
-10. **Minute-step dates.** Neighbouring posts share the displayed `YYYY-MM-DD` (1440 posts per day). Ordering is checked on the full `datetime` attribute, so this is only cosmetic.
+9. **Minute-step dates.** Neighbouring posts share the displayed `YYYY-MM-DD` (1440 posts per day). Ordering is checked on the full `datetime` attribute, so this is only cosmetic.
+
+## Decisions log
+
+| Date | Decision | Reason |
+|---|---|---|
+| 2026-10-04 | Markdown pre-processing stays ON in Core | it is the realistic default cost users pay, and the reference content is safe for it, since the body uses only `[A-Za-z0-9 .=+]` |

@@ -715,7 +715,7 @@ Why this is fair while maximising work: every element is something all 17 genera
 | 404 in Core | Yes | Extended. Rejected: the capability matrix shows native support in all 17 |
 | Stylesheet delivery | `<link>` to a copied file | `import` in JS generators (bundled and fingerprinted, violates R-5) |
 | `3plus` shape | `[extra]` table | Top-level custom keys (reserved by Zola) |
-| Markdown pre-processing (Liquid, Nunjucks, Vue) | Keep defaults | Disable per generator (a speed tweak; spec open question 9) |
+| Markdown pre-processing (Liquid, Nunjucks, Vue) | Keep defaults | Disable per generator (a speed tweak) |
 
 ## Risks
 
