@@ -1,0 +1,349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/schema/generators.schema.json",
+  "title": "SSGBerk generator index (generators.json)",
+  "description": "Aggregated index produced by tools/build_index.py from every <Lang>/<name>/generator.json plus derived fields.",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "description": "Semver of this format.",
+      "const": "1.0.0"
+    },
+    "generatedFrom": {
+      "description": "Commit SHA the index was generated from, or null.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "source": {
+      "description": "Repository URL.",
+      "$ref": "#/$defs/url"
+    },
+    "generators": {
+      "description": "Benchmarked generators, sorted by id.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/generator"
+      }
+    },
+    "proposed": {
+      "description": "Generators not yet in the repo, sorted by id.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/proposed"
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "generatedFrom",
+    "source",
+    "generators",
+    "proposed"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://[^\\s/$.?#][^\\s]*$"
+    },
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stringList": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "generator": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Equals the directory name and benchmark_config.json `framework`.",
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "path": {
+          "description": "Derived: <Lang>/<name>.",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9+#._-]+/[a-z0-9][a-z0-9-]*$"
+        },
+        "name": {
+          "description": "Human-readable name.",
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "description": {
+          "description": "One sentence.",
+          "type": "string",
+          "minLength": 10,
+          "pattern": "^[^\\n]+[.!]$"
+        },
+        "homepage": {
+          "description": "Project homepage.",
+          "$ref": "#/$defs/url"
+        },
+        "repository": {
+          "description": "Upstream source repository.",
+          "$ref": "#/$defs/url"
+        },
+        "license": {
+          "description": "SPDX license expression of the upstream project.",
+          "type": "string",
+          "pattern": "^\\(?[A-Za-z0-9][A-Za-z0-9.+-]*\\)?( (AND|OR|WITH) \\(?[A-Za-z0-9][A-Za-z0-9.+-]*\\)?)*$"
+        },
+        "language": {
+          "description": "Implementation language of the generator.",
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "runtime": {
+          "description": "Runtime used in the benchmark image, e.g. 'Node.js 24.21.0', 'Ruby 3.2 (Ubuntu 24.04 apt)', 'Go binary'.",
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "templateEngines": {
+          "description": "Template engine(s) used by this benchmark setup.",
+          "$ref": "#/$defs/stringList"
+        },
+        "contentFormats": {
+          "description": "Content formats supported natively or via official first-party plugins (lowercase).",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "category": {
+          "description": "Primary positioning.",
+          "enum": [
+            "blog",
+            "docs",
+            "framework",
+            "general"
+          ]
+        },
+        "firstRelease": {
+          "description": "Year of the first public release (only when verified).",
+          "type": "integer",
+          "minimum": 1990,
+          "maximum": 2100
+        },
+        "maintained": {
+          "description": "Upstream not archived and active in the last 12 months.",
+          "type": "boolean"
+        },
+        "versionFrom": {
+          "description": "Override for pinned-version extraction when the naming convention does not apply.",
+          "type": "object",
+          "properties": {
+            "source": {
+              "enum": [
+                "dockerfile",
+                "npm",
+                "gem",
+                "composer",
+                "pip"
+              ]
+            },
+            "name": {
+              "$ref": "#/$defs/nonEmptyString"
+            }
+          },
+          "required": [
+            "source",
+            "name"
+          ],
+          "additionalProperties": false
+        },
+        "benchmark": {
+          "description": "Benchmark state (curated status) and settings (derived from benchmark_config.json).",
+          "type": "object",
+          "properties": {
+            "status": {
+              "description": "active: benchmarked; wip: being added/fixed; removed: kept for history.",
+              "enum": [
+                "active",
+                "wip",
+                "removed"
+              ]
+            },
+            "displayName": {
+              "description": "Derived: tests[0].default.display_name.",
+              "type": "string"
+            },
+            "versus": {
+              "description": "Derived: tests[0].default.versus.",
+              "type": "string"
+            },
+            "contentType": {
+              "description": "Derived: content[0].type (front matter style).",
+              "enum": [
+                "3minus",
+                "3plus",
+                "2dot",
+                "none"
+              ]
+            },
+            "contentFolder": {
+              "description": "Derived: content[0].folder.",
+              "type": "string"
+            },
+            "buildCommand": {
+              "description": "Derived: config[0].build_command.",
+              "type": "string"
+            },
+            "outputFolder": {
+              "description": "Derived: config[0].output_folder.",
+              "type": "string"
+            },
+            "outputGlob": {
+              "description": "Derived: config[0].output_glob.",
+              "type": "string"
+            },
+            "cacheFolders": {
+              "description": "Derived: config[0].cache_folders (or []).",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "status",
+            "displayName",
+            "versus",
+            "contentType",
+            "contentFolder",
+            "buildCommand",
+            "outputFolder",
+            "outputGlob",
+            "cacheFolders"
+          ],
+          "additionalProperties": false
+        },
+        "links": {
+          "description": "Related links.",
+          "type": "object",
+          "properties": {
+            "issue": {
+              "description": "Issue that tracked adding the generator.",
+              "$ref": "#/$defs/url"
+            }
+          },
+          "additionalProperties": false
+        },
+        "notes": {
+          "description": "Free text, including fields that could not be verified.",
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "version": {
+          "description": "Derived: pinned generator version (dockerfile ARG or lockfile), without a leading 'v'.",
+          "type": "string",
+          "pattern": "^[0-9A-Za-z][0-9A-Za-z.+-]*$"
+        },
+        "files": {
+          "description": "Derived: raw URLs of the generator's files.",
+          "type": "object",
+          "properties": {
+            "dockerfile": {
+              "description": "Raw URL of <name>.dockerfile.",
+              "$ref": "#/$defs/url"
+            },
+            "benchmarkConfig": {
+              "description": "Raw URL of benchmark_config.json.",
+              "$ref": "#/$defs/url"
+            },
+            "readme": {
+              "description": "Raw URL of README.md.",
+              "$ref": "#/$defs/url"
+            },
+            "generatorJson": {
+              "description": "Raw URL of generator.json.",
+              "$ref": "#/$defs/url"
+            }
+          },
+          "required": [
+            "dockerfile",
+            "benchmarkConfig",
+            "readme",
+            "generatorJson"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "path",
+        "name",
+        "description",
+        "homepage",
+        "repository",
+        "license",
+        "language",
+        "runtime",
+        "templateEngines",
+        "contentFormats",
+        "category",
+        "maintained",
+        "benchmark",
+        "version",
+        "files"
+      ],
+      "additionalProperties": false
+    },
+    "proposed": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Intended directory name.",
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "language": {
+          "description": "Implementation language.",
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "repository": {
+          "$ref": "#/$defs/url"
+        },
+        "status": {
+          "description": "proposed: has a new-generator issue; planned: listed in a spec.",
+          "enum": [
+            "proposed",
+            "planned"
+          ]
+        },
+        "issue": {
+          "description": "new-generator issue URL.",
+          "$ref": "#/$defs/url"
+        },
+        "spec": {
+          "description": "Spec that plans the generator (repo-relative path).",
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "notes": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "language",
+        "repository",
+        "status"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/schema/generator.schema.json",
+  "title": "SSGBerk generator metadata (generator.json)",
+  "description": "Curated, descriptive metadata for one generator in <Lang>/<name>/generator.json. Derived fields (path, version, benchmark settings, files) are added by tools/build_index.py and must not appear here. schemaVersion 1.0.0.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "description": "Optional editor hint, e.g. ../../schema/generator.schema.json.",
+      "type": "string"
+    },
+    "id": {
+      "description": "Equals the directory name and benchmark_config.json `framework`.",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "name": {
+      "description": "Human-readable name.",
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "description": {
+      "description": "One sentence.",
+      "type": "string",
+      "minLength": 10,
+      "pattern": "^[^\\n]+[.!]$"
+    },
+    "homepage": {
+      "description": "Project homepage.",
+      "$ref": "#/$defs/url"
+    },
+    "repository": {
+      "description": "Upstream source repository.",
+      "$ref": "#/$defs/url"
+    },
+    "license": {
+      "description": "SPDX license expression of the upstream project.",
+      "type": "string",
+      "pattern": "^\\(?[A-Za-z0-9][A-Za-z0-9.+-]*\\)?( (AND|OR|WITH) \\(?[A-Za-z0-9][A-Za-z0-9.+-]*\\)?)*$"
+    },
+    "language": {
+      "description": "Implementation language of the generator.",
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "runtime": {
+      "description": "Runtime used in the benchmark image, e.g. 'Node.js 24.21.0', 'Ruby 3.2 (Ubuntu 24.04 apt)', 'Go binary'.",
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "templateEngines": {
+      "description": "Template engine(s) used by this benchmark setup.",
+      "$ref": "#/$defs/stringList"
+    },
+    "contentFormats": {
+      "description": "Content formats supported natively or via official first-party plugins (lowercase).",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "category": {
+      "description": "Primary positioning.",
+      "enum": [
+        "blog",
+        "docs",
+        "framework",
+        "general"
+      ]
+    },
+    "firstRelease": {
+      "description": "Year of the first public release (only when verified).",
+      "type": "integer",
+      "minimum": 1990,
+      "maximum": 2100
+    },
+    "maintained": {
+      "description": "Upstream not archived and active in the last 12 months.",
+      "type": "boolean"
+    },
+    "versionFrom": {
+      "description": "Override for pinned-version extraction when the naming convention does not apply.",
+      "type": "object",
+      "properties": {
+        "source": {
+          "enum": [
+            "dockerfile",
+            "npm",
+            "gem",
+            "composer",
+            "pip"
+          ]
+        },
+        "name": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      },
+      "required": [
+        "source",
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "benchmark": {
+      "description": "Benchmark state.",
+      "type": "object",
+      "properties": {
+        "status": {
+          "description": "active: benchmarked; wip: being added/fixed; removed: kept for history.",
+          "enum": [
+            "active",
+            "wip",
+            "removed"
+          ]
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "links": {
+      "description": "Related links.",
+      "type": "object",
+      "properties": {
+        "issue": {
+          "description": "Issue that tracked adding the generator.",
+          "$ref": "#/$defs/url"
+        }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "description": "Free text, including fields that could not be verified.",
+      "$ref": "#/$defs/nonEmptyString"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "license",
+    "language",
+    "runtime",
+    "templateEngines",
+    "contentFormats",
+    "category",
+    "maintained",
+    "benchmark"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://[^\\s/$.?#][^\\s]*$"
+    },
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stringList": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  }
+}
