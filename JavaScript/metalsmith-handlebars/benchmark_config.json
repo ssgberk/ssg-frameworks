@@ -13,7 +13,7 @@
   }],
   "content": [
     {
-      "folder": "src/posts",
+      "folder": "content/posts",
       "type": "3minus",
       "extension": "md"
     }
@@ -21,9 +21,11 @@
   "config": [
     {
       "metadata_dateslug": "date",
-      "metadata_layout": "layout: post.html",
-      "build_command": "make build",
-      "build_verbose": ""
+      "metadata_layout": "",
+      "build_command": "node index.js",
+      "build_verbose": "",
+      "output_folder": "build",
+      "output_glob": "posts/*/index.html"
     }
   ]
 }
