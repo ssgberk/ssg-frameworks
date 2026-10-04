@@ -177,14 +177,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/95"
   },
   {
-    "id": "mkdocs",
-    "name": "MkDocs",
-    "language": "Python",
-    "repository": "https://github.com/mkdocs/mkdocs",
-    "status": "planned",
-    "spec": "docs/specs/003-new-generators"
-  },
-  {
     "id": "nesta",
     "name": "Nesta",
     "language": "Ruby",

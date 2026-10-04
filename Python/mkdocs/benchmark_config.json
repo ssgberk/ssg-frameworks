@@ -1,0 +1,34 @@
+{
+  "framework": "mkdocs",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "MkDocs",
+        "language": "Python",
+        "display_name": "MkDocs",
+        "notes": "",
+        "versus": "python"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "docs/posts",
+      "type": "none",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "mkdocs build -q",
+      "build_verbose": "mkdocs build -v",
+      "output_folder": "site",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": []
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "edc49f6eae9d98f2ecfb54c4e5eda0e95fbf20dc",
+  "generatedFrom": "2a36a7bf7b93290b7e6c3a0c5d4d95b02784af94",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -426,6 +426,45 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/middleman/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/middleman/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/middleman/generator.json"
+      }
+    },
+    {
+      "id": "mkdocs",
+      "path": "Python/mkdocs",
+      "version": "1.6.1",
+      "name": "MkDocs",
+      "description": "MkDocs is a Python static site generator for project documentation that builds a site from Markdown files and a YAML configuration.",
+      "homepage": "https://www.mkdocs.org/",
+      "repository": "https://github.com/mkdocs/mkdocs",
+      "license": "BSD-2-Clause",
+      "language": "Python",
+      "runtime": "Python 3.12 (Ubuntu 24.04 apt, venv)",
+      "templateEngines": [
+        "Jinja2"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "docs",
+      "firstRelease": 2014,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "MkDocs",
+        "versus": "python",
+        "contentType": "none",
+        "contentFolder": "docs/posts",
+        "buildCommand": "mkdocs build -q",
+        "outputFolder": "site",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": []
+      },
+      "notes": "Benchmarked with a minimal custom theme (single main.html) instead of the built-in themes; no plugins (search disabled). firstRelease from the first PyPI upload (0.2, 2014-01-21).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/mkdocs/mkdocs.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/mkdocs/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/mkdocs/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/mkdocs/generator.json"
       }
     },
     {
@@ -868,14 +907,6 @@
       "repository": "https://github.com/rust-lang/mdBook",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/95"
-    },
-    {
-      "id": "mkdocs",
-      "name": "MkDocs",
-      "language": "Python",
-      "repository": "https://github.com/mkdocs/mkdocs",
-      "status": "planned",
-      "spec": "docs/specs/003-new-generators"
     },
     {
       "id": "nesta",

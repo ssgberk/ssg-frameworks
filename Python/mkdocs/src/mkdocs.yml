@@ -1,0 +1,8 @@
+site_name: SSGBerk MkDocs
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+theme:
+  name: null
+  custom_dir: theme
+plugins: []

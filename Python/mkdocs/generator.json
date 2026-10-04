@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "mkdocs",
+  "name": "MkDocs",
+  "description": "MkDocs is a Python static site generator for project documentation that builds a site from Markdown files and a YAML configuration.",
+  "homepage": "https://www.mkdocs.org/",
+  "repository": "https://github.com/mkdocs/mkdocs",
+  "license": "BSD-2-Clause",
+  "language": "Python",
+  "runtime": "Python 3.12 (Ubuntu 24.04 apt, venv)",
+  "templateEngines": [
+    "Jinja2"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "docs",
+  "firstRelease": 2014,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Benchmarked with a minimal custom theme (single main.html) instead of the built-in themes; no plugins (search disabled). firstRelease from the first PyPI upload (0.2, 2014-01-21)."
+}
