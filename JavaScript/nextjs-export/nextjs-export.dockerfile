@@ -22,6 +22,7 @@ RUN ARCH="$(dpkg --print-architecture)" \
 
 WORKDIR /opt/nextjs-export/src
 
+ENV NPM_CONFIG_UPDATE_NOTIFIER=false
 ENV NEXT_TELEMETRY_DISABLED=1
 COPY package.json package-lock.json /opt/nextjs-export/src/
 RUN npm ci

@@ -21,6 +21,7 @@ RUN ARCH="$(dpkg --print-architecture)" \
  && node --version && npm --version
 
 WORKDIR /opt/metalsmith-nunjucks/src
+ENV NPM_CONFIG_UPDATE_NOTIFIER=false
 
 COPY package.json package-lock.json /opt/metalsmith-nunjucks/src/
 RUN npm ci

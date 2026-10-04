@@ -22,6 +22,7 @@ RUN ARCH="$(dpkg --print-architecture)" \
 
 WORKDIR /opt/astro/src
 
+ENV NPM_CONFIG_UPDATE_NOTIFIER=false
 ENV ASTRO_TELEMETRY_DISABLED=1
 COPY package.json package-lock.json /opt/astro/src/
 RUN npm ci

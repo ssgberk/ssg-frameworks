@@ -21,6 +21,7 @@ RUN ARCH="$(dpkg --print-architecture)" \
  && node --version && npm --version
 
 WORKDIR /opt/eleventy/src
+ENV NPM_CONFIG_UPDATE_NOTIFIER=false
 
 COPY package.json package-lock.json /opt/eleventy/src/
 RUN npm ci

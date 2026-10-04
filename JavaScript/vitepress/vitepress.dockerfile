@@ -21,6 +21,7 @@ RUN ARCH="$(dpkg --print-architecture)" \
  && node --version && npm --version
 
 WORKDIR /opt/vitepress/src
+ENV NPM_CONFIG_UPDATE_NOTIFIER=false
 
 COPY package.json package-lock.json /opt/vitepress/src/
 RUN npm ci
