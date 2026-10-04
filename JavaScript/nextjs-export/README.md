@@ -1,3 +1,7 @@
 # Next.js (static export)
 
 Next.js 16.3.8 (App Router, `output: 'export'`) on Ubuntu 24.04 with Node 24.21.0, benchmarked by SSGBerk. `build.sh` generates the posts into `content/posts` (read with gray-matter and rendered with marked), then times `npx next build`; each post must render to `out/posts/*/index.html` (the verification step checks the count equals the requested number of files; `out/404/` and `out/_not-found/` do not match the glob). The site is a root layout, one post page (`app/posts/[slug]/page.js`, title + content only) and one index listing every post. Dependencies are installed with `npm ci` from the committed `package-lock.json`; `cache_folders` clears `.next` (which holds `.next/cache`) between timed runs so every run is a cold build; telemetry is disabled with `NEXT_TELEMETRY_DISABLED=1`. Run it with `./ssgberk --test nextjs-export -nf 10` from the toolset repository.
+
+Timed command uses the realistic invocation (`npx next …`), which includes ~0.1–0.4 s wrapper startup.
+
+The timed build includes the Next.js bundler/SSR pass (Next also writes per-page React Server Component `.txt` payloads next to each `index.html`); this is inherent to the generator and allowed. The index page lists post slugs, not titles.

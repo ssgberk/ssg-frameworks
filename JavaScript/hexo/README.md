@@ -1,3 +1,5 @@
 # Hexo
 
 Hexo 8.1.2 with EJS templates (hexo-renderer-marked, hexo-renderer-ejs, hexo-generator-index; index pagination disabled with `per_page: 0`) on Ubuntu 24.04 with Node 24.21.0, benchmarked by SSGBerk. `build.sh` generates the posts into `src/source/_posts`, then times `npx hexo generate --silent`; each post must render to `public/posts/*/index.html` (the verification step checks the count equals the requested number of files). A single `public/index.html` lists all posts. Hexo's `db.json` cache is wiped before every timed run. Dependencies are installed with `npm ci` from the committed `package-lock.json`. Run it with `./ssgberk --test hexo -nf 10` from the toolset repository.
+
+Timed command uses the realistic invocation (`npx hexo …`), which includes ~0.1–0.4 s wrapper startup.
