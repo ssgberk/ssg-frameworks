@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "2a36a7bf7b93290b7e6c3a0c5d4d95b02784af94",
+  "generatedFrom": "212520b2d2209d86c2a75f180fb009780ff46e4e",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -126,7 +126,8 @@
         "outputFolder": "public",
         "outputGlob": "posts/*/index.html",
         "cacheFolders": [
-          ".cache"
+          ".cache",
+          "node_modules/.cache"
         ]
       },
       "notes": "Markdown is handled by the official gatsby-transformer-remark plugin (used here); MDX by gatsby-plugin-mdx.",

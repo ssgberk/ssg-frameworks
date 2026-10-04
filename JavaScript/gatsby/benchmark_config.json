@@ -26,7 +26,7 @@
       "build_verbose": "npm run build-verbose",
       "output_folder": "public",
       "output_glob": "posts/*/index.html",
-      "cache_folders": [".cache"]
+      "cache_folders": [".cache", "node_modules/.cache"]
     }
   ]
 }
