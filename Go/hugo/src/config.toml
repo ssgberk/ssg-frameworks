@@ -1,7 +1,5 @@
-baseurl = "http://staystatic.github.io/sites/hugo/"
-languageCode = "en-us"
-languageLang = "en"
+baseURL = "/"
+locale = "en-us"
 defaultContentLanguage = "en"
 title = "Hugo Stay Static Site Sample"
-config = "config.toml"
-disableKinds = ["page", "home", "section", "taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"]

@@ -21,10 +21,8 @@
 <div>
     <b>More News 'n' Updates</b>
     <ul>
-        {{ range .Site.Pages }}
-        {{ if eq .Type "post" }}
+        {{ range where .Site.RegularPages "Type" "post" }}
             <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
         {{ end }}
     </ul>
 </div>

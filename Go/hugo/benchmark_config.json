@@ -21,9 +21,12 @@
   "config": [
     {
       "metadata_dateslug": "date",
-      "metadata_layout": "layout: post",
-      "build_command": "hugo --verbose --debug",
-      "build_verbose": "hugo"
+      "metadata_layout": "",
+      "build_command": "hugo --quiet",
+      "build_verbose": "hugo --logLevel debug",
+      "output_folder": "public",
+      "output_glob": "post/*/index.html",
+      "cache_folders": ["resources/_gen"]
     }
   ]
 }

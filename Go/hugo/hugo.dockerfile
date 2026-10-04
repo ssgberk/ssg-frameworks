@@ -1,31 +1,25 @@
-FROM ubuntu:18.04
+FROM ubuntu:24.04
 
-# Update then install needed programs
-RUN apt-get -yqq update && \
-  apt-get -yqq upgrade && \
-  apt-get -yqq install \
-  software-properties-common build-essential patch coreutils \
-  make gcc g++ zlib1g-dev git wget curl jq tree moreutils \
-  python python3 python3-pip ruby ruby-dev
+ARG DEBIAN_FRONTEND=noninteractive
+ARG HYPERFINE_VERSION=1.20.0
 
-# Instaling Hyperfine
-RUN wget https://github.com/sharkdp/hyperfine/releases/download/v1.7.0/hyperfine_1.7.0_amd64.deb \
-  && dpkg -i hyperfine_1.7.0_amd64.deb \
-  && rm hyperfine_1.7.0_amd64.deb
+RUN apt-get -yqq update \
+ && apt-get -yqq install --no-install-recommends \
+      build-essential ca-certificates curl git jq moreutils tree wget xz-utils \
+ && rm -rf /var/lib/apt/lists/*
 
-# Generator Dir
-RUN mkdir /opt/hugo
-COPY . /opt/hugo/
-COPY build.sh benchmark_config.json /opt/hugo/src/
+RUN ARCH="$(dpkg --print-architecture)" \
+ && curl -fsSL -o /tmp/hyperfine.deb \
+      "https://github.com/sharkdp/hyperfine/releases/download/v${HYPERFINE_VERSION}/hyperfine_${HYPERFINE_VERSION}_${ARCH}.deb" \
+ && dpkg -i /tmp/hyperfine.deb && rm /tmp/hyperfine.deb
+
 WORKDIR /opt/hugo/src
 
-# Install Hugo
-RUN wget https://github.com/gohugoio/hugo/releases/download/v0.58.2/hugo_0.58.2_Linux-64bit.deb \
-  && dpkg -i hugo_0.58.2_Linux-64bit.deb \
-  && rm hugo_0.58.2_Linux-64bit.deb
+ARG HUGO_VERSION=0.167.0
+RUN ARCH="$(dpkg --print-architecture)" \
+ && curl -fsSL -o /tmp/hugo.deb \
+      "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-${ARCH}.deb" \
+ && dpkg -i /tmp/hugo.deb && rm /tmp/hugo.deb && hugo version
 
-# Clean Installl
-RUN apt-get -yqq clean  \
-  && apt-get -yqq purge \
-  && apt-get -yqq --purge autoremove  \
-  && rm -rf /var/lib/apt/lists/*
+COPY src/ /opt/hugo/src/
+COPY build.sh benchmark_config.json /opt/hugo/src/

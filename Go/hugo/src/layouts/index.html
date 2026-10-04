@@ -8,10 +8,8 @@
 <div>
   <b>News 'n' Updates</b>
     <ul>
-        {{ range .Site.Pages }}
-        {{ if eq .Type "post" }}
+        {{ range where .Site.RegularPages "Type" "post" }}
             <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
         {{ end }}
     </ul>
 </div>
@@ -19,7 +17,7 @@
 <div>
   <b>Links 'n' Bookmarks</b>
     <ul>
-        {{ range .Site.Data.links.links }}
+        {{ range hugo.Data.links.links }}
           <li><a href="{{ .url }}">{{ .title }}</a></li>
         {{ end }}
     </ul>
