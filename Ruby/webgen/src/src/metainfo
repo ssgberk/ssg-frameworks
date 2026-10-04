@@ -1,6 +1,0 @@
---- alcn
-/posts/**:
-  template: /templates/post.template
-
-/about.en.html:
-  template: /templates/page.template
