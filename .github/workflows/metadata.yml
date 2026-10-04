@@ -2,6 +2,7 @@ name: metadata
 
 on:
   push:
+    branches: [master, chore/modernize-2026]
   pull_request:
 
 permissions:
@@ -17,7 +18,7 @@ jobs:
           python-version: "3.12"
       - name: generators.json is current and every generator.json is valid
         run: python3 tools/build_index.py --check
-      - name: Install pytest
-        run: python3 -m pip install pytest
+      - name: Install test dependencies
+        run: python3 -m pip install -r tools/requirements-dev.txt
       - name: Metadata tests
         run: python3 -m pytest tests/metadata -q

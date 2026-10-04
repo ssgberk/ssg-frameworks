@@ -3,7 +3,7 @@
   "id": "nikola-mako",
   "name": "Nikola + Mako",
   "description": "Nikola is a Python static website and blog generator, benchmarked here with Mako templates.",
-  "homepage": "https://getnikola.com",
+  "homepage": "https://getnikola.com/",
   "repository": "https://github.com/getnikola/nikola",
   "license": "MIT",
   "language": "Python",
