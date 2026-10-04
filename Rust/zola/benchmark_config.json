@@ -1,0 +1,31 @@
+{
+  "framework": "zola",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "zola",
+      "language": "Rust",
+      "display_name": "zola",
+      "notes": "",
+      "versus": "rust"
+    }
+  }],
+  "content": [
+    {
+      "folder": "content/posts",
+      "type": "3plus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "zola build",
+      "build_verbose": "zola build",
+      "output_folder": "public",
+      "output_glob": "posts/*/index.html"
+    }
+  ]
+}
