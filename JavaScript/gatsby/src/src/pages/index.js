@@ -1,38 +1,29 @@
 import React from 'react'
-import Link  from 'gatsby-link'
+import { graphql } from 'gatsby'
 
-
-import links from '../data/links'     // check rename to data.links - why? Why not? possible?
-
+import Header from '../components/Header'
 import PostList from '../components/PostList'
-import LinkList from '../components/LinkList'
+import '../css/style.css'
 
+const IndexPage = ({ data }) =>
+  <div>
+    <Header title={data.site.siteMetadata.title} />
+    <div>
+      <b>News 'n' Updates</b>
+      <PostList posts={data.allMarkdownRemark.nodes} />
+    </div>
+  </div>
 
-export default ({data}) => {
-
- const posts = data.allMarkdownRemark.edges
-
- return <div>
-          <div>
-            <b>News 'n' Updates</b>
-            <PostList posts={posts} />
-          </div>
-          <div>
-            <b>Links 'n' Bookmarks</b>
-            <LinkList links={links} />
-          </div>
-       </div>
-}
-
+export default IndexPage
 
 export const query = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
-      edges {
-        node {
-          frontmatter { title }
-          fields      { slug  }
-        }
+    site { siteMetadata { title } }
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+      nodes {
+        id
+        frontmatter { title }
+        fields { slug }
       }
     }
   }

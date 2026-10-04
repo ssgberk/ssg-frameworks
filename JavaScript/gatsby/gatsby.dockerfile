@@ -1,34 +1,30 @@
-FROM ubuntu:18.04
+FROM ubuntu:24.04
 
-# Update then install needed programs
-RUN apt-get -yqq update && \
-  apt-get -yqq upgrade && \
-  apt-get -yqq install \
-  software-properties-common build-essential patch coreutils \
-  make gcc g++ zlib1g-dev git wget curl jq tree moreutils \
-  python python3 python3-pip ruby ruby-dev
+ARG DEBIAN_FRONTEND=noninteractive
+ARG HYPERFINE_VERSION=1.20.0
 
-# Instaling Hyperfine
-RUN wget https://github.com/sharkdp/hyperfine/releases/download/v1.7.0/hyperfine_1.7.0_amd64.deb \
-  && dpkg -i hyperfine_1.7.0_amd64.deb \
-  && rm hyperfine_1.7.0_amd64.deb
+RUN apt-get -yqq update \
+ && apt-get -yqq install --no-install-recommends \
+      build-essential ca-certificates curl git jq moreutils tree wget xz-utils \
+ && rm -rf /var/lib/apt/lists/*
 
-# Instaling Node
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && /|RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
-  && apt-get install -y nodejs \
-  && npm install -g yarn
+RUN ARCH="$(dpkg --print-architecture)" \
+ && curl -fsSL -o /tmp/hyperfine.deb \
+      "https://github.com/sharkdp/hyperfine/releases/download/v${HYPERFINE_VERSION}/hyperfine_${HYPERFINE_VERSION}_${ARCH}.deb" \
+ && dpkg -i /tmp/hyperfine.deb && rm /tmp/hyperfine.deb
 
-# Generator Dir
-RUN mkdir /opt/gatsby
-COPY . /opt/gatsby/
-COPY build.sh benchmark_config.json package.json /opt/gatsby/src/
+ARG NODE_VERSION=24.21.0
+RUN ARCH="$(dpkg --print-architecture)" \
+ && case "$ARCH" in amd64) NARCH=x64 ;; arm64) NARCH=arm64 ;; *) echo "unsupported $ARCH"; exit 1 ;; esac \
+ && curl -fsSL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-${NARCH}.tar.xz" \
+    | tar -xJ -C /usr/local --strip-components=1 \
+ && node --version && npm --version
+
 WORKDIR /opt/gatsby/src
 
-# Install Gatsby
-RUN yarn
+ENV GATSBY_TELEMETRY_DISABLED=1
+COPY package.json package-lock.json /opt/gatsby/src/
+RUN npm ci
 
-# Clean Installl
-RUN apt-get -yqq clean  \
-  && apt-get -yqq purge \
-  && apt-get -yqq --purge autoremove  \
-  && rm -rf /var/lib/apt/lists/*
+COPY src/ /opt/gatsby/src/
+COPY build.sh benchmark_config.json /opt/gatsby/src/

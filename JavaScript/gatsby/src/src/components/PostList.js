@@ -1,7 +1,7 @@
 import React from 'react'
-import Link  from 'gatsby-link'
+import { Link } from 'gatsby'
 
-export default ({posts}) =>
-<ul>
-  {posts.map( ({node:post}) => <li><Link to={post.fields.slug}>{post.frontmatter.title}</Link></li> )}
-</ul>
+export default ({ posts }) =>
+  <ul>
+    {posts.map(post => <li key={post.id}><Link to={`/posts/${post.fields.slug}/`}>{post.frontmatter.title}</Link></li>)}
+  </ul>

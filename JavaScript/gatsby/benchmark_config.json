@@ -4,9 +4,9 @@
     "default": {
       "approach": "Realistic",
       "classification": "Micro",
-      "framework": "Gatsby",
+      "framework": "gatsby",
       "language": "JavaScript",
-      "display_name": "Gatsby",
+      "display_name": "gatsby",
       "notes": "",
       "versus": "javascript"
     }
@@ -22,8 +22,11 @@
     {
       "metadata_dateslug": "date",
       "metadata_layout": "",
-      "build_command": "yarn run build",
-      "build_verbose": "yarn run build-verbose"
+      "build_command": "npm run --silent build",
+      "build_verbose": "npm run build-verbose",
+      "output_folder": "public",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [".cache"]
     }
   ]
 }
