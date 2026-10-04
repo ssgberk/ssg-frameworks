@@ -15,13 +15,4 @@
 
 </div>
 
-<div>
-    <b>More News 'n' Updates</b>
-    <ul>
-      @foreach($posts as $post)
-        <li><a href="{{ $post->getPath() }}">{{ $post->title }}</a></li>
-      @endforeach
-    </ul>
-</div>
-
 @endsection

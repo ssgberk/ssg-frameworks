@@ -18,15 +18,6 @@
 
 </div>
 
-<div>
-    <b>More News 'n' Updates</b>
-    <ul>
-        {{ range where .Site.RegularPages "Type" "post" }}
-            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
-    </ul>
-</div>
-
 {{ partial "footer.html" . }}
 
   </body>

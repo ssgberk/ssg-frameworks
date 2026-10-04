@@ -12,6 +12,9 @@ for cmd in jq sponge hyperfine; do
     fi
 done
 
+tmpdir=$(mktemp -d) || { echo "[ ERROR ] mktemp failed"; exit 1; }
+trap 'rm -rf "${tmpdir}"' EXIT
+
 number_of_files="${number_of_files:-100}"
 content_size="${content_size:-0.500}"
 content_size="${content_size//[\[\]]/}"
@@ -99,10 +102,10 @@ fi
 
 # Untimed verification build: the site must contain exactly one page per post.
 clean_output
-eval "${command}" > /tmp/ssgberk-verify.log 2>&1
+eval "${command}" > "${tmpdir}/verify.log" 2>&1
 verify_status=$?
 if [ "${verify_status}" -ne 0 ]; then
-    cat /tmp/ssgberk-verify.log
+    cat "${tmpdir}/verify.log"
     echo "SSGBERK_VERIFY_FAIL build exited ${verify_status}"
     [ -z "${KEEP_CONTENT:-}" ] && reset_content
     exit 1
@@ -110,7 +113,7 @@ fi
 if [ -n "${output_folder}" ] && [ -n "${output_glob}" ]; then
     got=$(find "${output_folder}" -type f -path "${output_folder}/${output_glob}" | wc -l | tr -d ' ')
     if [ "${got}" -ne "${number_of_files}" ]; then
-        cat /tmp/ssgberk-verify.log
+        cat "${tmpdir}/verify.log"
         echo "SSGBERK_VERIFY_FAIL expected=${number_of_files} got=${got}"
         [ -z "${KEEP_CONTENT:-}" ] && reset_content
         exit 1
@@ -130,14 +133,14 @@ fi
 echo "STARTTIME $(date +%s)"
 hyperfine --time-unit second --min-runs "${min_runs}" --max-runs "${min_runs}" \
     --prepare "${prepare_cmd}" ${show_output} \
-    --export-json /tmp/ssgberk-hyperfine.json "${command}"
+    --export-json "${tmpdir}/hyperfine.json" "${command}"
 hyperfine_status=$?
 echo "ENDTIME $(date +%s)"
 echo "Number of files: ${number_of_files} | content size: ${content_size} KB | runs: ${min_runs}"
 
 if [ "${hyperfine_status}" -eq 0 ]; then
     echo "SSGBERK_RESULT_BEGIN"
-    cat /tmp/ssgberk-hyperfine.json
+    cat "${tmpdir}/hyperfine.json"
     echo
     echo "SSGBERK_RESULT_END"
 fi
