@@ -1,16 +1,18 @@
 {
   "framework": "nanoc",
-  "tests": [{
-    "default": {
-      "approach": "Realistic",
-      "classification": "Micro",
-      "framework": "nanoc",
-      "language": "Ruby",
-      "display_name": "nanoc",
-      "notes": "",
-      "versus": "ruby"
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "nanoc",
+        "language": "Ruby",
+        "display_name": "nanoc",
+        "notes": "",
+        "versus": "ruby"
+      }
     }
-  }],
+  ],
   "content": [
     {
       "folder": "content/posts",
@@ -22,8 +24,13 @@
     {
       "metadata_dateslug": "created_at",
       "metadata_layout": "kind: article",
-      "build_command": "bundle exec nanoc",
-      "build_verbose": ""
+      "build_command": "bundle exec nanoc compile",
+      "build_verbose": "bundle exec nanoc compile --verbose",
+      "output_folder": "output",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [
+        "tmp"
+      ]
     }
   ]
 }

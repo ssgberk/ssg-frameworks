@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= @item[:title] %></title>
+  </head>
+  <body>
+    <article class="post">
+      <h1><%= @item[:title] %></h1>
+      <%= yield %>
+    </article>
+  </body>
+</html>

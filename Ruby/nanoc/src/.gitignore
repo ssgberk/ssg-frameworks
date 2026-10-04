@@ -1,5 +1,3 @@
-#############################
-# nanoc ignores
-
-output
-tmp
+/output
+/tmp
+/crash.log

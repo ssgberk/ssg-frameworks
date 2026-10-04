@@ -1,29 +1,27 @@
-FROM ubuntu:18.04
+FROM ubuntu:24.04
 
-# Update then install needed programs
-RUN apt-get -yqq update && \
-  apt-get -yqq upgrade && \
-  apt-get -yqq install \
-  software-properties-common build-essential patch coreutils \
-  make gcc g++ zlib1g-dev git wget curl jq tree moreutils \
-  python python3 python3-pip ruby ruby-dev
+ARG DEBIAN_FRONTEND=noninteractive
+ARG HYPERFINE_VERSION=1.20.0
 
-# Instaling Hyperfine
-RUN wget https://github.com/sharkdp/hyperfine/releases/download/v1.7.0/hyperfine_1.7.0_amd64.deb \
-  && dpkg -i hyperfine_1.7.0_amd64.deb \
-  && rm hyperfine_1.7.0_amd64.deb
+RUN apt-get -yqq update \
+ && apt-get -yqq install --no-install-recommends \
+      build-essential ca-certificates curl git jq moreutils tree wget xz-utils \
+ && rm -rf /var/lib/apt/lists/*
 
-# Generator Dir
-RUN mkdir /opt/nanoc
-COPY . /opt/nanoc/
-COPY build.sh benchmark_config.json Gemfile /opt/nanoc/src/
+RUN ARCH="$(dpkg --print-architecture)" \
+ && curl -fsSL -o /tmp/hyperfine.deb \
+      "https://github.com/sharkdp/hyperfine/releases/download/v${HYPERFINE_VERSION}/hyperfine_${HYPERFINE_VERSION}_${ARCH}.deb" \
+ && dpkg -i /tmp/hyperfine.deb && rm /tmp/hyperfine.deb
+
+RUN apt-get -yqq update \
+ && apt-get -yqq install --no-install-recommends ruby ruby-dev zlib1g-dev libffi-dev libyaml-dev \
+ && rm -rf /var/lib/apt/lists/* \
+ && gem install bundler --no-document
+
 WORKDIR /opt/nanoc/src
 
-# Install Nanoc
-RUN gem install bundle && bundle install
+COPY Gemfile Gemfile.lock /opt/nanoc/src/
+RUN bundle install
 
-# Clean Installl
-RUN apt-get -yqq clean  \
-  && apt-get -yqq purge \
-  && apt-get -yqq --purge autoremove  \
-  && rm -rf /var/lib/apt/lists/*
+COPY src/ /opt/nanoc/src/
+COPY build.sh benchmark_config.json /opt/nanoc/src/

@@ -1,5 +1,18 @@
 ---
-title: Welcome
+title: Posts
 ---
-
-<!-- see layouts/index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= @item[:title] %></title>
+  </head>
+  <body>
+    <h1>Posts</h1>
+    <ul>
+<% @items.find_all('/posts/*.md').sort_by { |i| i.identifier.to_s }.each do |post| %>
+      <li><a href="<%= post.path %>"><%= post[:title] %></a></li>
+<% end %>
+    </ul>
+  </body>
+</html>
