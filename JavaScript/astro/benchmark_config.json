@@ -1,0 +1,32 @@
+{
+  "framework": "astro",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "astro",
+      "language": "JavaScript",
+      "display_name": "astro",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "src/content/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx astro build --silent",
+      "build_verbose": "npx astro build --verbose",
+      "output_folder": "dist",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [".astro", "node_modules/.astro"]
+    }
+  ]
+}

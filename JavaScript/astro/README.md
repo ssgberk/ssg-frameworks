@@ -1,0 +1,3 @@
+# Astro
+
+Astro 7.3.5 on Ubuntu 24.04 with Node 24.21.0, benchmarked by SSGBerk. `build.sh` generates the posts into `src/src/content/posts` (a `glob` content collection), then times `npx astro build --silent`; each post must render to `dist/posts/*/index.html` (the verification step checks the count equals the requested number of files). The site is a base layout, one post page (`[id].astro`, title + content only) and one index listing every post. Dependencies are installed with `npm ci` from the committed `package-lock.json`; telemetry is disabled with `ASTRO_TELEMETRY_DISABLED=1`. Run it with `./ssgberk --test astro -nf 10` from the toolset repository.
