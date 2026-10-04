@@ -27,3 +27,5 @@ CREATE_MONTHLY_ARCHIVE = False
 CREATE_SINGLE_ARCHIVE = False
 INDEX_PATH = ""
 FRONT_INDEX_HEADER = ""
+INDEX_DISPLAY_POST_COUNT = 10**9
+DOIT_CONFIG = {"dep_file": ".doit.db", "backend": "sqlite3"}
