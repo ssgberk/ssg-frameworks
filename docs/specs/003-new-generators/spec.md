@@ -2,7 +2,7 @@
 
 - **Repo:** `ssgberk/ssg-frameworks`
 - **Date:** 2026-10-04
-- **Status:** proposed, awaiting review (approved design redistributed from `2026-10-04-modernize-ssgberk-design.md`)
+- **Status:** concluído (2026-10-04)
 - **Siblings:** `plan.md` (how), `tasks.md` (executable task list) in this directory; roadmap in `benchmark-tool/docs/specs/ROADMAP.md`
 
 ## Context
@@ -28,7 +28,7 @@
 | Python | pelican | 4.12.x | `3minus` | `content` |
 | Python | mkdocs | 1.6.x | `none` | `docs/posts` |
 
-Cada site novo tem só: um layout base, um template de post e uma página índice listando os posts, sem tema, plugins ou otimização de assets. As versões "x" são fixadas no lockfile no momento da implementação.
+Cada site novo tem só: um layout base, um template de post (título + conteúdo, sem listar outros posts) e uma única página índice listando todos os posts, sem tema, plugins ou otimização de assets extras. As versões "x" são fixadas no lockfile no momento da implementação.
 
 Total: 17 geradores em 6 linguagens.
 
@@ -42,3 +42,15 @@ Total: 17 geradores em 6 linguagens.
 - Temas, plugins ou otimizações específicas de algum gerador.
 - O monorepo `StaticSiteGeneratorBenchmark`.
 - Updating existing generators (`docs/specs/002-update-existing-generators`).
+
+## Deviations (as built)
+
+- **vitepress:** the index lists posts through a `createContentLoader` data file (`posts.data.js`), and a minimal custom theme (bare layout, no nav/sidebar/search) is used.
+- **mkdocs:** custom minimal theme (`src/theme`) and `plugins: []` (search disabled); an empty `theme/sitemap.xml` suppresses the sitemap.
+- **pelican:** custom theme; all list pages (archives, categories, tags, authors, pagination, feeds) disabled; titles keep literal quotes.
+- **astro:** `node_modules/.vite` (and `.astro`, `node_modules/.astro`) added to `cache_folders` for cold builds.
+- **Python generators:** `requirements.txt` is the full `pip freeze` taken inside the built image.
+- **gatsby:** `node_modules/.cache` added to `cache_folders` (gatsby's own `clean` treats babel-loader/terser caches there as build caches).
+- **Mid-spec rules adopted:** cold-build rule (every surviving tool cache listed in `cache_folders`), metadata rule (`generator.json` per generator plus `generators.json` index), and single-index rule (post pages render only their post; one index lists all posts, pagination disabled).
+- **Final fix wave (2026-10-04):** zola section no longer renders (`render = false`, `section.html` removed) and sitemap/robots/404 are empty overrides; mkdocs sitemap removed; `NPM_CONFIG_UPDATE_NOTIFIER=false` in all Node images; README notes added. `vitepress build` has no `--debug` flag in 1.6.4, so `build_verbose` is unchanged.
+- **`-cs 500` acceptance:** verified locally for zola and mkdocs only (host disk limits). The other six (astro, eleventy, hexo, nextjs-export, vitepress, pelican) are verified through a CI `workflow_dispatch` run with `content_size=500`; run id: to be recorded by the controller.
