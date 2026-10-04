@@ -24,8 +24,14 @@
     {
       "metadata_dateslug": "date",
       "metadata_layout": "layout: post",
-      "build_command": "jekyll build",
-      "build_verbose": "jekyll build --verbose"
+      "build_command": "bundle exec jekyll build --quiet",
+      "build_verbose": "bundle exec jekyll build --verbose",
+      "output_folder": "_site",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [
+        ".jekyll-cache",
+        ".jekyll-metadata"
+      ]
     }
   ]
 }
