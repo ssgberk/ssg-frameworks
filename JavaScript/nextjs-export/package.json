@@ -1,0 +1,1 @@
+{"name":"nextjs-export-sample","private":true,"scripts":{"build":"next build"},"dependencies":{"next":"16.3.8","react":"^19.2.0","react-dom":"^19.2.0","gray-matter":"^4.0.3","marked":"^16.0.0"}}

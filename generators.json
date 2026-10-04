@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "db937ec1e2097c714a9556a73906b499d81e5d59",
+  "generatedFrom": "ccc0ffa6e94c44c98d6dadd5dd7103c5e26ded27",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -472,6 +472,51 @@
       }
     },
     {
+      "id": "nextjs-export",
+      "path": "JavaScript/nextjs-export",
+      "version": "16.3.8",
+      "name": "Next.js (static export)",
+      "description": "Next.js is a React framework that, with output set to export, prerenders App Router pages to static HTML at build time.",
+      "homepage": "https://nextjs.org/",
+      "repository": "https://github.com/vercel/next.js",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "React (JSX)"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "framework",
+      "firstRelease": 2016,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "next"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "next.js (export)",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "content/posts",
+        "buildCommand": "npx next build",
+        "outputFolder": "out",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          ".next"
+        ]
+      },
+      "notes": "firstRelease from npm next 1.0.0 (2016-10-25). Markdown is not built in: this setup parses it with gray-matter and marked inside a Server Component. Built with output: 'export' and trailingSlash.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/nextjs-export/nextjs-export.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/nextjs-export/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/nextjs-export/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/nextjs-export/generator.json"
+      }
+    },
+    {
       "id": "nikola-mako",
       "path": "Python/nikola-mako",
       "version": "8.3.3",
@@ -753,14 +798,6 @@
       "repository": "https://github.com/gma/nesta",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/134"
-    },
-    {
-      "id": "nextjs-export",
-      "name": "Next.js (static export)",
-      "language": "JavaScript",
-      "repository": "https://github.com/vercel/next.js",
-      "status": "planned",
-      "spec": "docs/specs/003-new-generators"
     },
     {
       "id": "nextra",

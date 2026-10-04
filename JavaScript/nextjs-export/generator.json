@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "nextjs-export",
+  "name": "Next.js (static export)",
+  "description": "Next.js is a React framework that, with output set to export, prerenders App Router pages to static HTML at build time.",
+  "homepage": "https://nextjs.org/",
+  "repository": "https://github.com/vercel/next.js",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "React (JSX)"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2016,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "versionFrom": {
+    "source": "npm",
+    "name": "next"
+  },
+  "notes": "firstRelease from npm next 1.0.0 (2016-10-25). Markdown is not built in: this setup parses it with gray-matter and marked inside a Server Component. Built with output: 'export' and trailingSlash."
+}

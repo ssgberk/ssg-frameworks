@@ -193,14 +193,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/134"
   },
   {
-    "id": "nextjs-export",
-    "name": "Next.js (static export)",
-    "language": "JavaScript",
-    "repository": "https://github.com/vercel/next.js",
-    "status": "planned",
-    "spec": "docs/specs/003-new-generators"
-  },
-  {
     "id": "nextra",
     "name": "Nextra",
     "language": "JavaScript",
