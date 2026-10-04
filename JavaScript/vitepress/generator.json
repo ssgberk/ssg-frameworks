@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "vitepress",
+  "name": "VitePress",
+  "description": "VitePress is a Vite and Vue powered static site generator that turns Markdown into fast static HTML pages.",
+  "homepage": "https://vitepress.dev",
+  "repository": "https://github.com/vuejs/vitepress",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Vue"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2020,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "firstRelease from npm vitepress creation (2020-04-30); the oldest GitHub release is v0.7.3 (2020-11-16). This setup uses a minimal custom theme (bare layout rendering the page content) and a createContentLoader data file for the index; no default theme, search or sidebar."
+}

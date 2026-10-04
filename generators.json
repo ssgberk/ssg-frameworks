@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "ccc0ffa6e94c44c98d6dadd5dd7103c5e26ded27",
+  "generatedFrom": "a7dff5c4dbfbe545600cd32cc6fdcc8992270d28",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -566,6 +566,48 @@
       }
     },
     {
+      "id": "vitepress",
+      "path": "JavaScript/vitepress",
+      "version": "1.6.4",
+      "name": "VitePress",
+      "description": "VitePress is a Vite and Vue powered static site generator that turns Markdown into fast static HTML pages.",
+      "homepage": "https://vitepress.dev",
+      "repository": "https://github.com/vuejs/vitepress",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "Vue"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "framework",
+      "firstRelease": 2020,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "vitepress",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "posts",
+        "buildCommand": "npx vitepress build .",
+        "outputFolder": ".vitepress/dist",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": [
+          ".vitepress/cache",
+          "node_modules/.vite"
+        ]
+      },
+      "notes": "firstRelease from npm vitepress creation (2020-04-30); the oldest GitHub release is v0.7.3 (2020-11-16). This setup uses a minimal custom theme (bare layout rendering the page content) and a createContentLoader data file for the index; no default theme, search or sidebar.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vitepress/vitepress.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vitepress/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vitepress/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vitepress/generator.json"
+      }
+    },
+    {
       "id": "zola",
       "path": "Rust/zola",
       "version": "0.23.6",
@@ -967,14 +1009,6 @@
       "repository": "https://github.com/antfu-collective/vite-ssg",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/127"
-    },
-    {
-      "id": "vitepress",
-      "name": "VitePress",
-      "language": "JavaScript",
-      "repository": "https://github.com/vuejs/vitepress",
-      "status": "planned",
-      "spec": "docs/specs/003-new-generators"
     },
     {
       "id": "vuepress",

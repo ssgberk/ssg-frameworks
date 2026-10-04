@@ -362,14 +362,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/127"
   },
   {
-    "id": "vitepress",
-    "name": "VitePress",
-    "language": "JavaScript",
-    "repository": "https://github.com/vuejs/vitepress",
-    "status": "planned",
-    "spec": "docs/specs/003-new-generators"
-  },
-  {
     "id": "vuepress",
     "name": "VuePress",
     "language": "JavaScript",
