@@ -21,7 +21,15 @@ COMMENT_SYSTEM = ""
 GENERATE_RSS = False
 GENERATE_ATOM = False
 SITEMAP_INCLUDE_FILELESS_DIRS = False
-DISABLED_PLUGINS = ["sitemap", "robots"]
+DISABLED_PLUGINS = [
+    "sitemap",
+    "robots",
+    "classify_archive",
+    "classify_categories",
+    "classify_tags",
+    "classify_authors",
+    "classify_page_index",
+]
 CREATE_ARCHIVE_NAVIGATION = False
 CREATE_MONTHLY_ARCHIVE = False
 CREATE_SINGLE_ARCHIVE = False
