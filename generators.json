@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "a7dff5c4dbfbe545600cd32cc6fdcc8992270d28",
+  "generatedFrom": "edc49f6eae9d98f2ecfb54c4e5eda0e95fbf20dc",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -566,6 +566,50 @@
       }
     },
     {
+      "id": "pelican",
+      "path": "Python/pelican",
+      "version": "4.12.0",
+      "name": "Pelican",
+      "description": "Pelican is a Python static site generator that turns Markdown or reStructuredText content into a blog with Jinja2 templates.",
+      "homepage": "https://getpelican.com",
+      "repository": "https://github.com/getpelican/pelican",
+      "license": "AGPL-3.0",
+      "language": "Python",
+      "runtime": "Python 3.12 (Ubuntu 24.04 apt, venv)",
+      "templateEngines": [
+        "Jinja2"
+      ],
+      "contentFormats": [
+        "markdown",
+        "restructuredtext",
+        "html"
+      ],
+      "category": "blog",
+      "firstRelease": 2010,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Pelican",
+        "versus": "python",
+        "contentType": "3minus",
+        "contentFolder": "content",
+        "buildCommand": "pelican -q",
+        "outputFolder": "output",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          "cache",
+          "__pycache__"
+        ]
+      },
+      "notes": "Benchmarked with a minimal custom theme (base, article, index) instead of notmyidea. firstRelease from the 1.1 git tag (2010-08-19); PyPI uploads start in 2014.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/pelican/pelican.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/pelican/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/pelican/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/pelican/generator.json"
+      }
+    },
+    {
       "id": "vitepress",
       "path": "JavaScript/vitepress",
       "version": "1.6.4",
@@ -872,14 +916,6 @@
       "repository": "https://github.com/observablehq/framework",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/123"
-    },
-    {
-      "id": "pelican",
-      "name": "Pelican",
-      "language": "Python",
-      "repository": "https://github.com/getpelican/pelican",
-      "status": "planned",
-      "spec": "docs/specs/003-new-generators"
     },
     {
       "id": "plenti",

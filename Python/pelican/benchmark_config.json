@@ -1,0 +1,37 @@
+{
+  "framework": "pelican",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "Pelican",
+        "language": "Python",
+        "display_name": "Pelican",
+        "notes": "",
+        "versus": "python"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "content",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "pelican -q",
+      "build_verbose": "pelican -v",
+      "output_folder": "output",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [
+        "cache",
+        "__pycache__"
+      ]
+    }
+  ]
+}

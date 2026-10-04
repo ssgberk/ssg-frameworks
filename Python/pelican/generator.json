@@ -1,0 +1,26 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "pelican",
+  "name": "Pelican",
+  "description": "Pelican is a Python static site generator that turns Markdown or reStructuredText content into a blog with Jinja2 templates.",
+  "homepage": "https://getpelican.com",
+  "repository": "https://github.com/getpelican/pelican",
+  "license": "AGPL-3.0",
+  "language": "Python",
+  "runtime": "Python 3.12 (Ubuntu 24.04 apt, venv)",
+  "templateEngines": [
+    "Jinja2"
+  ],
+  "contentFormats": [
+    "markdown",
+    "restructuredtext",
+    "html"
+  ],
+  "category": "blog",
+  "firstRelease": 2010,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Benchmarked with a minimal custom theme (base, article, index) instead of notmyidea. firstRelease from the 1.1 git tag (2010-08-19); PyPI uploads start in 2014."
+}

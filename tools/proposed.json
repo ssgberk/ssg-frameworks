@@ -225,14 +225,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/123"
   },
   {
-    "id": "pelican",
-    "name": "Pelican",
-    "language": "Python",
-    "repository": "https://github.com/getpelican/pelican",
-    "status": "planned",
-    "spec": "docs/specs/003-new-generators"
-  },
-  {
     "id": "plenti",
     "name": "Plenti",
     "language": "Go",
