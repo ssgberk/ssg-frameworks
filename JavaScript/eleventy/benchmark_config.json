@@ -1,0 +1,32 @@
+{
+  "framework": "eleventy",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "eleventy",
+      "language": "JavaScript",
+      "display_name": "Eleventy",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx @11ty/eleventy --quiet",
+      "build_verbose": "DEBUG=Eleventy* npx @11ty/eleventy",
+      "output_folder": "_site",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [".cache"]
+    }
+  ]
+}
