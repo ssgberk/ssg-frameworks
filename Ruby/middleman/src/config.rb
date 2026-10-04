@@ -1,32 +1,12 @@
-###
-# Page options, layouts, aliases and proxies
-###
-
 activate :blog do |blog|
-  blog.permalink = '/news/{title}.html'
-  blog.sources = 'posts/{year}-{month}-{day}-{title}.html'
+  blog.sources = "posts/{year}-{month}-{day}-{title}"
+  blog.permalink = "posts/{title}/index.html"
+  blog.layout = "post"
+  blog.paginate = false
+  blog.generate_tag_pages = false
+  blog.generate_year_pages = false
+  blog.generate_month_pages = false
+  blog.generate_day_pages = false
 end
 
-
-## page 'posts/*', :layout => :post
-##   -- use layout: post in front matter for now
-
-## set :site_title, 'Middleman Stay Static Sample Site' 
-##   -- not working; try/use helper method instead for now
-
-require 'tzinfo'
-
-helpers do
-  def site_title
-    'Middleman Stay Static Sample Site'
-  end
-
-  def page_title
-    current_page.data.title ? current_page.data.title : nil
-  end
-end
-
-
-configure :build do
-  set :http_prefix, '/sites/middleman'
-end
+set :markdown_engine, :kramdown

@@ -1,16 +1,18 @@
 {
   "framework": "middleman",
-  "tests": [{
-    "default": {
-      "approach": "Realistic",
-      "classification": "Micro",
-      "framework": "Middleman",
-      "language": "Ruby",
-      "display_name": "Middleman",
-      "notes": "",
-      "versus": "ruby"
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "Middleman",
+        "language": "Ruby",
+        "display_name": "Middleman",
+        "notes": "",
+        "versus": "ruby"
+      }
     }
-  }],
+  ],
   "content": [
     {
       "folder": "source/posts",
@@ -21,9 +23,14 @@
   "config": [
     {
       "metadata_dateslug": "date",
-      "metadata_layout": "layout: post",
+      "metadata_layout": "",
       "build_command": "bundle exec middleman build",
-      "build_verbose": "bundle exec middleman build --verbose"
+      "build_verbose": "bundle exec middleman build --verbose",
+      "output_folder": "build",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [
+        ".sass-cache"
+      ]
     }
   ]
 }

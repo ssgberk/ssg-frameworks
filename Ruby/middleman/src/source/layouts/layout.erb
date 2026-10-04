@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <%= partial "partials/head" %>
+  <head>
+    <meta charset="utf-8">
+    <title><%= current_page.data.title || "Middleman Blog" %></title>
+  </head>
   <body>
-
-    <%= partial "partials/header" %>
-
-    <div class="main">
-      <%= yield %>
-    </div>
-    
-    <%= partial "partials/footer" %>
-
+    <%= yield %>
   </body>
 </html>
