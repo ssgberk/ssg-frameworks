@@ -1,0 +1,5 @@
+# mdBook
+
+mdBook 0.5.4 (musl release binary, amd64/arm64) on Ubuntu 24.04, benchmarked by SSGBerk. `build.sh` generates the posts into `src/src/posts` (plain Markdown, no front matter; content type `none`, titles come from the file names), then times `build_command`, a shell line that rewrites `src/SUMMARY.md` and `src/README.md` (the index page, one link per post) from the post files and runs `mdbook build`; that listing is part of the timed build because mdBook only renders files named in `SUMMARY.md`. Each post must render to `book/posts/*.html` (the verification step checks the count equals the requested number of files). Run it with `./ssgberk --test mdbook -nf 10` from the toolset repository.
+
+Deviations: the version is the latest stable on 2026-10-05 (0.5.4, not 0.4.x). `src/theme/index.hbs` is a minimal page template (no sidebar, no navigation); search, the print page and hosted fonts are disabled (`book.toml`, empty `theme/fonts/fonts.css`). mdBook still writes its stock CSS/JS, `toc.html`, `404.html` and favicons into `book/`. No caches are written (`cache_folders` is empty). `assets/ssgberk.css` and `ssgberk.png` live in `src/src/assets`.

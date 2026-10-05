@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "mdbook",
+  "name": "mdBook",
+  "description": "mdBook is a Rust command-line tool that builds online books from Markdown files listed in a SUMMARY.md, with Handlebars templates.",
+  "homepage": "https://rust-lang.github.io/mdBook/",
+  "repository": "https://github.com/rust-lang/mdBook",
+  "license": "MPL-2.0",
+  "language": "Rust",
+  "runtime": "Rust binary (release tarball)",
+  "templateEngines": [
+    "Handlebars"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "docs",
+  "firstRelease": 2015,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Benchmarked with a minimal theme/index.hbs (no sidebar), search, print page and hosted fonts disabled. The build command regenerates SUMMARY.md and the index (README.md) from the post files before mdbook build. firstRelease from the first GitHub release (v0.0.1, 2015); the sidebar table of contents file (toc.html) is still emitted."
+}

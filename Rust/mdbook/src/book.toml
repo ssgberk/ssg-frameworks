@@ -1,0 +1,14 @@
+[book]
+title = "SSGBerk mdBook"
+language = "en"
+
+[build]
+build-dir = "book"
+create-missing = false
+
+[output.html]
+print = { enable = false }
+no-section-label = true
+
+[output.html.search]
+enable = false

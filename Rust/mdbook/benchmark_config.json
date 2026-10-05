@@ -1,0 +1,34 @@
+{
+  "framework": "mdbook",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "mdbook",
+        "language": "Rust",
+        "display_name": "mdBook",
+        "notes": "",
+        "versus": "rust"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "src/posts",
+      "type": "none",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "sh -c '{ printf \"# Summary\\n\\n[Index](README.md)\\n\\n\"; for f in src/posts/*.md; do b=$(basename \"$f\" .md); printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done; } > src/SUMMARY.md && { printf \"# SSGBerk\\n\\n\"; for f in src/posts/*.md; do b=$(basename \"$f\" .md); printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done; } > src/README.md && mdbook build'",
+      "build_verbose": "sh -c '{ printf \"# Summary\\n\\n[Index](README.md)\\n\\n\"; for f in src/posts/*.md; do b=$(basename \"$f\" .md); printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done; } > src/SUMMARY.md && { printf \"# SSGBerk\\n\\n\"; for f in src/posts/*.md; do b=$(basename \"$f\" .md); printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done; } > src/README.md && mdbook build'",
+      "output_folder": "book",
+      "output_glob": "posts/*.html",
+      "cache_folders": []
+    }
+  ]
+}
