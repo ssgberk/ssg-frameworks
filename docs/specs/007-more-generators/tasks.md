@@ -49,3 +49,33 @@ Nextra 4 on the pinned Next.js 16.3.x line already used by `nextjs-export` if co
 ### Task 6: Sphinx (`Python/sphinx`, #97)
 
 Sphinx 8 + `myst-parser`, content type `3minus` (MyST reads YAML front matter) in `posts/`. `index.md` with a hidden-free `{toctree}` `:glob:` `posts/*` that lists every post; a minimal theme (`basic`-derived or `html_theme = 'basic'` with a bare `layout.html`) without sidebars, search page or genindex. `-q` build into `_build/html`; `output_glob` `posts/*.html`. Disable `html_copy_source`, `html_show_sourcelink`, search index if possible. Caches: `_build/doctrees`.
+
+---
+
+## Wave 2
+
+Same Global Constraints, Standard steps, local smoke and shared-machine rules as wave 1.
+
+### Task 7: Quartz (`JavaScript/quartz`, #119)
+
+Quartz 4 is distributed as a repository template, not an npm package: vendor the pinned release tag's sources (the `quartz/` folder, `package.json`, lockfile, `quartz.config.ts`, `quartz.layout.ts`) into `src/`, with content in `content/posts`. Configure the layout so a post page renders only its post (no explorer, graph view, backlinks, search, table of contents, recent notes) and an index page lists all posts; disable plugins that emit extra pages (tag pages, folder pages, RSS, sitemap, alias redirects, OG images) unless required for the index. Content type `3minus`. Build command `npx quartz build`; output `public/`. Caches: `.quartz-cache` and any other folder it writes.
+
+### Task 8: Starlight (`JavaScript/starlight`, #98)
+
+`@astrojs/starlight` on the Astro version it requires (prefer the pinned `astro` 7.3.x line if compatible). Docs collection in `src/content/docs/posts`, content type `3minus` (Starlight needs `title` in front matter — build.sh writes it). Turn off sidebar autogeneration of posts, the table of contents, pagination links, search (Pagefind), edit links and social links, so a post page renders only its post; `src/content/docs/index.mdx` (or a custom page) lists all posts. `ENV ASTRO_TELEMETRY_DISABLED=1`. Caches like `JavaScript/astro` (`node_modules/.vite`, `.astro`, `node_modules/.astro`).
+
+### Task 9: Quarto (`Other/quarto`, #100)
+
+Pinned Quarto CLI release `.deb` (or tarball) for amd64 and arm64; it bundles pandoc. A website project (`_quarto.yml`, `project: type: website`) with `posts/*.md`, a listing page (`index.qmd` with `listing:` over `posts`, no pagination: `page-size` ≥ any post count or listing type `table`/`default` with all items), no navbar/sidebar/search (`website: search: false`), `format: html` with minimal theme (`theme: none` or `minimal: true`). Content type `3minus`. Build `quarto render --quiet` (no Jupyter/knitr: plain markdown). Output `_site`. Caches: `.quarto`, `_freeze`.
+
+### Task 10: Zensical (`Python/zensical`, #120)
+
+`pip install zensical` (pinned; full `pip freeze`). Zensical reads `mkdocs.yml`-style config (or `zensical.toml`); mirror `Python/mkdocs`: content type `none` in `docs/posts`, a minimal custom theme or theme overrides that drop navigation, search and TOC, index page listing all posts. Build `zensical build` (quiet flag if any); output `site`. Caches: whatever it writes between runs (check `.cache`).
+
+### Task 11: DocFX (`CSharp/docfx`, #101)
+
+.NET SDK/runtime for both arches (Microsoft install script with a pinned channel, or the `dotnet` tarball) and `dotnet tool install docfx --version <pinned>`; `ENV DOTNET_CLI_TELEMETRY_OPTOUT=1`, `DOTNET_NOLOGO=1`. A conceptual-docs project (`docfx.json`, `toc.yml`) with `posts/*.md` (content type `3minus`, DocFX reads YAML front matter), an index page listing all posts, and a template (the `default` template with overrides, or a minimal custom template) without the navbar/TOC/search/affix panel on post pages. `build_command` `docfx build docfx.json` (no metadata step, no serve). Output `_site`. Caches: `obj/` and any `.cache`.
+
+### Task 12: Lektor (`Python/lektor`, #102)
+
+`pip install Lektor` (pinned; full `pip freeze`). A project with `models/`, `templates/` and `content/`. Lektor needs one `contents.lr` per page, not markdown files: use content type `none` in `content/posts` and a `build_command` that converts each generated `posts/<name>.md` into `content/posts/<name>/contents.lr` (`_model: post`, `title: <name>`, `body:` = the markdown, with Lektor's `---` field separators) in one pass without per-post forks, then runs `lektor build --output-path _site`. That conversion is part of the timed build, as with mdBook. A `posts` model with `markdown` body, a post template rendering only its post, and an index listing all children (no pagination). Output `_site`. Caches: Lektor's build state (`--buildstate-path` if set, or `~/.cache/lektor`/project cache dir) in `cache_folders`.

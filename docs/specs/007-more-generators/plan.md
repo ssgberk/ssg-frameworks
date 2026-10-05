@@ -4,8 +4,8 @@ Spec: `spec.md`. Tasks: `tasks.md`. Contracts are owned by `docs/specs/001-canon
 
 ## Parallel work
 
-- One worktree and branch per generator, `feat/007-<dir name>`, each based on `feat/007-more-generators` (which holds this spec). The controller rebases the six branches onto `feat/007-more-generators` in order and opens one PR.
-- Implementers never touch files outside their generator directory except their own entry produced by `tools/build_index.py`; the controller regenerates `generators.json` once at integration.
+- One worktree and branch per generator, `feat/007-<dir name>`, each based on `feat/007-more-generators` (which holds this spec). The controller opens one PR per generator as soon as it passes review; the first PR to merge carries the spec commits, later ones are rebased on master.
+- Implementers never touch files outside their generator directory except their own entry produced by `tools/build_index.py`; the controller removes the generator's entry from `tools/proposed.json` and regenerates `generators.json` in that generator's PR.
 
 ## Local smoke (replaces the benchmark-tool run during iteration)
 
