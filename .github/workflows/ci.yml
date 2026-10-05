@@ -25,6 +25,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: tools/check-build-sh.sh
+      - run: tools/check-reference-assets.sh
+      - run: tests/reference/test_check_reference_assets.sh
       - run: tests/build_sh/test_build_sh.sh
 
   changed:
