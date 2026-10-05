@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('docs', (p) => p.id.startsWith('posts/'));
+---
+<ul>
+  {posts.map((p) => (
+    <li><a href={`/${p.id}/`}>{p.data.title}</a></li>
+  ))}
+</ul>

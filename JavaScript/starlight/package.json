@@ -1,0 +1,1 @@
+{"name":"starlight-sample","private":true,"type":"module","scripts":{"build":"astro build"},"dependencies":{"@astrojs/starlight":"0.42.5","astro":"7.3.5"}}

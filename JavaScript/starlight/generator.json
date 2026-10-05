@@ -1,0 +1,29 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "starlight",
+  "name": "Starlight",
+  "description": "Starlight is a documentation theme and framework built on Astro that renders Markdown and MDX content to static HTML.",
+  "homepage": "https://starlight.astro.build/",
+  "repository": "https://github.com/withastro/starlight",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Astro components"
+  ],
+  "contentFormats": [
+    "markdown",
+    "mdx"
+  ],
+  "category": "framework",
+  "firstRelease": 2022,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "versionFrom": {
+    "source": "npm",
+    "name": "@astrojs/starlight"
+  },
+  "notes": "Runs on Astro 7.3.5. firstRelease is the year of the first @astrojs/starlight npm release (2022). This setup uses Markdown posts and one MDX index page."
+}
