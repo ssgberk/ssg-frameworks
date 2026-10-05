@@ -24,7 +24,7 @@ Prerequisite: `docs/specs/001-canonical-build-runner` Task 1 is complete (canoni
 - Generated post filenames are `YYYY-MM-DD-NNN.<ext>` (NNN zero-padded by `seq -w`). `build.sh` only ever deletes entries in the content folder matching `[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]-*`, so section index files (e.g. `_index.md`, `posts.json`) survive.
 - Every generator's `build.sh` is byte-identical to `SF/Go/hugo/build.sh`.
 - A generator's directory name equals its `benchmark_config.json` `framework` value and its test name (CI derives the test name from the directory basename).
-- No themes, plugins, minification or speed tweaks in generator sites: base layout + post template + index listing posts.
+- No themes, plugins beyond the baseline set, minification or speed tweaks; every site builds the Core reference site of docs/specs/005-reference-site-design (supersedes the former minimal-site rule).
 
 ## Standard steps
 

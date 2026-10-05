@@ -92,6 +92,6 @@ O trabalho está pronto quando:
 
 ## Out of scope
 
-- Temas, plugins ou otimizações específicas de algum gerador.
+- Temas, plugins ou otimizações específicas de algum gerador. See docs/specs/005-reference-site-design for the reference site that every generator builds.
 - O monorepo `StaticSiteGeneratorBenchmark`.
 - Updating or adding generators other than Hugo (`docs/specs/002-update-existing-generators`, `docs/specs/003-new-generators`).
