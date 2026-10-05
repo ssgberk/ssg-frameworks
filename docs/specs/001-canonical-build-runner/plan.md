@@ -31,6 +31,13 @@ Read by the canonical `Go/hugo/build.sh` (source of truth: its header and code):
 
 Verification markers (design 5.4): `SSGBERK_VERIFY_FAIL expected=<n> got=<m>` (also `SSGBERK_VERIFY_FAIL build exited <code>` when the verification build fails) and `SSGBERK_VERIFY_OK expected=<n> got=<m>`.
 
+Size markers (BT 008):
+
+| Marker | When | Format |
+|---|---|---|
+| `SSGBERK_INPUT files=<n> bytes=<b>` | right after content generation (also under `SSGBERK_GENERATE_ONLY=1`) | `n` = generated post files in `content_folder`, `b` = sum of their sizes |
+| `SSGBERK_OUTPUT files=<n> bytes=<b>` | after the verification build (and, once SF 006 lands, the conformance check), before `STARTTIME` | regular files under `output_folder`, recursive |
+
 - Parse de estatísticas do `dool` (`__parse_stats`) continua igual, chamado com `startTime`/`endTime` vindos de linhas `STARTTIME <epoch>` / `ENDTIME <epoch>` que o `build.sh` imprime antes e depois do hyperfine.
 
 - Result markers printed by `build.sh`, consumed by `Results.parse_test`: `SSGBERK_RESULT_BEGIN`, `SSGBERK_RESULT_END`, `SSGBERK_VERIFY_FAIL`, `STARTTIME <epoch>`, `ENDTIME <epoch>`.

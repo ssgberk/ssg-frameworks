@@ -68,6 +68,23 @@ number_of_files=1 content_size=0.500 min_runs=1 verbose_build=False KEEP_CONTENT
 head -1 posts/[0-9]*.md | grep -qx "+++" || fail "3plus header"
 cmp -s posts/2025-12-31-1.md /sf/tests/build_sh/golden/3plus/2025-12-31-1.md || fail "3plus post 1 must match golden"
 
+# test_input_marker: N=3, 0.500 KB (512 bytes each), type none => 3 files, 1536 bytes
+setup none "posts/*.html"
+out=$(number_of_files=3 content_size=0.500 min_runs=1 verbose_build=False bash build.sh)
+echo "$out" | grep -qx "SSGBERK_INPUT files=3 bytes=1536" || fail "input marker: $(echo "$out" | grep SSGBERK_INPUT)"
+
+# test_output_marker: fake generator writes 2 files of 10 bytes
+setup none "*"
+cat > gen.sh <<"EOF"
+#!/bin/bash
+mkdir -p out; printf 0123456789 > out/a.html; printf 0123456789 > out/b.html
+EOF
+out=$(number_of_files=2 content_size=0.500 min_runs=1 verbose_build=False bash build.sh)
+echo "$out" | grep -qx "SSGBERK_OUTPUT files=2 bytes=20" || fail "output marker: $(echo "$out" | grep SSGBERK_OUTPUT)"
+
+# test_markers_before_starttime
+echo "$out" | awk "/^SSGBERK_INPUT /{i=NR} /^SSGBERK_OUTPUT /{o=NR} /^STARTTIME /{s=NR} END{exit !(i && o && s && i<o && o<s)}" || fail "markers must precede STARTTIME"
+
 # golden content tests (spec 005) under mawk, the awk of every generator image
 bash /sf/tests/build_sh/test_content.sh || fail "content golden tests"
 echo "ALL build.sh TESTS PASSED"

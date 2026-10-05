@@ -49,6 +49,15 @@ reset_content()
     find "${content_folder}" -mindepth 1 -maxdepth 1 -name "${dated_pattern}" -exec rm -rf {} +
 }
 
+# Portable (GNU and BSD) size marker: "<files> <bytes>" of the regular files given by find args.
+count_files()
+{
+    local n b
+    n=$(find "$@" -type f | wc -l | tr -d ' ')
+    b=$(find "$@" -type f -exec cat {} + 2>/dev/null | wc -c | tr -d ' ')
+    echo "${n} ${b:-0}"
+}
+
 clean_output()
 {
     [ -n "${output_folder}" ] && rm -rf "${output_folder}"
@@ -139,6 +148,8 @@ awk -v n="${number_of_files}" -v reps="${repetitions}" -v width="${width}" \
     -v dateslug="${metadata_dateslug}" -v layout="${metadata_layout}" \
     -v ext="${content_extension}" "${content_awk}" || { echo "[ ERROR ] content generation failed"; exit 1; }
 [ "${verbose_build}" = true ] && ls -sh "${content_folder}"
+read -r in_files in_bytes <<< "$(count_files "${content_folder}" -maxdepth 1 -name "${dated_pattern}")"
+echo "SSGBERK_INPUT files=${in_files} bytes=${in_bytes}"
 
 if [ "${SSGBERK_GENERATE_ONLY:-}" = 1 ]; then
     echo "SSGBERK_GENERATE_ONLY: content generated, skipping build"
@@ -174,6 +185,14 @@ if [ -n "${output_folder}" ] && [ -n "${output_glob}" ]; then
 else
     echo "[ WARN ] output_folder/output_glob not set; skipping output verification"
 fi
+
+# SF spec 006's conformance check goes before this marker.
+if [ -n "${output_folder}" ]; then
+    read -r out_files out_bytes <<< "$(count_files "${output_folder}")"
+else
+    out_files=0; out_bytes=0
+fi
+echo "SSGBERK_OUTPUT files=${out_files} bytes=${out_bytes}"
 
 show_output=""
 [ "${verbose_build}" = true ] && show_output="--show-output"
