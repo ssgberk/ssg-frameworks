@@ -1,0 +1,7 @@
+# SvelteKit
+
+SvelteKit 3.0.0 (`@sveltejs/adapter-static` 4.0.0, `mdsvex` 0.12.8, Svelte 5.57.1, Vite 8.3.2) on Ubuntu 24.04 with Node 24.21.0, benchmarked by SSGBerk. `build.sh` generates the posts into `src/posts` (Markdown with `title`/`date` front matter, `3minus`), then times `npx vite build --logLevel silent`; each post must render to `build/posts/*/index.html` (the verification step checks the count equals the requested number of files). The site is a bare `app.html`, one post route (`routes/posts/[slug]`, loading a post through `import.meta.glob('/src/posts/*.md')`, title + content only) and one index route listing every post; `prerender = true` and `trailingSlash = 'always'` are set in `+layout.js`. `reference/assets/ssgberk.{css,png}` are shipped in `static/assets`. Dependencies are installed with `npm ci` from the committed `package-lock.json`; `cache_folders` clears `.svelte-kit` and `node_modules/.vite` between timed runs; telemetry is disabled with `DO_NOT_TRACK=1`. Run it with `./ssgberk --test sveltekit -nf 10` from the toolset repository.
+
+Deviations: the task brief names SvelteKit 2, but 3.0.0 is the latest stable release (spec R-4). SvelteKit 3 rejects `svelte.config.js`, so the mdsvex preprocessor, extensions and adapter are configured in `vite.config.js` via the `sveltekit()` plugin.
+
+Timed command uses the realistic invocation (`npx vite …`), which includes ~0.1-0.4 s wrapper startup. The build includes Vite's client and SSR bundling plus the prerender pass; this is inherent to the generator and allowed.

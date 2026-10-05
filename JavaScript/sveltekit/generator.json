@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "sveltekit",
+  "name": "SvelteKit",
+  "description": "SvelteKit is the application framework for Svelte; with adapter-static and mdsvex it prerenders Markdown posts to static HTML.",
+  "homepage": "https://svelte.dev/docs/kit",
+  "repository": "https://github.com/sveltejs/kit",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Svelte"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2020,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "versionFrom": {
+    "source": "npm",
+    "name": "@sveltejs/kit"
+  },
+  "notes": "Application framework used as an SSG through adapter-static and mdsvex (Markdown compiled to Svelte components). firstRelease from the first public SvelteKit beta (2020). Minimal site: bare layout, one post route and one index route."
+}
