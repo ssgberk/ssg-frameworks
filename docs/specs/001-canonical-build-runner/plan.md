@@ -6,6 +6,17 @@ Spec: `spec.md`. Tasks: `tasks.md`. This plan owns the marker contract, the `ben
 
 Every generator directory carries a byte-identical copy of `Go/hugo/build.sh`. The script generates the posts, runs an untimed verification build, then times the build with hyperfine and prints the markers below for the toolset to parse.
 
+## Env inputs
+
+Read by the canonical `Go/hugo/build.sh` (source of truth: its header and code):
+
+- `number_of_files` — posts to generate; default `100`. The verification build must produce exactly this many output files.
+- `content_size` — per-post size in KB; default `0.500`; surrounding `[` `]` are stripped. Accepted values map to content block repetitions: `0.500`→1, `5`→10, `50`→100, `500`→1000, `1000`→2000, `5000`→10000, `10000`→20000, `100000`→200000; any other value fails with `[ ERROR ] unknown content_size`.
+- `min_runs` — hyperfine run count (passed as both `--min-runs` and `--max-runs`); default `3`.
+- `verbose_build` — default `false`; `True`, `true` or `1` enable it (anything else is false). When enabled it lists the generated content, uses `build_verbose` (falling back to `build_command`) and passes `--show-output` to hyperfine.
+- `KEEP_CONTENT` — when non-empty, generated posts are not removed after the verification build or after timing (only dated posts are ever removed; section index files survive).
+- `SSGBERK_GENERATE_ONLY` — when exactly `1`, the script generates the content, prints `SSGBERK_GENERATE_ONLY: content generated, skipping build` and exits 0 before requiring or running hyperfine.
+
 ## Contracts
 
 ### Marker contract between `build.sh` and the toolset (design 4.3)

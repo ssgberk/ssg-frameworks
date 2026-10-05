@@ -6,7 +6,7 @@
 
 **Architecture:** Every generator directory carries a byte-identical copy of `Go/hugo/build.sh`; `benchmark_config.json` describes the content, build command, output folder/glob and cache folders. Contract and Dockerfile skeleton are in `docs/specs/001-canonical-build-runner/plan.md`.
 
-**Tech Stack:** bash, jq, moreutils (`sponge`), hyperfine 1.20.0, Ubuntu 24.04, hugo 0.167.0, GitHub Actions.
+**Tech Stack:** bash, jq, moreutils (`sponge`; superseded: `sponge` is no longer used by build.sh since spec 005 Task 2, moreutils may remain installed in Dockerfiles), hyperfine 1.20.0, Ubuntu 24.04, hugo 0.167.0, GitHub Actions.
 
 **Spec:** `docs/specs/001-canonical-build-runner/spec.md` and `docs/specs/001-canonical-build-runner/plan.md` (same directory, repo `ssgberk/ssg-frameworks`). Read both before starting any task.
 
