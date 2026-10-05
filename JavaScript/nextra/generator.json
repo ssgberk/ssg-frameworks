@@ -1,0 +1,29 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "nextra",
+  "name": "Nextra",
+  "description": "Nextra is a Next.js based static site generator that compiles Markdown and MDX content into App Router pages, best known for docs and blog themes.",
+  "homepage": "https://nextra.site/",
+  "repository": "https://github.com/shuding/nextra",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "React (JSX)"
+  ],
+  "contentFormats": [
+    "markdown",
+    "mdx"
+  ],
+  "category": "framework",
+  "firstRelease": 2020,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "versionFrom": {
+    "source": "npm",
+    "name": "nextra"
+  },
+  "notes": "Nextra 4.6.1 on Next.js 16.3.8, App Router, output: 'export' and trailingSlash. No Nextra theme: a bare layout and MDX wrapper render only the post; the index is a plain page listing the post slugs. Search (pagefind) is off: Nextra 4 only indexes through a separate postbuild script, which is not run. firstRelease is approximate (first nextra npm release in 2020)."
+}

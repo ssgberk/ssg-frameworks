@@ -1,0 +1,32 @@
+{
+  "framework": "nextra",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "nextra",
+      "language": "JavaScript",
+      "display_name": "nextra",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "content/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx next build",
+      "build_verbose": "npx next build",
+      "output_folder": "out",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [".next", "node_modules/.cache"]
+    }
+  ]
+}
