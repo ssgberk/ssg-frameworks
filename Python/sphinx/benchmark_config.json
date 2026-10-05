@@ -1,0 +1,34 @@
+{
+  "framework": "sphinx",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "Sphinx",
+        "language": "Python",
+        "display_name": "Sphinx",
+        "notes": "",
+        "versus": "python"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "sphinx-build -q -b html . _build/html",
+      "build_verbose": "sphinx-build -v -b html . _build/html",
+      "output_folder": "_build/html",
+      "output_glob": "posts/*.html",
+      "cache_folders": ["_build/doctrees"]
+    }
+  ]
+}

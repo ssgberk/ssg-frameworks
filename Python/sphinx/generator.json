@@ -1,0 +1,25 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "sphinx",
+  "name": "Sphinx",
+  "description": "Sphinx is a Python documentation generator that builds HTML sites from reStructuredText or Markdown (through MyST-Parser) sources.",
+  "homepage": "https://www.sphinx-doc.org/",
+  "repository": "https://github.com/sphinx-doc/sphinx",
+  "license": "BSD-2-Clause",
+  "language": "Python",
+  "runtime": "Python 3.12 (Ubuntu 24.04 apt, venv)",
+  "templateEngines": [
+    "Jinja2"
+  ],
+  "contentFormats": [
+    "markdown",
+    "restructuredtext"
+  ],
+  "category": "docs",
+  "firstRelease": 2008,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Sphinx 9.1.0 with MyST-Parser 5.1.0 (Markdown) and a minimal custom theme (single page.html) instead of alabaster; search, genindex and source copies disabled. firstRelease from Sphinx 0.1 (2008-03-21)."
+}
