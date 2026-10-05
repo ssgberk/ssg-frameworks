@@ -1,0 +1,36 @@
+{
+  "framework": "lektor",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "Lektor",
+        "language": "Python",
+        "display_name": "Lektor",
+        "notes": "",
+        "versus": "python"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "none",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "bash -c 'rm -rf content/posts/*/; set -- posts/*.md; [ -e \"$1\" ] || exit 1; d=(\"${@##*/}\"); d=(\"${d[@]%.md}\"); d=(\"${d[@]/#/content/posts/}\"); mkdir \"${d[@]}\"; for f; do n=${f##*/}; n=${n%.md}; IFS= read -r -d \"\" body < \"$f\"; printf \"_model: post\\n---\\ntitle: %s\\n---\\nbody:\\n\\n%s\\n\" \"$n\" \"$body\" > content/posts/$n/contents.lr; done; lektor build -O _site --buildstate-path .lektor-cache'",
+      "build_verbose": "bash -c 'rm -rf content/posts/*/; set -- posts/*.md; [ -e \"$1\" ] || exit 1; d=(\"${@##*/}\"); d=(\"${d[@]%.md}\"); d=(\"${d[@]/#/content/posts/}\"); mkdir \"${d[@]}\"; for f; do n=${f##*/}; n=${n%.md}; IFS= read -r -d \"\" body < \"$f\"; printf \"_model: post\\n---\\ntitle: %s\\n---\\nbody:\\n\\n%s\\n\" \"$n\" \"$body\" > content/posts/$n/contents.lr; done; lektor build -O _site --buildstate-path .lektor-cache -v'",
+      "output_folder": "_site",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [
+        ".lektor-cache"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "lektor",
+  "name": "Lektor",
+  "description": "Lektor is a Python static content management system that builds sites from per-page contents.lr files, data models and Jinja2 templates.",
+  "homepage": "https://www.getlektor.com",
+  "repository": "https://github.com/lektor/lektor",
+  "license": "BSD-3-Clause",
+  "language": "Python",
+  "runtime": "Python 3.12 (Ubuntu 24.04 apt, venv)",
+  "templateEngines": [
+    "Jinja2"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "general",
+  "firstRelease": 2015,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Lektor reads one contents.lr per page, so the timed build_command first converts each generated posts/<name>.md into content/posts/<name>/contents.lr with bash builtins only (one mkdir, one read and one printf per post, no per-post forks). Minimal custom models and templates; build state is written to .lektor-cache."
+}
