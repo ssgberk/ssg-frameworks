@@ -16,7 +16,6 @@ html_permalinks = False
 html_title = project
 
 
-
 def add_title(app, docname, source):
     # MyST keeps the front-matter title as metadata only; prepend it as the H1 so
     # every post has one document title (otherwise each "## Chapter" is a top-level section).
