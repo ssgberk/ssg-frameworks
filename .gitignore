@@ -1,5 +1,6 @@
 node_modules/
 public/
+!/*/*/src/public/
 _site/
 .DS_Store
 __pycache__/
