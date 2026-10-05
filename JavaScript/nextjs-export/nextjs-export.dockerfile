@@ -23,6 +23,8 @@ RUN ARCH="$(dpkg --print-architecture)" \
 WORKDIR /opt/nextjs-export/src
 
 ENV NPM_CONFIG_UPDATE_NOTIFIER=false
+# Same V8 heap cap for every Node generator, inside the 8 GB container limit (BT spec 008)
+ENV NODE_OPTIONS=--max-old-space-size=6144
 ENV NEXT_TELEMETRY_DISABLED=1
 COPY package.json package-lock.json /opt/nextjs-export/src/
 RUN npm ci

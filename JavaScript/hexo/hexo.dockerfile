@@ -22,6 +22,8 @@ RUN ARCH="$(dpkg --print-architecture)" \
 
 WORKDIR /opt/hexo/src
 ENV NPM_CONFIG_UPDATE_NOTIFIER=false
+# Same V8 heap cap for every Node generator, inside the 8 GB container limit (BT spec 008)
+ENV NODE_OPTIONS=--max-old-space-size=6144
 
 COPY package.json package-lock.json /opt/hexo/src/
 RUN npm ci

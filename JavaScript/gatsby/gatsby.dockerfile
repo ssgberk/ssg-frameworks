@@ -23,6 +23,8 @@ RUN ARCH="$(dpkg --print-architecture)" \
 WORKDIR /opt/gatsby/src
 
 ENV NPM_CONFIG_UPDATE_NOTIFIER=false
+# Same V8 heap cap for every Node generator, inside the 8 GB container limit (BT spec 008)
+ENV NODE_OPTIONS=--max-old-space-size=6144
 ENV GATSBY_TELEMETRY_DISABLED=1
 COPY package.json package-lock.json /opt/gatsby/src/
 RUN npm ci

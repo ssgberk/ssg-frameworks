@@ -26,6 +26,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: tools/check-build-sh.sh
       - run: tools/check-reference-assets.sh
+      - run: tools/check-node-heap.sh
       - run: tests/reference/test_check_reference_assets.sh
       - run: python3 -m unittest discover -s tests/reference -p "test_*.py"
       - run: tests/build_sh/test_build_sh.sh
