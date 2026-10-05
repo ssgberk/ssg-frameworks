@@ -24,8 +24,8 @@
     {
       "metadata_dateslug": "date",
       "metadata_layout": "",
-      "build_command": "sh -c '{ printf \"# Summary\\n\\n[Index](README.md)\\n\\n\"; for f in src/posts/*.md; do b=$(basename \"$f\" .md); printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done; } > src/SUMMARY.md && { printf \"# SSGBerk\\n\\n\"; for f in src/posts/*.md; do b=$(basename \"$f\" .md); printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done; } > src/README.md && mdbook build'",
-      "build_verbose": "sh -c '{ printf \"# Summary\\n\\n[Index](README.md)\\n\\n\"; for f in src/posts/*.md; do b=$(basename \"$f\" .md); printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done; } > src/SUMMARY.md && { printf \"# SSGBerk\\n\\n\"; for f in src/posts/*.md; do b=$(basename \"$f\" .md); printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done; } > src/README.md && mdbook build'",
+      "build_command": "sh -c 'for f in src/posts/*.md; do [ -e \"$f\" ] || continue; b=${f##*/}; b=${b%.md}; printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done > src/.list && { printf \"# Summary\\n\\n[Index](README.md)\\n\\n\"; cat src/.list; } > src/SUMMARY.md && { printf \"# SSGBerk\\n\\n\"; cat src/.list; } > src/README.md && rm src/.list && mdbook build'",
+      "build_verbose": "sh -c 'for f in src/posts/*.md; do [ -e \"$f\" ] || continue; b=${f##*/}; b=${b%.md}; printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done > src/.list && { printf \"# Summary\\n\\n[Index](README.md)\\n\\n\"; cat src/.list; } > src/SUMMARY.md && { printf \"# SSGBerk\\n\\n\"; cat src/.list; } > src/README.md && rm src/.list && mdbook build'",
       "output_folder": "book",
       "output_glob": "posts/*.html",
       "cache_folders": []
