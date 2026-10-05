@@ -60,11 +60,15 @@ echo "$out" | grep -q "unknown content_size" || fail "unknown cs must fail loudl
 # legacy [500] accepted and sizes are right
 setup none "posts/*.html"
 number_of_files=1 content_size="[500]" min_runs=1 verbose_build=False KEEP_CONTENT=1 bash build.sh >/dev/null
-size=$(stat -c %s posts/[0-9]*.md); [ "$size" -gt 500000 ] || fail "500 => ~550KB, got $size"
+size=$(stat -c %s posts/[0-9]*.md); [ "$size" -eq 512000 ] || fail "500 => 1000 blocks of 512 bytes, got $size"
 
 # 3plus header
 setup 3plus "posts/*.html"
 number_of_files=1 content_size=0.500 min_runs=1 verbose_build=False KEEP_CONTENT=1 bash build.sh >/dev/null
 head -1 posts/[0-9]*.md | grep -qx "+++" || fail "3plus header"
+cmp -s posts/2025-12-31-1.md /sf/tests/build_sh/golden/3plus/2025-12-31-1.md || fail "3plus post 1 must match golden"
+
+# golden content tests (spec 005) under mawk, the awk of every generator image
+bash /sf/tests/build_sh/test_content.sh || fail "content golden tests"
 echo "ALL build.sh TESTS PASSED"
 '

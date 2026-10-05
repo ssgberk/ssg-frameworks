@@ -18,7 +18,7 @@ In this file **BT** = `/Users/jobs/Dev/ssgberk/.worktrees/benchmark-tool-moderni
 - Every commit message ends with the trailer `Co-Authored-By: Claude Opus 5.5 (1M context) <noreply@anthropic.com>`.
 - Never commit to `master`. Never push, open PRs, or close dependabot branches unless the human explicitly asks.
 - Every generator's `build.sh` is byte-identical to `SF/Go/hugo/build.sh` (`tools/check-build-sh.sh`).
-- `-cs` values and meaning: `0.500`=1 block, `500`=1000, `1000`=2000, `5000`=10000, `10000`=20000, `100000`=200000 blocks of exactly 512 bytes. Any other value exits non-zero.
+- `-cs` values and meaning: `0.500`=1 block, `5`=10, `50`=100, `500`=1000, `1000`=2000, `5000`=10000, `10000`=20000, `100000`=200000 blocks of exactly 512 bytes. Any other value exits non-zero.
 - Content is deterministic: no `$RANDOM`, no `rand()`, no `date` call in content generation. The only inputs are `number_of_files`, `content_size` and `benchmark_config.json`.
 - Generated post file names match `[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]-*`; section index files (e.g. `_index.md`, `posts.json`) survive resets.
 - No themes, plugins, minification or speed tweaks; the reference assets are copied verbatim, never processed.

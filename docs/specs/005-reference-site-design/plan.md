@@ -228,6 +228,8 @@ Why each syntax choice, for portability across renderers:
 | `-cs` | Blocks B | Body bytes per post |
 |---|---|---|
 | `0.500` | 1 | 512 |
+| `5` | 10 | 5 120 |
+| `50` | 100 | 51 200 |
 | `500` | 1000 | 512 000 |
 | `1000` | 2000 | 1 024 000 |
 | `5000` | 10000 | 5 120 000 |
