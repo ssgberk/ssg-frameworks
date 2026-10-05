@@ -41,15 +41,15 @@ In this file **BT** = `/Users/jobs/Dev/ssgberk/.worktrees/benchmark-tool-moderni
 - Produces: `reference/assets/*` (copied by every generator), `reference/html/*` (golden input for `docs/specs/006-layout-conformance` checker tests).
 - `tools/make_reference_png.py <out-path>` writes a 64×64 RGB PNG and exits 0.
 
-- [ ] **Step 1: Write the failing test** — `tests/reference/test_reference.py` (stdlib `unittest`):
+- [x] **Step 1: Write the failing test** — `tests/reference/test_reference.py` (stdlib `unittest`):
   - `test_css_is_literal`: `reference/assets/ssgberk.css` equals the fenced block under "Stylesheet" in `docs/specs/005-reference-site-design/plan.md`. The test extracts the first ```` ```css ```` block after the heading `## Stylesheet` and compares the bytes, with a trailing newline.
   - `test_css_rules`: no `@import`, no `url(`, no `-webkit-`/`-moz-`, and it starts with a comment followed by `:root {`.
   - `test_png_header`: the PNG starts with `\x89PNG\r\n\x1a\n`, the IHDR is 64×64, bit depth 8, colour type 2, and the chunk types are exactly `IHDR`, `IDAT`, `IEND`.
   - `test_reference_html_literal`: each `reference/html/*.html` equals the corresponding fenced `html` block in `plan.md`. For `404.html`, the base layout and the `main` fragment are assembled as described there. The test asserts the file exists and contains `<section class="not-found">` and `<title>Page not found | SSGBerk Reference</title>`.
-- [ ] **Step 2: Run** `python3 -m unittest tests/reference/test_reference.py -v` → FAIL (files missing).
-- [ ] **Step 3: Implement** — write `ssgberk.css` from plan.md. Write `tools/make_reference_png.py`: rows of 64 pixels; rows 0–15 `#2f5bd3`, 16–31 `#f2f4f8`, 32–47 `#1d2330`, 48–63 `#d8dde7`; each scanline prefixed with filter byte 0; `zlib.compress(raw, 9)`; chunks written with `struct.pack('>I', len)` + type + data + CRC32. Run it once to produce `reference/assets/ssgberk.png`. Write the three reference HTML files. `reference/README.md` says what each file is and that copies must stay byte-identical.
-- [ ] **Step 4: Run** the test → PASS.
-- [ ] **Step 5: Commit** `feat(reference): add reference assets and reference HTML`.
+- [x] **Step 2: Run** `python3 -m unittest tests/reference/test_reference.py -v` → FAIL (files missing).
+- [x] **Step 3: Implement** — write `ssgberk.css` from plan.md. Write `tools/make_reference_png.py`: rows of 64 pixels; rows 0–15 `#2f5bd3`, 16–31 `#f2f4f8`, 32–47 `#1d2330`, 48–63 `#d8dde7`; each scanline prefixed with filter byte 0; `zlib.compress(raw, 9)`; chunks written with `struct.pack('>I', len)` + type + data + CRC32. Run it once to produce `reference/assets/ssgberk.png`. Write the three reference HTML files. `reference/README.md` says what each file is and that copies must stay byte-identical.
+- [x] **Step 4: Run** the test → PASS.
+- [x] **Step 5: Commit** `feat(reference): add reference assets and reference HTML`.
 
 ### Task 2: Rich deterministic content in the canonical `build.sh`
 
@@ -62,7 +62,7 @@ In this file **BT** = `/Users/jobs/Dev/ssgberk/.worktrees/benchmark-tool-moderni
 - Produces: N files `<YYYY-MM-DD>-<NNN>.<ext>` in `content[0].folder` per `plan.md` "Content model". The `today`, `paragraph`, `content` and `header_for` code in `build.sh` is removed. `KEEP_CONTENT` keeps working.
 - Env `SSGBERK_GENERATE_ONLY=1` (new): generate the content and exit 0 before any build. This lets tests and 006 fixtures produce content without a generator.
 
-- [ ] **Step 1: Write the failing test** — `tests/build_sh/test_content.sh` creates a temp dir with a `benchmark_config.json` per content type (`folder: posts`, `extension: md`, `metadata_dateslug: date`, `metadata_layout: ""`) and runs `SSGBERK_GENERATE_ONLY=1 KEEP_CONTENT=1 number_of_files=3 content_size=0.500 bash Go/hugo/build.sh` in it. Then:
+- [x] **Step 1: Write the failing test** — `tests/build_sh/test_content.sh` creates a temp dir with a `benchmark_config.json` per content type (`folder: posts`, `extension: md`, `metadata_dateslug: date`, `metadata_layout: ""`) and runs `SSGBERK_GENERATE_ONLY=1 KEEP_CONTENT=1 number_of_files=3 content_size=0.500 bash Go/hugo/build.sh` in it. Then:
   - `test_golden_post_1`: for each of `3minus`, `3plus` and `2dot`, `posts/2025-12-31-1.md` is byte-identical to `tests/build_sh/golden/<type>/2025-12-31-1.md`. The golden files hold exactly the plan.md literals: the front matter layout followed by the literal block 1.
   - `test_manifest_n3`: `sha256sum posts/*` for `3minus` equals `golden/manifest-n3.sha256`.
   - `test_block_is_512_bytes`: with `type: none`, `content_size=500`, `number_of_files=1`, the file is exactly 512000 bytes. With `0.500` it is 512 bytes.
@@ -72,8 +72,8 @@ In this file **BT** = `/Users/jobs/Dev/ssgberk/.worktrees/benchmark-tool-moderni
   - `test_content_size_unknown_fails`: `content_size=42` exits non-zero and prints `[ ERROR ] unknown content_size: 42`. This keeps the existing assertion in `tests/build_sh/test_build_sh.sh`.
   - `test_deterministic`: two runs give identical `sha256sum` manifests.
   - `test_reset_keeps_section_files`: an existing `posts/_index.md` survives generation.
-- [ ] **Step 2: Run** `bash tests/build_sh/test_content.sh` → FAIL (old generator). Also run it inside `ubuntu:24.04`, where `awk` is mawk (`docker run --rm -v "$PWD":/w -w /w ubuntu:24.04 bash -c 'apt-get -qq update && apt-get -qq install -y jq moreutils >/dev/null && bash tests/build_sh/test_content.sh'`). The tests may skip the hyperfine dependency because `SSGBERK_GENERATE_ONLY` exits first, so the `command -v hyperfine` check must move after the generate-only exit.
-- [ ] **Step 3: Implement** — in `build.sh`, embed the awk program as `content_awk=$(cat <<'AWK' … AWK)`. It is the prototype below, which was checked to emit the plan.md literals. Invoke it once:
+- [x] **Step 2: Run** `bash tests/build_sh/test_content.sh` → FAIL (old generator). Also run it inside `ubuntu:24.04`, where `awk` is mawk (`docker run --rm -v "$PWD":/w -w /w ubuntu:24.04 bash -c 'apt-get -qq update && apt-get -qq install -y jq moreutils >/dev/null && bash tests/build_sh/test_content.sh'`). The tests may skip the hyperfine dependency because `SSGBERK_GENERATE_ONLY` exits first, so the `command -v hyperfine` check must move after the generate-only exit.
+- [x] **Step 3: Implement** — in `build.sh`, embed the awk program as `content_awk=$(cat <<'AWK' … AWK)`. It is the prototype below, which was checked to emit the plan.md literals. Invoke it once:
 
   ```bash
   width=${#number_of_files}
@@ -129,10 +129,10 @@ In this file **BT** = `/Users/jobs/Dev/ssgberk/.worktrees/benchmark-tool-moderni
   ```
 
   For `none` the `if` chain writes no header, only the body. Write the golden files from the plan.md literals by hand, not from the implementation output, then compare.
-- [ ] **Step 4: Run** `bash tests/build_sh/test_content.sh` (host awk and mawk) and `bash tests/build_sh/test_build_sh.sh` → PASS.
-- [ ] **Step 5: Propagate** — `for f in */*/build.sh; do cp Go/hugo/build.sh "$f"; done`; `tools/check-build-sh.sh` exits 0.
-- [ ] **Step 6: Smoke every existing generator** with the 001 smoke procedure (`./ssgberk --test <name> -nf 10 -cs 0.500 -mr 1`, one at a time). Each must still report `SSGBERK_VERIFY_OK expected=10 got=10`. The templates are not ported yet, so only the count check applies. A generator that now fails on the new front matter (for example Pelican tags) gets the minimal config fix needed to build, recorded in its README. The full port is its 006 task.
-- [ ] **Step 7: Commit** `feat(build.sh): generate deterministic rich reference content (005)`.
+- [x] **Step 4: Run** `bash tests/build_sh/test_content.sh` (host awk and mawk) and `bash tests/build_sh/test_build_sh.sh` → PASS.
+- [x] **Step 5: Propagate** — `for f in */*/build.sh; do cp Go/hugo/build.sh "$f"; done`; `tools/check-build-sh.sh` exits 0.
+- [x] **Step 6: Smoke every existing generator** with the 001 smoke procedure (`./ssgberk --test <name> -nf 10 -cs 0.500 -mr 1`, one at a time). Each must still report `SSGBERK_VERIFY_OK expected=10 got=10`. The templates are not ported yet, so only the count check applies. A generator that now fails on the new front matter (for example Pelican tags) gets the minimal config fix needed to build, recorded in its README. The full port is its 006 task.
+- [x] **Step 7: Commit** `feat(build.sh): generate deterministic rich reference content (005)`.
 
 ### Task 3: Point the old "minimal site" rule at the reference site
 
@@ -143,11 +143,11 @@ In this file **BT** = `/Users/jobs/Dev/ssgberk/.worktrees/benchmark-tool-moderni
 **Interfaces:**
 - Produces: the replacement line, used verbatim in all three files: `No themes, plugins beyond the baseline set, minification or speed tweaks; every site builds the Core reference site of docs/specs/005-reference-site-design (supersedes the former minimal-site rule).`
 
-- [ ] **Step 1: Write the failing check** — `grep -c "base layout + post template + index listing posts" docs/specs/00[123]-*/tasks.md` prints non-zero counts (the check fails while the old line exists).
-- [ ] **Step 2: Run** it → non-zero.
-- [ ] **Step 3: Implement** — replace the line in the three `tasks.md` files with the replacement line. Append `See docs/specs/005-reference-site-design for the reference site that every generator builds.` to the 001 spec bullet.
-- [ ] **Step 4: Run** the grep → `0` for every file; `grep -l "005-reference-site-design" docs/specs/00[123]-*/tasks.md | wc -l` prints `3`.
-- [ ] **Step 5: Commit** `docs(specs): point minimal-site rule at 005 reference site`.
+- [x] **Step 1: Write the failing check** — `grep -c "base layout + post template + index listing posts" docs/specs/00[123]-*/tasks.md` prints non-zero counts (the check fails while the old line exists).
+- [x] **Step 2: Run** it → non-zero.
+- [x] **Step 3: Implement** — replace the line in the three `tasks.md` files with the replacement line. Append `See docs/specs/005-reference-site-design for the reference site that every generator builds.` to the 001 spec bullet.
+- [x] **Step 4: Run** the grep → `0` for every file; `grep -l "005-reference-site-design" docs/specs/00[123]-*/tasks.md | wc -l` prints `3`.
+- [x] **Step 5: Commit** `docs(specs): point minimal-site rule at 005 reference site`.
 
 ### Task 4: CI check for byte-identical asset copies
 
@@ -158,8 +158,8 @@ In this file **BT** = `/Users/jobs/Dev/ssgberk/.worktrees/benchmark-tool-moderni
 **Interfaces:**
 - `tools/check-reference-assets.sh` reads each `*/*/benchmark_config.json` `config[0].static_folder` (string, path relative to the generator dir where `assets/ssgberk.{css,png}` live). Schema amendment: 006 Task 8 adds `static_folder` to the 001 schema together with `profiles` and `allow_extra_html`. For every generator it `cmp`s `<Lang>/<name>/<static_folder>/assets/ssgberk.css` and `.png` against `reference/assets/`. It prints `differs: <path>` or `missing: <path>` and exits 1 on any problem. Generators without `static_folder` print `pending: <Lang>/<name>` and do not fail until 006 migration is complete; the flag `--strict` makes `pending` fail.
 
-- [ ] **Step 1: Write the failing test** — `tests/reference/test_check_reference_assets.sh` builds a temp tree with `reference/assets/*`, one generator with identical copies (expects exit 0), one with a modified CSS byte (expects `differs:` and exit 1), one with a missing PNG (expects `missing:`), and one without `static_folder` (expects `pending:` with exit 0, and exit 1 with `--strict`).
-- [ ] **Step 2: Run** → FAIL (script missing).
-- [ ] **Step 3: Implement** the script with `jq` and `cmp -s`, following `tools/check-build-sh.sh` style (`set -euo pipefail`, `cd "$(dirname "$0")/.."`). Add the CI step.
-- [ ] **Step 4: Run** the test → PASS; `tools/check-reference-assets.sh` on the repo exits 0 (all `pending`).
-- [ ] **Step 5: Commit** `ci: check reference asset copies are byte-identical`.
+- [x] **Step 1: Write the failing test** — `tests/reference/test_check_reference_assets.sh` builds a temp tree with `reference/assets/*`, one generator with identical copies (expects exit 0), one with a modified CSS byte (expects `differs:` and exit 1), one with a missing PNG (expects `missing:`), and one without `static_folder` (expects `pending:` with exit 0, and exit 1 with `--strict`).
+- [x] **Step 2: Run** → FAIL (script missing).
+- [x] **Step 3: Implement** the script with `jq` and `cmp -s`, following `tools/check-build-sh.sh` style (`set -euo pipefail`, `cd "$(dirname "$0")/.."`). Add the CI step.
+- [x] **Step 4: Run** the test → PASS; `tools/check-reference-assets.sh` on the repo exits 0 (all `pending`).
+- [x] **Step 5: Commit** `ci: check reference asset copies are byte-identical`.

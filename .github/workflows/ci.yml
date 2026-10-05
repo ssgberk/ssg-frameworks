@@ -9,7 +9,7 @@ on:
       content_size:
         description: Post content size passed to -cs
         type: choice
-        options: ["0.500", "500", "1000", "5000", "10000", "100000"]
+        options: ["0.500", "5", "50", "500", "1000", "5000", "10000", "100000"]
         default: "0.500"
       tests:
         description: Space-separated generator test names (empty = all generators)
@@ -27,6 +27,7 @@ jobs:
       - run: tools/check-build-sh.sh
       - run: tools/check-reference-assets.sh
       - run: tests/reference/test_check_reference_assets.sh
+      - run: python3 -m unittest discover -s tests/reference -p "test_*.py"
       - run: tests/build_sh/test_build_sh.sh
 
   changed:

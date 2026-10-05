@@ -1,7 +1,7 @@
 # 005 Reference Site Design
 
 - **Data:** 2026-10-04
-- **Status:** proposto — aguardando revisão
+- **Status:** aprovado (2026-10-04) — implementado em feat/reference-site
 - **Repos afetados:** `ssgberk/ssg-frameworks` (SF): every generator site under `<Lang>/<name>/src`, the content generator inside the canonical `build.sh`, the new `reference/` directory. `ssgberk/benchmark-tool` (BT) is not changed by this spec.
 - **Siblings:** `plan.md` (formats, literal reference output, template guidance, capability matrix), `tasks.md`. Related: `docs/specs/006-layout-conformance` (how conformance is checked) and `benchmark-tool/docs/specs/008-benchmark-methodology` (how the benchmark is run).
 
@@ -115,4 +115,4 @@ The reference site supersedes the "minimal site" rule of `001`/`002`/`003` (Glob
 | Date | Decision | Reason |
 |---|---|---|
 | 2026-10-04 | Markdown pre-processing stays ON in Core | it is the realistic default cost users pay, and the reference content is safe for it, since the body uses only `[A-Za-z0-9 .=+]` |
-| 2026-10-05 | added -cs 5 and 50 (site-size scenarios P/M/G/GG), decided by the maintainer | `5` = 10 blocks (5 120 body bytes), `50` = 100 blocks (51 200); every existing value unchanged |
+| 2026-10-04 | added -cs 5 and 50 (site-size scenarios P/M/G/GG), decided by the maintainer | `5` = 10 blocks (5 120 body bytes), `50` = 100 blocks (51 200); every existing value unchanged |
