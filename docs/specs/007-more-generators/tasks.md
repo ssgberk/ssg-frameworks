@@ -79,3 +79,33 @@ Pinned Quarto CLI release `.deb` (or tarball) for amd64 and arm64; it bundles pa
 ### Task 12: Lektor (`Python/lektor`, #102)
 
 `pip install Lektor` (pinned; full `pip freeze`). A project with `models/`, `templates/` and `content/`. Lektor needs one `contents.lr` per page, not markdown files: use content type `none` in `content/posts` and a `build_command` that converts each generated `posts/<name>.md` into `content/posts/<name>/contents.lr` (`_model: post`, `title: <name>`, `body:` = the markdown, with Lektor's `---` field separators) in one pass without per-post forks, then runs `lektor build --output-path _site`. That conversion is part of the timed build, as with mdBook. A `posts` model with `markdown` body, a post template rendering only its post, and an index listing all children (no pagination). Output `_site`. Caches: Lektor's build state (`--buildstate-path` if set, or `~/.cache/lektor`/project cache dir) in `cache_folders`.
+
+---
+
+## Wave 3
+
+Same Global Constraints, Standard steps, local smoke and shared-machine rules. Toolchains for Swift and Haskell are large: build the site binary in a builder stage and keep only the runtime pieces needed for the timed build, so the image stays small; never leave intermediate images behind.
+
+### Task 13: Publish (`Swift/publish`, #99)
+
+Swift toolchain (pinned swift.org release for Ubuntu 24.04, amd64 and arm64). A Swift package using JohnSundell/Publish (pinned tag) with a minimal custom `HTMLFactory` theme: post item page renders only its post, the section/index page lists all posts; no tag pages, RSS or sitemap steps. Posts in `Content/posts/*.md`, content type `3minus` (Publish reads YAML-ish front matter: check `date` format; Publish expects `date: yyyy-MM-dd HH:mm`, so pick `metadata_dateslug` and verify parsing). Compile the site generator executable in the image (untimed); the timed `build_command` runs the compiled binary (`.build/release/<Site>`), which is what a Publish site does on each build. Output `Output/`. Caches: none beyond output (confirm).
+
+### Task 14: dumi (`JavaScript/dumi`, #122)
+
+dumi 2 (pinned), docs in `docs/posts/*.md`, content type `3minus`. Disable the default theme chrome (navbar, sidebar, TOC, search, footer, demo previews) via theme config or a minimal local theme so a post page renders only its post; one index page lists all posts. `dumi build`, output `dist`. Caches: `.dumi/tmp*`, `node_modules/.cache`. `ENV DUMI_TELEMETRY_DISABLED=1` or equivalent if it exists.
+
+### Task 15: Observable Framework (`JavaScript/observable-framework`, #123)
+
+`@observablehq/framework` (pinned), `src/posts/*.md` (Framework markdown with YAML front matter: content type `3minus`), `observablehq.config.js` with `pager: false`, `sidebar: false`, `toc: false`, `search: false`, `footer: ""`, explicit `pages` or default. `src/index.md` lists all posts (static markdown list generated at build time is not allowed — use Framework's data loader or a JS cell that imports the file list; if that is not possible without timed pre-processing, use a single-loop pre-processing step as in mdBook). `observable build`, output `dist`. Caches: `src/.observablehq/cache`, `node_modules/.cache`. `ENV OBSERVABLE_TELEMETRY_DISABLE=true`.
+
+### Task 16: Analog (`JavaScript/analog`, #124)
+
+Analog (pinned `@analogjs/platform`, `@analogjs/content`, Angular per Analog's peer requirements) with markdown content routes: `src/content/posts/*.md` (`3minus`), `injectContentFiles` for the index, `injectContent` + `MarkdownComponent` for the post page, static prerender of every post route (`prerender.routes` from the content files, no SSR server). `ng build` or `vite build`, output `dist/analog/public`. Caches: `node_modules/.vite`, `.angular/cache`, `node_modules/.cache`. `NG_CLI_ANALYTICS=false`.
+
+### Task 17: Hakyll (`Haskell/hakyll`, #103)
+
+GHC + cabal (pinned, via ghcup or distro) in a builder stage; compile a `site` executable against pinned Hakyll (cabal freeze file). The runtime image carries the compiled `site` binary (and its shared libs) only. Rules: `posts/*.md` → pandoc → post template rendering only its post; `index.html` lists all posts (`loadAll "posts/*"`), no tags/archive/feeds. Content type `3minus`. Timed `build_command`: `./site build` (untimed compile, as a real Hakyll site compiles once). Output `_site`. Caches: `_cache` (Hakyll's store).
+
+### Task 18: VuePress 2 (`JavaScript/vuepress`, #94)
+
+`vuepress@2` (latest stable or the current release candidate if no 2.x stable exists — report which), with `@vuepress/bundler-vite` and a minimal local theme (no navbar/sidebar/search; layout renders only the page content); posts in `docs/posts/*.md` (`3minus`), `docs/README.md` lists all posts using the pages data (`usePages` / a client data file) without timed pre-processing if possible. `vuepress build docs`, output `docs/.vuepress/dist`. Caches: `docs/.vuepress/.cache`, `docs/.vuepress/.temp`, `node_modules/.vite`.
