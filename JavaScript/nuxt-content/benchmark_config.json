@@ -1,0 +1,31 @@
+{
+  "framework": "nuxt-content",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "nuxt-content",
+      "language": "JavaScript",
+      "display_name": "nuxt-content",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "content/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx nuxt generate",
+      "output_folder": ".output/public",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [".nuxt", ".output", ".data", "node_modules/.cache", "node_modules/.vite"]
+    }
+  ]
+}

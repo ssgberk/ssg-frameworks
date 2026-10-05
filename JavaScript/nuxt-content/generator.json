@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "nuxt-content",
+  "name": "Nuxt Content",
+  "description": "Nuxt is a Vue application framework; with the Nuxt Content module it renders a folder of Markdown files into a statically generated site.",
+  "homepage": "https://content.nuxt.com",
+  "repository": "https://github.com/nuxt/content",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Vue"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2020,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Nuxt 4.5.2 with @nuxt/content 3.16.1 (nuxt/content repository, first release 2020). Nuxt is an application framework; the content module makes it a Markdown site generator. Static output comes from nuxt generate."
+}
