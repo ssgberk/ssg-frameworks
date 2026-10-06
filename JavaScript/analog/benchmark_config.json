@@ -26,7 +26,7 @@
       "build_verbose": "npx vite build",
       "output_folder": "dist/analog/public",
       "output_glob": "posts/*/index.html",
-      "cache_folders": ["node_modules/.vite", ".angular/cache", "node_modules/.cache"]
+      "cache_folders": ["dist", "node_modules/.vite", ".angular/cache", "node_modules/.cache"]
     }
   ]
 }
