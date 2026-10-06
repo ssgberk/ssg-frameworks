@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "950110a5d858ce8f4dc57cd4118228741d57cf33",
+  "generatedFrom": "784b80d8cab4f00d48fc9b299140c8f1dea65c6a",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -86,6 +86,53 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/docfx/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/docfx/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/docfx/generator.json"
+      }
+    },
+    {
+      "id": "docusaurus",
+      "path": "JavaScript/docusaurus",
+      "version": "3.10.2",
+      "name": "Docusaurus",
+      "description": "Docusaurus is a React-based static site generator from Meta for documentation sites and blogs, with MDX support.",
+      "homepage": "https://docusaurus.io",
+      "repository": "https://github.com/facebook/docusaurus",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "React"
+      ],
+      "contentFormats": [
+        "markdown",
+        "mdx"
+      ],
+      "category": "framework",
+      "firstRelease": 2017,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "@docusaurus/core"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "docusaurus",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "blog",
+        "buildCommand": "npx docusaurus build",
+        "outputFolder": "build",
+        "outputGlob": "posts/????/??/??/*/index.html",
+        "cacheFolders": [
+          ".docusaurus",
+          "node_modules/.cache"
+        ]
+      },
+      "notes": "Version 3.10.2. Blog-only setup: docs plugin off, blog at /posts with a bare Layout override (no navbar/footer), prev/next overridden to null, tags cleared via processBlogPosts (no tag pages), built-in list page emptied, and a small local plugin feeding the index page.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/docusaurus/docusaurus.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/docusaurus/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/docusaurus/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/docusaurus/generator.json"
       }
     },
     {
@@ -1261,14 +1308,6 @@
       "repository": "https://github.com/docmd-io/docmd",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/125"
-    },
-    {
-      "id": "docusaurus",
-      "name": "Docusaurus",
-      "language": "JavaScript",
-      "repository": "https://github.com/facebook/docusaurus",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/92"
     },
     {
       "id": "dumi",

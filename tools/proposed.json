@@ -56,14 +56,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/125"
   },
   {
-    "id": "docusaurus",
-    "name": "Docusaurus",
-    "language": "JavaScript",
-    "repository": "https://github.com/facebook/docusaurus",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/92"
-  },
-  {
     "id": "dumi",
     "name": "dumi",
     "language": "JavaScript",
