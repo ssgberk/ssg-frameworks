@@ -8,7 +8,9 @@
   "license": "ISC",
   "language": "JavaScript",
   "runtime": "Node.js 24.21.0",
-  "templateEngines": ["htl"],
+  "templateEngines": [
+    "htl"
+  ],
   "contentFormats": [
     "markdown"
   ],
@@ -18,5 +20,9 @@
   "benchmark": {
     "status": "active"
   },
-  "notes": "Pinned @observablehq/framework 1.13.4 (latest stable on 2026-10-05). The site disables the sidebar, table of contents, pager, search, header and footer; the index lists posts through a data loader (posts.json.js) read with FileAttachment."
+  "notes": "Pinned @observablehq/framework 1.13.4 (latest stable on 2026-10-05). The site disables the sidebar, table of contents, pager, search, header and footer; the index lists posts through a data loader (posts.json.js) read with FileAttachment.",
+  "versionFrom": {
+    "source": "npm",
+    "name": "@observablehq/framework"
+  }
 }
