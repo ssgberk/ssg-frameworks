@@ -153,14 +153,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/131"
   },
   {
-    "id": "publish",
-    "name": "Publish",
-    "language": "Swift",
-    "repository": "https://github.com/JohnSundell/Publish",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/99"
-  },
-  {
     "id": "quarkdown",
     "name": "Quarkdown",
     "language": "Kotlin",
