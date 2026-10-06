@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "9589c112cc7a4a585d36dbcec74edc12f43327d5",
+  "generatedFrom": "d426aaf30f01ddc62d4c265e896c3191f09227ec",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -822,6 +822,48 @@
       }
     },
     {
+      "id": "quarto",
+      "path": "Other/quarto",
+      "version": "1.10.18",
+      "name": "Quarto",
+      "description": "Quarto is a scientific and technical publishing system built on Pandoc that renders Markdown and notebooks into websites, books and documents.",
+      "homepage": "https://quarto.org/",
+      "repository": "https://github.com/quarto-dev/quarto-cli",
+      "license": "MIT",
+      "language": "TypeScript",
+      "runtime": "Deno binary (Quarto 1.10.18 .deb, bundles Pandoc)",
+      "templateEngines": [
+        "Pandoc templates"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "docs",
+      "firstRelease": 2021,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "quarto",
+        "versus": "typescript",
+        "contentType": "3minus",
+        "contentFolder": "posts",
+        "buildCommand": "quarto render --quiet",
+        "outputFolder": "_site",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": [
+          ".quarto",
+          "_freeze"
+        ]
+      },
+      "notes": "Benchmarked on plain markdown (no Jupyter or knitr engine). The CLI is TypeScript on Deno and drives the bundled Pandoc. License is MIT (COPYING.md; GitHub reports NOASSERTION because of the file name). firstRelease is the oldest GitHub release, v0.1.13 (2021-01-19).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Other/quarto/quarto.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Other/quarto/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Other/quarto/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Other/quarto/generator.json"
+      }
+    },
+    {
       "id": "sphinx",
       "path": "Python/sphinx",
       "version": "9.1.0",
@@ -1248,14 +1290,6 @@
       "repository": "https://github.com/iamgio/quarkdown",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/117"
-    },
-    {
-      "id": "quarto",
-      "name": "Quarto",
-      "language": "TypeScript",
-      "repository": "https://github.com/quarto-dev/quarto-cli",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/100"
     },
     {
       "id": "quartz",

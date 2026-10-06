@@ -209,14 +209,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/117"
   },
   {
-    "id": "quarto",
-    "name": "Quarto",
-    "language": "TypeScript",
-    "repository": "https://github.com/quarto-dev/quarto-cli",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/100"
-  },
-  {
     "id": "quartz",
     "name": "Quartz",
     "language": "TypeScript",
