@@ -1,0 +1,31 @@
+{
+  "framework": "dumi",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "dumi",
+      "language": "JavaScript",
+      "display_name": "dumi",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "docs/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx dumi build",
+      "output_folder": "dist",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [".dumi/tmp", ".dumi/tmp-production", "node_modules/.cache", "server"]
+    }
+  ]
+}

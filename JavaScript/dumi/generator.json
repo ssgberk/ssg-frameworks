@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "dumi",
+  "name": "dumi",
+  "description": "dumi is a React-based static site generator for component libraries and documentation, built on Umi, that turns Markdown into static HTML pages.",
+  "homepage": "https://d.umijs.org",
+  "repository": "https://github.com/umijs/dumi",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "React"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2019,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "firstRelease from npm dumi creation (2019-12-27). This setup pins dumi 2.4.50 and overrides the default theme layout (.dumi/theme/layouts/DocLayout) with a bare one: no navbar, sidebar, TOC, search or footer; it renders only the post, and the index page lists all posts."
+}
