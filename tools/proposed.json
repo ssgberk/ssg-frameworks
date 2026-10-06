@@ -257,14 +257,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
   },
   {
-    "id": "starlight",
-    "name": "Starlight",
-    "language": "JavaScript",
-    "repository": "https://github.com/withastro/starlight",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/98"
-  },
-  {
     "id": "statiq",
     "name": "Statiq",
     "language": "C#",
