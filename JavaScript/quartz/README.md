@@ -12,3 +12,8 @@ Setup:
 - Reference assets live in `content/assets/` and are copied to `public/assets/` by Quartz.
 
 The timed command is the realistic invocation (`npx quartz build`), including the esbuild transpile step Quartz runs on every build. Run it with `./ssgberk --test quartz -nf 10` from the toolset repository.
+
+## Notes
+
+- Version: Quartz v5.0.0 is the default branch and newest tag, but it is not published as a GitHub release (the last release object is v4.0.8).
+- `src/quartz/cli/plugin-git-handlers.js` is vendored unchanged from upstream v5.0.0. A security scan flags it (shell command and path built from plugin names); it runs only during the image build, with inputs from the pinned `quartz.lock.json`, and is imported by the CLI, so it stays as upstream.
