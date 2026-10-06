@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "d42399295f5ff511ea3fc6f6ce22ad32b7c71375",
+  "generatedFrom": "acbcb054cfe95c2692ff44ffc732b95a76047813",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -1351,6 +1351,53 @@
       }
     },
     {
+      "id": "vuepress",
+      "path": "JavaScript/vuepress",
+      "version": "2.0.0-rc.31",
+      "name": "VuePress",
+      "description": "VuePress is a Vue powered static site generator that turns Markdown into static HTML pages, with a Vite or webpack bundler.",
+      "homepage": "https://vuepress.vuejs.org",
+      "repository": "https://github.com/vuepress/core",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "Vue"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "framework",
+      "firstRelease": 2018,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "vuepress"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "vuepress",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "docs/posts",
+        "buildCommand": "npx vuepress build docs",
+        "outputFolder": "docs/.vuepress/dist",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": [
+          "docs/.vuepress/.cache",
+          "docs/.vuepress/.temp",
+          "node_modules/.vite"
+        ]
+      },
+      "notes": "Pinned to VuePress 2.0.0-rc.31 (no 2.x stable release exists; npm latest is 1.9.10, the v2 line ships as release candidates). Uses @vuepress/bundler-vite and a minimal local theme (one layout rendering only the page content, with a post list on the index built from a temp data file written by the theme's onPrepared hook); no default theme, navbar, sidebar or search. firstRelease from npm vuepress creation (2018-04-12).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vuepress/vuepress.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vuepress/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vuepress/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vuepress/generator.json"
+      }
+    },
+    {
       "id": "zensical",
       "path": "Python/zensical",
       "version": "0.0.68",
@@ -1657,14 +1704,6 @@
       "repository": "https://github.com/antfu-collective/vite-ssg",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/127"
-    },
-    {
-      "id": "vuepress",
-      "name": "VuePress",
-      "language": "JavaScript",
-      "repository": "https://github.com/vuepress/core",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/94"
     },
     {
       "id": "zine",

@@ -226,14 +226,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/127"
   },
   {
-    "id": "vuepress",
-    "name": "VuePress",
-    "language": "JavaScript",
-    "repository": "https://github.com/vuepress/core",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/94"
-  },
-  {
     "id": "zine",
     "name": "Zine",
     "language": "Zig",
