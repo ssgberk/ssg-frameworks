@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "38677e403ebdcb63add280202ae4c1ad90966037",
+  "generatedFrom": "950110a5d858ce8f4dc57cd4118228741d57cf33",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -905,6 +905,48 @@
       }
     },
     {
+      "id": "quartz",
+      "path": "JavaScript/quartz",
+      "version": "5.0.0",
+      "name": "Quartz",
+      "description": "Quartz is a static site generator that turns Markdown notes into a fast, linked digital garden website.",
+      "homepage": "https://quartz.jzhao.xyz",
+      "repository": "https://github.com/jackyzha0/quartz",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "Preact"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "docs",
+      "firstRelease": 2021,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "quartz",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "content/posts",
+        "buildCommand": "npx quartz build",
+        "outputFolder": "public",
+        "outputGlob": "posts/[0-9]*.html",
+        "cacheFolders": [
+          ".quartz-cache",
+          "quartz/.quartz-cache"
+        ]
+      },
+      "notes": "Distributed as a repository template, so the v5.0.0 sources are vendored into src/ and their plugins are installed from the pinned commits in quartz.lock.json at image build time. GitHub's latest-release marker still points at v4.0.8 (2023); v5.0.0 (2026-03-14) is the newest tag and the default branch. firstRelease is a best-effort year for Quartz 3 (Hugo-based, 2021-2022). This setup keeps only the content, folder-listing, GFM, link and draft plugins.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/quartz/quartz.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/quartz/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/quartz/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/quartz/generator.json"
+      }
+    },
+    {
       "id": "sphinx",
       "path": "Python/sphinx",
       "version": "9.1.0",
@@ -1364,14 +1406,6 @@
       "repository": "https://github.com/iamgio/quarkdown",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/117"
-    },
-    {
-      "id": "quartz",
-      "name": "Quartz",
-      "language": "TypeScript",
-      "repository": "https://github.com/jackyzha0/quartz",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/119"
     },
     {
       "id": "rspress",

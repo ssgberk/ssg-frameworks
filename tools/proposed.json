@@ -201,14 +201,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/117"
   },
   {
-    "id": "quartz",
-    "name": "Quartz",
-    "language": "TypeScript",
-    "repository": "https://github.com/jackyzha0/quartz",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/119"
-  },
-  {
     "id": "rspress",
     "name": "rspress",
     "language": "JavaScript",
