@@ -1,5 +1,14 @@
 # dumi
 
-dumi 2.4.50 (latest stable on 2026-10-05) on Ubuntu 24.04 with Node 24.21.0, benchmarked by SSGBerk. `build.sh` generates the posts into `src/docs/posts` (Markdown with `title`/`date` front matter), then times `npx dumi build`; each post must render to `dist/posts/*.html` (`exportStatic: { htmlSuffix: true }`; the verification step checks the count equals the requested number of files; `index.html` and `404.html` sit outside `posts/`). The site overrides the default theme layout with a bare local one (`.dumi/theme/layouts/DocLayout/index.tsx`: no navbar, sidebar, TOC, search or footer, so a post page renders only its post) and `docs/index.md` is rendered by the same layout as a list of all posts, built from dumi's `useSiteData()` route metadata. The posts contain no demo code blocks, so no demo previews are generated. `ENV DUMI_TELEMETRY_DISABLED=1` is set in the image. Dependencies are installed with `npm ci` from the committed `package-lock.json`. `cache_folders` clears `.dumi/tmp`, `.dumi/tmp-production` and `node_modules/.cache` and `server` (the SSR bundle written next to `dist`) between timed runs. Run it with `./ssgberk --test dumi -nf 10` from the toolset repository.
+dumi 2.4.50 (latest stable on 2026-10-05) on Ubuntu 24.04 with Node 24.21.0, benchmarked by SSGBerk. `build.sh` generates the posts into `src/docs/posts` (Markdown with `title`/`date` front matter), then times `npx dumi build`; each post renders to `dist/posts/<slug>/index.html` (`exportStatic: {}`, `output_glob` `posts/*/index.html`; the verification step checks the count equals the requested number of files; `index.html`, `404.html` and `~demos/` sit outside `posts/`).
 
-Timed command uses the realistic invocation (`npx dumi build`). A dumi build runs the full Umi/Father-style bundling pipeline (Mako/webpack, with a pre-generated `.dumi/tmp-production` tree), which dominates the time even for small sites.
+The site overrides the default theme layout with a bare local one (`.dumi/theme/layouts/DocLayout/index.tsx`: no navbar, sidebar, TOC, search or footer, so a post page renders only its post) and `docs/index.md` is rendered by the same layout as a list of all posts, built from dumi's `useFullSidebarData()` route metadata. The posts contain no demo code blocks, so no demo previews are generated.
+
+Two settings are required, not tuning:
+
+- `ssr: {}` in `.dumirc.ts`: without it the exported HTML is an empty client-side shell with no post content.
+- `package.json` has no `"type": "module"`: with it, the SSR bundle fails at build time.
+
+Dependencies are installed with `npm ci` from the committed `package-lock.json`. `cache_folders` clears `.dumi/tmp`, `.dumi/tmp-production`, `node_modules/.cache` and `server` (the SSR bundle written next to `dist`) between timed runs. The timed build makes no network requests. `ENV DUMI_TELEMETRY_DISABLED=1` is set in the image but neither dumi nor umi reads it; their telemetry already uses a no-op store. Reference assets are force-added under `src/public/assets`.
+
+Timed command uses the realistic invocation (`npx dumi build`). A dumi build runs the full Umi bundling pipeline (Mako, with a pre-generated `.dumi/tmp-production` tree), which dominates the time even for small sites. Run it with `./ssgberk --test dumi -nf 10` from the toolset repository.
