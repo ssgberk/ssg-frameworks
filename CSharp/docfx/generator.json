@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "docfx",
+  "name": "DocFX",
+  "description": "DocFX is a .NET static site generator for documentation that builds Markdown conceptual pages and API reference through Mustache templates.",
+  "homepage": "https://dotnet.github.io/docfx/",
+  "repository": "https://github.com/dotnet/docfx",
+  "license": "MIT",
+  "language": "C#",
+  "runtime": ".NET 10 SDK (tarball), docfx dotnet tool",
+  "templateEngines": [
+    "Mustache"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "docs",
+  "firstRelease": 2016,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Benchmarked with a minimal custom template (single conceptual page template, no navbar, TOC, search or affix) instead of the default template. DocFX cannot list pages from a page, so build_command first runs mkindex.sh, which writes index.md from the posts' front matter (part of the timed build)."
+}

@@ -1,0 +1,37 @@
+{
+  "framework": "docfx",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "DocFX",
+        "language": "C#",
+        "display_name": "DocFX",
+        "notes": "",
+        "versus": "csharp"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "bash ./mkindex.sh && docfx build docfx.json --logLevel warning",
+      "build_verbose": "bash ./mkindex.sh && docfx build docfx.json --logLevel verbose",
+      "output_folder": "_site",
+      "output_glob": "posts/*.html",
+      "static_folder": "src",
+      "cache_folders": [
+        "obj"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{pageTitle}}</title>
+<link rel="stylesheet" href="/assets/ssgberk.css">
+</head>
+<body>
+<header class="site-header">
+<a class="site-title" href="/">SSGBerk Reference</a>
+<nav class="site-nav">
+<ul>
+<li><a href="/"{{#isIndex}} aria-current="page"{{/isIndex}}>Home</a></li>
+<li><a href="/#posts">Posts</a></li>
+<li><a href="https://github.com/ssgberk">Source</a></li>
+</ul>
+</nav>
+</header>
+<main class="site-main">
+{{#isPost}}
+<article class="post">
+<h1 class="post-title">{{title}}</h1>
+<p class="post-meta"><time class="post-date" datetime="{{date}}">{{day}}</time> by <span class="post-author">{{author}}</span></p>
+<ul class="post-tags">
+{{#tags}}
+<li class="post-tag">{{.}}</li>
+{{/tags}}
+</ul>
+<div class="post-body">
+{{{conceptual}}}
+</div>
+</article>
+{{/isPost}}
+{{#isIndex}}
+<section class="posts" id="posts">
+<h1 class="page-title">Posts</h1>
+<ol class="post-list">
+{{#posts}}
+<li class="post-item">
+<h2 class="post-item-title"><a href="{{href}}">{{title}}</a></h2>
+<time class="post-item-date" datetime="{{date}}">{{day}}</time>
+<p class="post-item-summary">{{summary}}</p>
+</li>
+{{/posts}}
+</ol>
+</section>
+{{/isIndex}}
+{{#isNotFound}}
+<section class="not-found">
+<h1 class="page-title">Page not found</h1>
+<p><a href="/">Back to the posts</a></p>
+</section>
+{{/isNotFound}}
+</main>
+<footer class="site-footer">
+<p>Built for the SSGBerk build-time benchmark.</p>
+</footer>
+</body>
+</html>

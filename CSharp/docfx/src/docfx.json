@@ -1,0 +1,12 @@
+{
+  "build": {
+    "content": [
+      { "files": ["index.md", "404.md", "posts/*.md"] }
+    ],
+    "resource": [
+      { "files": ["assets/**"] }
+    ],
+    "output": "_site",
+    "template": ["templates/ssgberk"]
+  }
+}
