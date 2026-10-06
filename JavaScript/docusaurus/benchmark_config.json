@@ -1,0 +1,31 @@
+{
+  "framework": "docusaurus",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "docusaurus",
+      "language": "JavaScript",
+      "display_name": "docusaurus",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "blog",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx docusaurus build",
+      "output_folder": "build",
+      "output_glob": "posts/????/??/??/*/index.html",
+      "cache_folders": [".docusaurus", "node_modules/.cache"]
+    }
+  ]
+}
