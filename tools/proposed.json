@@ -145,14 +145,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/137"
   },
   {
-    "id": "observable-framework",
-    "name": "Observable Framework",
-    "language": "JavaScript",
-    "repository": "https://github.com/observablehq/framework",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/123"
-  },
-  {
     "id": "plenti",
     "name": "Plenti",
     "language": "Go",
