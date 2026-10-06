@@ -1,8 +1,56 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "784b80d8cab4f00d48fc9b299140c8f1dea65c6a",
+  "generatedFrom": "ca17262060336d76661cea99c209271fa70e6a27",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
+    {
+      "id": "analog",
+      "path": "JavaScript/analog",
+      "version": "2.8.0",
+      "name": "Analog",
+      "description": "Analog is a meta-framework for Angular, built on Vite and Nitro, that prerenders file-based routes to static HTML.",
+      "homepage": "https://analogjs.org/",
+      "repository": "https://github.com/analogjs/analog",
+      "license": "MIT",
+      "language": "TypeScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "Angular templates"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "framework",
+      "firstRelease": 2022,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "@analogjs/platform"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "analog",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "src/content/posts",
+        "buildCommand": "npx vite build",
+        "outputFolder": "dist/analog/public",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          "dist",
+          "node_modules/.vite",
+          ".angular/cache",
+          "node_modules/.cache"
+        ]
+      },
+      "notes": "firstRelease from npm @analogjs/platform creation (2022-11-17). Markdown rendering is the official @analogjs/content package (marked). Built with static prerender of every post route and no SSR server.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/analog/analog.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/analog/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/analog/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/analog/generator.json"
+      }
+    },
     {
       "id": "astro",
       "path": "JavaScript/astro",
@@ -1253,14 +1301,6 @@
     }
   ],
   "proposed": [
-    {
-      "id": "analog",
-      "name": "Analog",
-      "language": "TypeScript",
-      "repository": "https://github.com/analogjs/analog",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/124"
-    },
     {
       "id": "antora",
       "name": "Antora",

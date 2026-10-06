@@ -1,13 +1,5 @@
 [
   {
-    "id": "analog",
-    "name": "Analog",
-    "language": "TypeScript",
-    "repository": "https://github.com/analogjs/analog",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/124"
-  },
-  {
     "id": "antora",
     "name": "Antora",
     "language": "JavaScript",
