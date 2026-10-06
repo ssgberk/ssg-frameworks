@@ -1,0 +1,53 @@
+{
+  "version": "1.0.0",
+  "plugins": {
+    "article-title": {
+      "source": "github:quartz-community/article-title",
+      "resolved": "https://github.com/quartz-community/article-title.git",
+      "commit": "6b57785696ab3fd187ba91b218e5fde67b8533ee",
+      "installedAt": "2026-03-11T18:23:01.116Z"
+    },
+    "content-page": {
+      "source": "github:quartz-community/content-page",
+      "resolved": "https://github.com/quartz-community/content-page.git",
+      "commit": "b8a3f3bb6a126256b12f55879d144ba2ac104b73",
+      "installedAt": "2026-03-11T18:22:51.572Z"
+    },
+    "crawl-links": {
+      "source": "github:quartz-community/crawl-links",
+      "resolved": "https://github.com/quartz-community/crawl-links.git",
+      "commit": "5ccbcb5f3ac7b1c24fbcb34aa2454df06fe7031c",
+      "installedAt": "2026-03-11T18:22:30.563Z"
+    },
+    "created-modified-date": {
+      "source": "github:quartz-community/created-modified-date",
+      "resolved": "https://github.com/quartz-community/created-modified-date.git",
+      "commit": "330621e98824efc34bcc061365076a0e30607235",
+      "installedAt": "2026-03-11T18:22:23.768Z"
+    },
+    "folder-page": {
+      "source": "github:quartz-community/folder-page",
+      "resolved": "https://github.com/quartz-community/folder-page.git",
+      "commit": "0bb653d651626dece1e56fd7a08d3f2fb3a3cd8a",
+      "installedAt": "2026-03-11T18:22:52.983Z"
+    },
+    "github-flavored-markdown": {
+      "source": "github:quartz-community/github-flavored-markdown",
+      "resolved": "https://github.com/quartz-community/github-flavored-markdown.git",
+      "commit": "628366ec62c1122da1eaef7c988d53bdaae3d19a",
+      "installedAt": "2026-03-11T18:22:27.866Z"
+    },
+    "note-properties": {
+      "source": "github:quartz-community/note-properties",
+      "resolved": "https://github.com/quartz-community/note-properties.git",
+      "commit": "353531585033528eef9faa7eb2f27e377db7fa14",
+      "installedAt": "2026-03-12T19:33:36.033Z"
+    },
+    "remove-draft": {
+      "source": "github:quartz-community/remove-draft",
+      "resolved": "https://github.com/quartz-community/remove-draft.git",
+      "commit": "c44b2a1314cfe8ac4d4450a566ec9a122daba5f2",
+      "installedAt": "2026-03-11T18:22:39.521Z"
+    }
+  }
+}

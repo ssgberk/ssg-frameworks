@@ -1,0 +1,83 @@
+# yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
+# SSGBerk minimal Quartz 5 configuration: post pages and one folder listing, nothing else.
+configuration:
+  pageTitle: SSGBerk Quartz
+  pageTitleSuffix: ""
+  enableSPA: false
+  enablePopovers: false
+  analytics: null
+  locale: en-US
+  baseUrl: localhost
+  ignorePatterns:
+    - private
+    - templates
+    - .obsidian
+  defaultDateType: created
+  theme:
+    fontOrigin: local
+    cdnCaching: false
+    typography:
+      header: sans-serif
+      body: sans-serif
+      code: monospace
+    colors:
+      lightMode:
+        light: "#ffffff"
+        lightgray: "#d8dde7"
+        gray: "#5b6475"
+        darkgray: "#1d2330"
+        dark: "#1d2330"
+        secondary: "#2f5bd3"
+        tertiary: "#2f5bd3"
+        highlight: rgba(47, 91, 211, 0.15)
+        textHighlight: "#fff23688"
+      darkMode:
+        light: "#ffffff"
+        lightgray: "#d8dde7"
+        gray: "#5b6475"
+        darkgray: "#1d2330"
+        dark: "#1d2330"
+        secondary: "#2f5bd3"
+        tertiary: "#2f5bd3"
+        highlight: rgba(47, 91, 211, 0.15)
+        textHighlight: "#fff23688"
+plugins:
+  - source: github:quartz-community/note-properties
+    enabled: true
+    options:
+      hidePropertiesView: true
+    order: 5
+  - source: github:quartz-community/created-modified-date
+    enabled: true
+    options:
+      priority:
+        - frontmatter
+    order: 10
+  - source: github:quartz-community/github-flavored-markdown
+    enabled: true
+    order: 40
+  - source: github:quartz-community/crawl-links
+    enabled: true
+    options:
+      markdownLinkResolution: shortest
+    order: 60
+  - source: github:quartz-community/remove-draft
+    enabled: true
+  - source: github:quartz-community/content-page
+    enabled: true
+  - source: github:quartz-community/folder-page
+    enabled: true
+  - source: github:quartz-community/article-title
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 10
+layout:
+  byPageType:
+    "404":
+      positions:
+        beforeBody: []
+        left: []
+        right: []
+    content: {}
+    folder: {}

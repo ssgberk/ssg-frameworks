@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "quartz",
+  "name": "Quartz",
+  "description": "Quartz is a static site generator that turns Markdown notes into a fast, linked digital garden website.",
+  "homepage": "https://quartz.jzhao.xyz",
+  "repository": "https://github.com/jackyzha0/quartz",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Preact"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "docs",
+  "firstRelease": 2021,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Distributed as a repository template, so the v5.0.0 sources are vendored into src/ and their plugins are installed from the pinned commits in quartz.lock.json at image build time. GitHub's latest-release marker still points at v4.0.8 (2023); v5.0.0 (2026-03-14) is the newest tag and the default branch. firstRelease is a best-effort year for Quartz 3 (Hugo-based, 2021-2022). This setup keeps only the content, folder-listing, GFM, link and draft plugins."
+}

@@ -1,0 +1,31 @@
+{
+  "framework": "quartz",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "quartz",
+      "language": "JavaScript",
+      "display_name": "quartz",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "content/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx quartz build",
+      "output_folder": "public",
+      "output_glob": "posts/[0-9]*.html",
+      "cache_folders": [".quartz-cache", "quartz/.quartz-cache"]
+    }
+  ]
+}
