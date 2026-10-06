@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "fa4b16752cc47ce90f38e760321290e06429b5d7",
+  "generatedFrom": "38677e403ebdcb63add280202ae4c1ad90966037",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -1083,6 +1083,47 @@
       }
     },
     {
+      "id": "zensical",
+      "path": "Python/zensical",
+      "version": "0.0.68",
+      "name": "Zensical",
+      "description": "Zensical is a static site generator for project documentation from the team behind Material for MkDocs, with a Rust core and a Python package that reads MkDocs-style configuration.",
+      "homepage": "https://zensical.org/",
+      "repository": "https://github.com/zensical/zensical",
+      "license": "MIT",
+      "language": "Python",
+      "runtime": "Python 3.12 (Ubuntu 24.04 apt, venv)",
+      "templateEngines": [
+        "MiniJinja"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "docs",
+      "firstRelease": 2025,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Zensical",
+        "versus": "python",
+        "contentType": "none",
+        "contentFolder": "docs/posts",
+        "buildCommand": "zensical build",
+        "outputFolder": "site",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          ".cache"
+        ]
+      },
+      "notes": "Rust core distributed as a Python wheel; benchmarked with a minimal theme override (single main.html via theme.custom_dir) instead of the built-in Material-style theme. Search index and sitemap are always produced by the tool and counted in the output.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/zensical/zensical.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/zensical/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/zensical/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/zensical/generator.json"
+      }
+    },
+    {
       "id": "zola",
       "path": "Rust/zola",
       "version": "0.23.6",
@@ -1404,14 +1445,6 @@
       "repository": "https://github.com/vuepress/core",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/94"
-    },
-    {
-      "id": "zensical",
-      "name": "Zensical",
-      "language": "Rust",
-      "repository": "https://github.com/zensical/zensical",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/120"
     },
     {
       "id": "zine",

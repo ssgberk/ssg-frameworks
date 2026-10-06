@@ -282,14 +282,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/94"
   },
   {
-    "id": "zensical",
-    "name": "Zensical",
-    "language": "Rust",
-    "repository": "https://github.com/zensical/zensical",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/120"
-  },
-  {
     "id": "zine",
     "name": "Zine",
     "language": "Zig",
