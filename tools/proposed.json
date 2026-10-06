@@ -65,14 +65,6 @@
     "notes": "The issue links tlienart/Franklin.jl; GitHub redirects it to JuliaDocs/Franklin.jl (checked 2026-10-04)."
   },
   {
-    "id": "hakyll",
-    "name": "Hakyll",
-    "language": "Haskell",
-    "repository": "https://github.com/jaspervdj/hakyll",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/103"
-  },
-  {
     "id": "iles",
     "name": "îles",
     "language": "JavaScript",

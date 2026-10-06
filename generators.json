@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "acbcb054cfe95c2692ff44ffc732b95a76047813",
+  "generatedFrom": "bbc84852bb21ffbf5cb3195b6deb352221f30311",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -316,6 +316,47 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/gatsby/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/gatsby/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/gatsby/generator.json"
+      }
+    },
+    {
+      "id": "hakyll",
+      "path": "Haskell/hakyll",
+      "version": "4.17.0.0",
+      "name": "Hakyll",
+      "description": "Hakyll is a static site generator library written in Haskell; a site is a compiled Haskell program that renders Markdown through Pandoc and templates.",
+      "homepage": "https://jaspervdj.be/hakyll/",
+      "repository": "https://github.com/jaspervdj/hakyll",
+      "license": "BSD-3-Clause",
+      "language": "Haskell",
+      "runtime": "Compiled Haskell binary (GHC, cabal)",
+      "templateEngines": [
+        "Hakyll templates"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "general",
+      "firstRelease": 2010,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "hakyll",
+        "versus": "haskell",
+        "contentType": "3minus",
+        "contentFolder": "posts",
+        "buildCommand": "./site build",
+        "outputFolder": "_site",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": [
+          "_cache"
+        ]
+      },
+      "notes": "Pandoc is linked into the site binary, so Markdown needs no external helper.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Haskell/hakyll/hakyll.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Haskell/hakyll/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Haskell/hakyll/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Haskell/hakyll/generator.json"
       }
     },
     {
@@ -1543,14 +1584,6 @@
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/111",
       "notes": "The issue links tlienart/Franklin.jl; GitHub redirects it to JuliaDocs/Franklin.jl (checked 2026-10-04)."
-    },
-    {
-      "id": "hakyll",
-      "name": "Hakyll",
-      "language": "Haskell",
-      "repository": "https://github.com/jaspervdj/hakyll",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/103"
     },
     {
       "id": "iles",
