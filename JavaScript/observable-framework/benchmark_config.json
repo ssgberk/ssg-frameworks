@@ -1,0 +1,36 @@
+{
+  "framework": "observable-framework",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "observable-framework",
+        "language": "JavaScript",
+        "display_name": "observable-framework",
+        "notes": "",
+        "versus": "javascript"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "src/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx observable build",
+      "output_folder": "dist",
+      "output_glob": "posts/*.html",
+      "cache_folders": [
+        "src/.observablehq/cache",
+        "node_modules/.cache"
+      ]
+    }
+  ]
+}

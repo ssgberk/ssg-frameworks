@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "observable-framework",
+  "name": "Observable Framework",
+  "description": "Observable Framework is a static site generator for data apps and dashboards that turns Markdown with reactive JavaScript cells and data loaders into static HTML.",
+  "homepage": "https://observablehq.com/framework/",
+  "repository": "https://github.com/observablehq/framework",
+  "license": "ISC",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": ["htl"],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2023,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Pinned @observablehq/framework 1.13.4 (latest stable on 2026-10-05). The site disables the sidebar, table of contents, pager, search, header and footer; the index lists posts through a data loader (posts.json.js) read with FileAttachment."
+}
