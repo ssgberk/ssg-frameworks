@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "vuepress",
+  "name": "VuePress",
+  "description": "VuePress is a Vue powered static site generator that turns Markdown into static HTML pages, with a Vite or webpack bundler.",
+  "homepage": "https://vuepress.vuejs.org",
+  "repository": "https://github.com/vuepress/core",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Vue"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2018,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "versionFrom": {
+    "source": "npm",
+    "name": "vuepress"
+  },
+  "notes": "Pinned to VuePress 2.0.0-rc.31 (no 2.x stable release exists; npm latest is 1.9.10, the v2 line ships as release candidates). Uses @vuepress/bundler-vite and a minimal local theme (one layout rendering only the page content, with a post list on the index built from a temp data file written by the theme's onPrepared hook); no default theme, navbar, sidebar or search. firstRelease from npm vuepress creation (2018-04-12)."
+}

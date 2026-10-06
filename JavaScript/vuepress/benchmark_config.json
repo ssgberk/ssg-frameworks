@@ -1,0 +1,31 @@
+{
+  "framework": "vuepress",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "vuepress",
+      "language": "JavaScript",
+      "display_name": "vuepress",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "docs/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx vuepress build docs",
+      "output_folder": "docs/.vuepress/dist",
+      "output_glob": "posts/*.html",
+      "cache_folders": ["docs/.vuepress/.cache", "docs/.vuepress/.temp", "node_modules/.vite"]
+    }
+  ]
+}
