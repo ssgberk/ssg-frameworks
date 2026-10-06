@@ -48,14 +48,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/125"
   },
   {
-    "id": "dumi",
-    "name": "dumi",
-    "language": "JavaScript",
-    "repository": "https://github.com/umijs/dumi",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/122"
-  },
-  {
     "id": "emanote",
     "name": "Emanote",
     "language": "Haskell",
