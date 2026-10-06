@@ -1,0 +1,33 @@
+{
+  "framework": "quarto",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "quarto",
+      "language": "TypeScript",
+      "display_name": "quarto",
+      "notes": "",
+      "versus": "typescript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "quarto render --quiet",
+      "build_verbose": "quarto render",
+      "output_folder": "_site",
+      "output_glob": "posts/*.html",
+      "static_folder": "src",
+      "cache_folders": [".quarto", "_freeze"]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "quarto",
+  "name": "Quarto",
+  "description": "Quarto is a scientific and technical publishing system built on Pandoc that renders Markdown and notebooks into websites, books and documents.",
+  "homepage": "https://quarto.org/",
+  "repository": "https://github.com/quarto-dev/quarto-cli",
+  "license": "GPL-2.0-only",
+  "language": "TypeScript",
+  "runtime": "Deno binary (Quarto 1.10.18 .deb, bundles Pandoc)",
+  "templateEngines": [
+    "Pandoc templates"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "docs",
+  "firstRelease": 2020,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Benchmarked on plain markdown (no Jupyter or knitr engine). The CLI is TypeScript on Deno and drives the bundled Pandoc. firstRelease is the public launch year; the exact first tag was not verified."
+}

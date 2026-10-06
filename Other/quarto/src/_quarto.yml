@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - posts/*.md
+
+website:
+  title: "SSGBerk Quarto"
+  search: false
+
+format:
+  html:
+    theme: none
+    css: assets/ssgberk.css
+    toc: false
+    code-copy: false
+    anchor-sections: false
+    smooth-scroll: false
+    link-external-icon: false
+    lang: en

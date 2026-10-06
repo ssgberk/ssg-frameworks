@@ -1,0 +1,14 @@
+---
+title: "Posts"
+listing:
+  contents: posts
+  type: default
+  sort: "date desc"
+  fields: [title, date, description]
+  page-size: 1000000
+  max-description-length: 0
+  categories: false
+  feed: false
+  sort-ui: false
+  filter-ui: false
+---
