@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "212520b2d2209d86c2a75f180fb009780ff46e4e",
+  "generatedFrom": "4d36fb5c68220c4f410bbe0adee274590673f8f7",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -650,6 +650,48 @@
       }
     },
     {
+      "id": "sphinx",
+      "path": "Python/sphinx",
+      "version": "9.1.0",
+      "name": "Sphinx",
+      "description": "Sphinx is a Python documentation generator that builds HTML sites from reStructuredText or Markdown (through MyST-Parser) sources.",
+      "homepage": "https://www.sphinx-doc.org/",
+      "repository": "https://github.com/sphinx-doc/sphinx",
+      "license": "BSD-2-Clause",
+      "language": "Python",
+      "runtime": "Python 3.12 (Ubuntu 24.04 apt, venv)",
+      "templateEngines": [
+        "Jinja2"
+      ],
+      "contentFormats": [
+        "markdown",
+        "restructuredtext"
+      ],
+      "category": "docs",
+      "firstRelease": 2008,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Sphinx",
+        "versus": "python",
+        "contentType": "3minus",
+        "contentFolder": "posts",
+        "buildCommand": "sphinx-build -q -d _build/doctrees -b html . _build/html",
+        "outputFolder": "_build/html",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": [
+          "_build/doctrees"
+        ]
+      },
+      "notes": "Sphinx 9.1.0 with MyST-Parser 5.1.0 (Markdown) and a minimal custom theme (single page.html) instead of alabaster; search, genindex and source copies disabled. firstRelease from Sphinx 0.1 (2008-03-21).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/sphinx/sphinx.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/sphinx/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/sphinx/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/sphinx/generator.json"
+      }
+    },
+    {
       "id": "vitepress",
       "path": "JavaScript/vitepress",
       "version": "1.6.4",
@@ -1012,14 +1054,6 @@
       "repository": "https://github.com/PataphysicalSociety/soupault",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
-    },
-    {
-      "id": "sphinx",
-      "name": "Sphinx",
-      "language": "Python",
-      "repository": "https://github.com/sphinx-doc/sphinx",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/97"
     },
     {
       "id": "starlight",

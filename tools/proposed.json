@@ -281,14 +281,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
   },
   {
-    "id": "sphinx",
-    "name": "Sphinx",
-    "language": "Python",
-    "repository": "https://github.com/sphinx-doc/sphinx",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/97"
-  },
-  {
     "id": "starlight",
     "name": "Starlight",
     "language": "JavaScript",
