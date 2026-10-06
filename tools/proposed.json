@@ -274,14 +274,6 @@
     "notes": "The issue links statiqdev/Statiq.Web; GitHub redirects it to statiqdev/Statiq (checked 2026-10-04)."
   },
   {
-    "id": "sveltekit",
-    "name": "SvelteKit",
-    "language": "JavaScript",
-    "repository": "https://github.com/sveltejs/kit",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/96"
-  },
-  {
     "id": "tableau",
     "name": "Tableau",
     "language": "Elixir",

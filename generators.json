@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "aaeea2f566d35df463e1cbd9388f0d6f8f2c92ef",
+  "generatedFrom": "5e17a8c2a5e9b448ccca456137099d7e8af2cfc3",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -823,6 +823,52 @@
       }
     },
     {
+      "id": "sveltekit",
+      "path": "JavaScript/sveltekit",
+      "version": "3.0.0",
+      "name": "SvelteKit",
+      "description": "SvelteKit is the application framework for Svelte; with adapter-static and mdsvex it prerenders Markdown posts to static HTML.",
+      "homepage": "https://svelte.dev/docs/kit",
+      "repository": "https://github.com/sveltejs/kit",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "Svelte"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "framework",
+      "firstRelease": 2020,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "@sveltejs/kit"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "sveltekit",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "src/posts",
+        "buildCommand": "npx vite build --logLevel silent",
+        "outputFolder": "build",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          ".svelte-kit",
+          "node_modules/.vite"
+        ]
+      },
+      "notes": "Application framework used as an SSG through adapter-static and mdsvex (Markdown compiled to Svelte components). firstRelease from the first public SvelteKit beta (2020). Minimal site: bare layout, one post route and one index route.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/sveltekit/sveltekit.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/sveltekit/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/sveltekit/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/sveltekit/generator.json"
+      }
+    },
+    {
       "id": "vitepress",
       "path": "JavaScript/vitepress",
       "version": "1.6.4",
@@ -1178,14 +1224,6 @@
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/106",
       "notes": "The issue links statiqdev/Statiq.Web; GitHub redirects it to statiqdev/Statiq (checked 2026-10-04)."
-    },
-    {
-      "id": "sveltekit",
-      "name": "SvelteKit",
-      "language": "JavaScript",
-      "repository": "https://github.com/sveltejs/kit",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/96"
     },
     {
       "id": "tableau",
