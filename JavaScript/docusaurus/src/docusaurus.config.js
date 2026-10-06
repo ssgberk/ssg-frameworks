@@ -35,14 +35,16 @@ module.exports = {
           showReadingTime: false,
           feedOptions: { type: null },
           archiveBasePath: null,
+          blogListComponent: '@site/src/components/EmptyPage',
+          // Clear tags before the plugin builds its tag map: no /posts/tags/* pages.
+          processBlogPosts: async ({blogPosts}) =>
+            blogPosts.map((p) => ({...p, metadata: {...p.metadata, tags: []}})),
           onInlineTags: 'ignore',
           onInlineAuthors: 'ignore',
           onUntruncatedBlogPosts: 'ignore',
         },
         pages: { path: 'src/pages' },
-        theme: {},
         sitemap: false,
-        gtag: undefined,
       },
     ],
   ],
