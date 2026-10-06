@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "publish",
+  "name": "Publish",
+  "description": "Publish is a static site generator for Swift developers: a Swift package whose executable builds the site from Markdown with type-safe HTML themes.",
+  "homepage": "https://github.com/JohnSundell/Publish",
+  "repository": "https://github.com/JohnSundell/Publish",
+  "license": "MIT",
+  "language": "Swift",
+  "runtime": "Swift 6.4.0 (compiled site executable)",
+  "templateEngines": [
+    "Plot (Swift HTML DSL)"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "general",
+  "firstRelease": 2019,
+  "maintained": false,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "The timed build runs the pre-compiled site executable, as a Publish site does on each build. Ink's metadata block cannot read the YAML tags list, so a custom publishing step parses the front matter and uses Ink for the Markdown body."
+}

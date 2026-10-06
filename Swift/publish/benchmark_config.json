@@ -1,0 +1,32 @@
+{
+  "framework": "publish",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "publish",
+      "language": "Swift",
+      "display_name": "publish",
+      "notes": "",
+      "versus": "swift"
+    }
+  }],
+  "content": [
+    {
+      "folder": "Content/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": ".build/release/SSGBerk",
+      "build_verbose": ".build/release/SSGBerk",
+      "output_folder": "Output",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [".publish"]
+    }
+  ]
+}
