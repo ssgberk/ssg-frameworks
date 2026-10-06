@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ page.title }}</title>
+</head>
+<body>
+{% if page.url == "" %}
+<h1>{{ config.site_name }}</h1>
+<ul>
+{% for section in nav.items %}{% for p in section.children %}<li><a href="{{ p.url|url }}">{{ p.title }}</a></li>
+{% endfor %}{% endfor %}</ul>
+{% else %}
+<h1>{{ page.title }}</h1>
+{{ page.content }}
+{% endif %}
+</body>
+</html>

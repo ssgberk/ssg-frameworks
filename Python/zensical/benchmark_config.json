@@ -1,0 +1,36 @@
+{
+  "framework": "zensical",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "Zensical",
+        "language": "Python",
+        "display_name": "Zensical",
+        "notes": "",
+        "versus": "python"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "docs/posts",
+      "type": "none",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "zensical build",
+      "build_verbose": "zensical build",
+      "output_folder": "site",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [
+        ".cache"
+      ]
+    }
+  ]
+}

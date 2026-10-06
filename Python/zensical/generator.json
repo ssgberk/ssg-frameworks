@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "zensical",
+  "name": "Zensical",
+  "description": "Zensical is a static site generator for project documentation from the team behind Material for MkDocs, with a Rust core and a Python package that reads MkDocs-style configuration.",
+  "homepage": "https://zensical.org/",
+  "repository": "https://github.com/zensical/zensical",
+  "license": "MIT",
+  "language": "Python",
+  "runtime": "Python 3.12 (Ubuntu 24.04 apt, venv)",
+  "templateEngines": [
+    "MiniJinja"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "docs",
+  "firstRelease": 2025,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Rust core distributed as a Python wheel; benchmarked with a minimal theme override (single main.html via theme.custom_dir) instead of the built-in Material-style theme. Search index and sitemap are always produced by the tool and counted in the output."
+}

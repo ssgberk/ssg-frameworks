@@ -1,0 +1,6 @@
+site_name: SSGBerk Zensical
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+theme:
+  custom_dir: overrides
