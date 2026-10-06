@@ -129,14 +129,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/135"
   },
   {
-    "id": "lektor",
-    "name": "Lektor",
-    "language": "Python",
-    "repository": "https://github.com/lektor/lektor",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/102"
-  },
-  {
     "id": "lume",
     "name": "Lume",
     "language": "JavaScript (Deno)",

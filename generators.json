@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "d426aaf30f01ddc62d4c265e896c3191f09227ec",
+  "generatedFrom": "fa4b16752cc47ce90f38e760321290e06429b5d7",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -346,6 +346,47 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/generator.json"
+      }
+    },
+    {
+      "id": "lektor",
+      "path": "Python/lektor",
+      "version": "3.3.14",
+      "name": "Lektor",
+      "description": "Lektor is a Python static content management system that builds sites from per-page contents.lr files, data models and Jinja2 templates.",
+      "homepage": "https://www.getlektor.com",
+      "repository": "https://github.com/lektor/lektor",
+      "license": "BSD-3-Clause",
+      "language": "Python",
+      "runtime": "Python 3.12 (Ubuntu 24.04 apt, venv)",
+      "templateEngines": [
+        "Jinja2"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "general",
+      "firstRelease": 2015,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Lektor",
+        "versus": "python",
+        "contentType": "none",
+        "contentFolder": "posts",
+        "buildCommand": "bash -c 'rm -rf content/posts/*/; set -- posts/*.md; [ -e \"$1\" ] || exit 1; d=(\"${@##*/}\"); d=(\"${d[@]%.md}\"); d=(\"${d[@]/#/content/posts/}\"); mkdir \"${d[@]}\"; for f; do n=${f##*/}; n=${n%.md}; IFS= read -r -d \"\" body < \"$f\"; printf \"_model: post\\n---\\ntitle: %s\\n---\\nbody:\\n\\n%s\\n\" \"$n\" \"$body\" > content/posts/$n/contents.lr; done; lektor build -O _site --buildstate-path .lektor-cache'",
+        "outputFolder": "_site",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          ".lektor-cache"
+        ]
+      },
+      "notes": "Lektor reads one contents.lr per page, so the timed build_command first converts each generated posts/<name>.md into content/posts/<name>/contents.lr with bash builtins only (one mkdir, one read and one printf per post, no per-post forks). Minimal custom models and templates; build state is written to .lektor-cache.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/lektor/lektor.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/lektor/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/lektor/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/lektor/generator.json"
       }
     },
     {
@@ -1210,14 +1251,6 @@
       "repository": "https://github.com/typelevel/Laika",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/135"
-    },
-    {
-      "id": "lektor",
-      "name": "Lektor",
-      "language": "Python",
-      "repository": "https://github.com/lektor/lektor",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/102"
     },
     {
       "id": "lume",
