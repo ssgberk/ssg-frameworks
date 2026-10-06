@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "hakyll",
+  "name": "Hakyll",
+  "description": "Hakyll is a static site generator library written in Haskell; a site is a compiled Haskell program that renders Markdown through Pandoc and templates.",
+  "homepage": "https://jaspervdj.be/hakyll/",
+  "repository": "https://github.com/jaspervdj/hakyll",
+  "license": "BSD-3-Clause",
+  "language": "Haskell",
+  "runtime": "Compiled Haskell binary (GHC, cabal)",
+  "templateEngines": [
+    "Hakyll templates"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "general",
+  "firstRelease": 2010,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Pandoc is linked into the site binary, so Markdown needs no external helper."
+}

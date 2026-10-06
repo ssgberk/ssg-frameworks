@@ -1,0 +1,15 @@
+---
+title: Posts
+---
+<section class="posts" id="posts">
+<h1 class="page-title">Posts</h1>
+<ol class="post-list">
+$for(posts)$
+<li class="post-item">
+<h2 class="post-item-title"><a href="$url$">$title$</a></h2>
+<time class="post-item-date" datetime="$datetime$">$date$</time>
+<p class="post-item-summary">$summary$</p>
+</li>
+$endfor$
+</ol>
+</section>

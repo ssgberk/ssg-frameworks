@@ -1,0 +1,32 @@
+{
+  "framework": "hakyll",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "hakyll",
+      "language": "Haskell",
+      "display_name": "hakyll",
+      "notes": "",
+      "versus": "haskell"
+    }
+  }],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "./site build",
+      "build_verbose": "./site build --verbose",
+      "output_folder": "_site",
+      "output_glob": "posts/*.html",
+      "cache_folders": ["_cache"]
+    }
+  ]
+}
