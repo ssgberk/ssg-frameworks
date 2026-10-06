@@ -193,14 +193,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/137"
   },
   {
-    "id": "nuxt",
-    "name": "Nuxt",
-    "language": "JavaScript",
-    "repository": "https://github.com/nuxt/nuxt",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/93"
-  },
-  {
     "id": "observable-framework",
     "name": "Observable Framework",
     "language": "JavaScript",
