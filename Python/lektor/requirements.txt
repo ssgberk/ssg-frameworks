@@ -12,7 +12,7 @@ itsdangerous==2.2.0
 Jinja2==3.1.6
 Lektor==3.3.14
 MarkupSafe==3.0.4
-mistune==0.8.4
+mistune==3.3.3
 python-slugify==9.1.2
 pytz==2026.5
 requests==2.34.2
