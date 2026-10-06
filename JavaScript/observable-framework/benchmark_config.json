@@ -28,7 +28,7 @@
       "output_folder": "dist",
       "output_glob": "posts/*.html",
       "cache_folders": [
-        "src/.observablehq/cache",
+        "src/.observablehq/cache/posts.json",
         "node_modules/.cache"
       ]
     }

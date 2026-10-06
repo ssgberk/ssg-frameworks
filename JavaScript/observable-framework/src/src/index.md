@@ -6,5 +6,12 @@ title: SSGBerk Observable Framework
 
 ```js
 const posts = await FileAttachment("posts.json").json();
-display(html`<ul>${posts.map((p) => html`<li><a href="${p.path}">${p.title}</a></li>`)}</ul>`);
+const list = document.createElement("ul");
+for (const p of posts) {
+  const li = list.appendChild(document.createElement("li"));
+  const a = li.appendChild(document.createElement("a"));
+  a.href = p.path;
+  a.textContent = p.title;
+}
+display(list);
 ```
