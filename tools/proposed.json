@@ -169,14 +169,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/133"
   },
   {
-    "id": "mdbook",
-    "name": "mdBook",
-    "language": "Rust",
-    "repository": "https://github.com/rust-lang/mdBook",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/95"
-  },
-  {
     "id": "nesta",
     "name": "Nesta",
     "language": "Ruby",

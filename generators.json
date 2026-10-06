@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "4d36fb5c68220c4f410bbe0adee274590673f8f7",
+  "generatedFrom": "5a25e1ce94f2dd43de2a140243869aaa16125358",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -305,6 +305,45 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/generator.json"
+      }
+    },
+    {
+      "id": "mdbook",
+      "path": "Rust/mdbook",
+      "version": "0.5.4",
+      "name": "mdBook",
+      "description": "mdBook is a Rust command-line tool that builds online books from Markdown files listed in a SUMMARY.md, with Handlebars templates.",
+      "homepage": "https://rust-lang.github.io/mdBook/",
+      "repository": "https://github.com/rust-lang/mdBook",
+      "license": "MPL-2.0",
+      "language": "Rust",
+      "runtime": "Rust binary (release tarball)",
+      "templateEngines": [
+        "Handlebars"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "docs",
+      "firstRelease": 2015,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "mdBook",
+        "versus": "rust",
+        "contentType": "none",
+        "contentFolder": "src/posts",
+        "buildCommand": "sh -c 'for f in src/posts/*.md; do [ -e \"$f\" ] || continue; b=${f##*/}; b=${b%.md}; printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done > src/.list && { printf \"# Summary\\n\\n[Index](README.md)\\n\\n\"; cat src/.list; } > src/SUMMARY.md && { printf \"# SSGBerk\\n\\n\"; cat src/.list; } > src/README.md && rm src/.list && mdbook build'",
+        "outputFolder": "book",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": []
+      },
+      "notes": "Benchmarked with a minimal theme/index.hbs (no sidebar), search, print page and hosted fonts disabled. The build command regenerates SUMMARY.md and the index (README.md) from the post files before mdbook build. firstRelease from the first GitHub release (v0.0.1, 2015); the sidebar table of contents file (toc.html) is still emitted.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/mdbook/mdbook.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/mdbook/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/mdbook/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/mdbook/generator.json"
       }
     },
     {
@@ -942,14 +981,6 @@
       "repository": "https://github.com/rochacbruno/marmite",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/133"
-    },
-    {
-      "id": "mdbook",
-      "name": "mdBook",
-      "language": "Rust",
-      "repository": "https://github.com/rust-lang/mdBook",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/95"
     },
     {
       "id": "nesta",
