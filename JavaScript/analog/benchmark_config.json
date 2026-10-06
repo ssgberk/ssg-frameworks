@@ -1,0 +1,32 @@
+{
+  "framework": "analog",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "analog",
+      "language": "JavaScript",
+      "display_name": "analog",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "src/content/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx vite build",
+      "build_verbose": "npx vite build",
+      "output_folder": "dist/analog/public",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": ["node_modules/.vite", ".angular/cache", "node_modules/.cache"]
+    }
+  ]
+}

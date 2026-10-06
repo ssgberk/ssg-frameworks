@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "analog",
+  "name": "Analog",
+  "description": "Analog is a meta-framework for Angular, built on Vite and Nitro, that prerenders file-based routes to static HTML.",
+  "homepage": "https://analogjs.org/",
+  "repository": "https://github.com/analogjs/analog",
+  "license": "MIT",
+  "language": "TypeScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Angular templates"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2022,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "versionFrom": {
+    "source": "npm",
+    "name": "@analogjs/platform"
+  },
+  "notes": "firstRelease from npm @analogjs/platform creation (2022-11-17). Markdown rendering is the official @analogjs/content package (marked). Built with static prerender of every post route and no SSR server."
+}
