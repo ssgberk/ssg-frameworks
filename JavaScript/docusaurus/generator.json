@@ -21,5 +21,9 @@
   "benchmark": {
     "status": "active"
   },
-  "notes": "Version 3.10.2. Blog-only setup: docs plugin off, blog at /posts with a bare Layout override (no navbar/footer), prev/next overridden to null, tags cleared via processBlogPosts (no tag pages), built-in list page emptied, and a small local plugin feeding the index page."
+  "notes": "Version 3.10.2. Blog-only setup: docs plugin off, blog at /posts with a bare Layout override (no navbar/footer), prev/next overridden to null, tags cleared via processBlogPosts (no tag pages), built-in list page emptied, and a small local plugin feeding the index page.",
+  "versionFrom": {
+    "source": "npm",
+    "name": "@docusaurus/core"
+  }
 }
