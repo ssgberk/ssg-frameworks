@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "9e95004418c768481e97f87accfb18fc79918d58",
+  "generatedFrom": "9589c112cc7a4a585d36dbcec74edc12f43327d5",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -45,6 +45,47 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/generator.json"
+      }
+    },
+    {
+      "id": "docfx",
+      "path": "CSharp/docfx",
+      "version": "2.81.0",
+      "name": "DocFX",
+      "description": "DocFX is a .NET static site generator for documentation that builds Markdown conceptual pages and API reference through Mustache templates.",
+      "homepage": "https://dotnet.github.io/docfx/",
+      "repository": "https://github.com/dotnet/docfx",
+      "license": "MIT",
+      "language": "C#",
+      "runtime": ".NET 10 SDK (tarball), docfx dotnet tool",
+      "templateEngines": [
+        "Mustache"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "docs",
+      "firstRelease": 2016,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "DocFX",
+        "versus": "csharp",
+        "contentType": "3minus",
+        "contentFolder": "posts",
+        "buildCommand": "bash ./mkindex.sh && docfx build docfx.json --logLevel warning",
+        "outputFolder": "_site",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": [
+          "obj"
+        ]
+      },
+      "notes": "Benchmarked with a minimal custom template (single conceptual page template, no navbar, TOC, search or affix) instead of the default template. DocFX cannot list pages from a page, so build_command first runs mkindex.sh, which writes index.md from the posts' front matter (part of the timed build).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/docfx/docfx.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/docfx/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/docfx/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/docfx/generator.json"
       }
     },
     {
@@ -1046,14 +1087,6 @@
       "repository": "https://github.com/cryogen-project/cryogen",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/110"
-    },
-    {
-      "id": "docfx",
-      "name": "DocFX",
-      "language": "C#",
-      "repository": "https://github.com/dotnet/docfx",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/101"
     },
     {
       "id": "docmd",

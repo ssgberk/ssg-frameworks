@@ -7,3 +7,4 @@ __pycache__/
 .pytest_cache/
 /JavaScript/sveltekit/build/
 .svelte-kit/
+/CSharp/docfx/src/index.md

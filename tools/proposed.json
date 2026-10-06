@@ -48,14 +48,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/110"
   },
   {
-    "id": "docfx",
-    "name": "DocFX",
-    "language": "C#",
-    "repository": "https://github.com/dotnet/docfx",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/101"
-  },
-  {
     "id": "docmd",
     "name": "docmd",
     "language": "JavaScript",
