@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "38098fb28e7a99ce0e14ed0b2bd0ac55622c1d46",
+  "generatedFrom": "aaeea2f566d35df463e1cbd9388f0d6f8f2c92ef",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -596,6 +596,53 @@
       }
     },
     {
+      "id": "nextra",
+      "path": "JavaScript/nextra",
+      "version": "4.6.1",
+      "name": "Nextra",
+      "description": "Nextra is a Next.js based static site generator that compiles Markdown and MDX content into App Router pages, best known for docs and blog themes.",
+      "homepage": "https://nextra.site/",
+      "repository": "https://github.com/shuding/nextra",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "React (JSX)"
+      ],
+      "contentFormats": [
+        "markdown",
+        "mdx"
+      ],
+      "category": "framework",
+      "firstRelease": 2020,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "nextra"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "nextra",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "content/posts",
+        "buildCommand": "npx next build",
+        "outputFolder": "out",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          ".next",
+          "node_modules/.cache"
+        ]
+      },
+      "notes": "Nextra 4.6.1 on Next.js 16.3.8, App Router, output: 'export' and trailingSlash. No Nextra theme: a bare layout and MDX wrapper render only the post; the index is a plain page listing the post slugs. Search (pagefind) is off: Nextra 4 only indexes through a separate postbuild script, which is not run. firstRelease is approximate (first nextra npm release in 2020).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/nextra/nextra.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/nextra/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/nextra/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/nextra/generator.json"
+      }
+    },
+    {
       "id": "nikola-mako",
       "path": "Python/nikola-mako",
       "version": "8.3.3",
@@ -1034,14 +1081,6 @@
       "repository": "https://github.com/gma/nesta",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/134"
-    },
-    {
-      "id": "nextra",
-      "name": "Nextra",
-      "language": "JavaScript",
-      "repository": "https://github.com/shuding/nextra",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/118"
     },
     {
       "id": "nimib",
