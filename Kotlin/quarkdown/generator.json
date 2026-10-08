@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "quarkdown",
+  "name": "Quarkdown",
+  "description": "Quarkdown is a Markdown-based typesetting system that extends CommonMark with functions and compiles to HTML websites, paged documents, slides and PDF.",
+  "homepage": "https://quarkdown.com/",
+  "repository": "https://github.com/iamgio/quarkdown",
+  "license": "GPL-3.0",
+  "language": "Kotlin",
+  "runtime": "JVM (Quarkdown 2.6.3 release zip, OpenJDK 17 JRE)",
+  "templateEngines": [
+    "Quarkdown functions"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "docs",
+  "firstRelease": 2025,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "License GPL-3.0 (GitHub SPDX). firstRelease is the oldest GitHub release, v1.0.0 (2025-05-13). Posts are compiled as subdocuments of one project in a single JVM process. The release zip is x64 only; the image reuses its platform-independent jars on the distro JRE so arm64 works."
+}

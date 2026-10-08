@@ -1,0 +1,8 @@
+.docname {SSGBerk}
+.doctype {plain}
+
+# SSGBerk
+
+.foreach {.listfiles {posts} fullpath:{no} sortby:{name} order:{descending}}
+    post:
+    - .subdocument {posts/.post}

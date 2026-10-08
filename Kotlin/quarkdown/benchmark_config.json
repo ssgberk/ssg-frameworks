@@ -1,0 +1,33 @@
+{
+  "framework": "quarkdown",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "quarkdown",
+      "language": "Kotlin",
+      "display_name": "quarkdown",
+      "notes": "",
+      "versus": "kotlin"
+    }
+  }],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "none",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "quarkdown c index.qd -o output --timeout 0",
+      "build_verbose": "quarkdown c index.qd -o output --timeout 0",
+      "output_folder": "output",
+      "output_glob": "*/20*/index.html",
+      "static_folder": "src",
+      "cache_folders": []
+    }
+  ]
+}
