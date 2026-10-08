@@ -1,0 +1,31 @@
+{
+  "framework": "vike",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "vike",
+      "language": "JavaScript",
+      "display_name": "vike",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "src/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx vike build --logLevel silent",
+      "output_folder": "dist/client",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": ["node_modules/.vite"]
+    }
+  ]
+}

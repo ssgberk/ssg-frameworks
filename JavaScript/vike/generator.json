@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "vike",
+  "name": "Vike",
+  "description": "Vike is a Vite-based framework with a flexible, UI-agnostic architecture; with prerendering enabled it emits fully static HTML for every route.",
+  "homepage": "https://vike.dev",
+  "repository": "https://github.com/vikejs/vike",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "React"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2021,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "versionFrom": {
+    "source": "npm",
+    "name": "vike"
+  },
+  "notes": "Application framework used as an SSG through prerender: true and vike-react. Markdown is read at build time with import.meta.glob and rendered with marked inside the page data hook; a post route (/posts/@slug) with onBeforePrerenderStart lists every post URL. firstRelease from the first public vite-plugin-ssr release (2021), Vike's predecessor name."
+}
