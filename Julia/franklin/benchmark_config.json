@@ -1,0 +1,31 @@
+{
+  "framework": "franklin",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "franklin",
+      "language": "Julia",
+      "display_name": "franklin",
+      "notes": "",
+      "versus": "julia"
+    }
+  }],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "none",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "julia --project -e 'using Franklin; optimize(minify=false, prerender=false)'",
+      "build_verbose": "julia --project -e 'using Franklin; optimize(minify=false, prerender=false)'",
+      "output_folder": "__site",
+      "output_glob": "posts/*/index.html"
+    }
+  ]
+}

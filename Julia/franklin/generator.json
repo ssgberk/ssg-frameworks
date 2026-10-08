@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "franklin",
+  "name": "Franklin",
+  "description": "Franklin.jl is a static site generator written in Julia that renders Markdown with embedded Julia code through HTML layouts.",
+  "homepage": "https://franklinjl.org",
+  "repository": "https://github.com/tlienart/Franklin.jl",
+  "license": "MIT",
+  "language": "Julia",
+  "runtime": "Julia 1.13.1 (official tarball)",
+  "templateEngines": [
+    "Franklin HTML layouts with Julia hfun functions"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "general",
+  "firstRelease": 2019,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Franklin evaluates +++ front matter as Julia code, so the benchmark posts carry no front matter and titles come from file names."
+}
