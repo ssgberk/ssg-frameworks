@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "ink",
+  "name": "Ink",
+  "description": "Ink is a static blog generator written in Go that renders Markdown posts with YAML front matter through Go templates.",
+  "homepage": "https://github.com/InkProject/ink",
+  "repository": "https://github.com/InkProject/ink",
+  "license": "CC-BY-NC-4.0",
+  "language": "Go",
+  "runtime": "Go binary (built from the pinned upstream commit)",
+  "templateEngines": [
+    "Go html/template"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "blog",
+  "firstRelease": 2015,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Ink publishes no versions: its only release is the rolling nightly tag, so the image builds upstream commit f9aeb2b (2026-06-08) and the version is recorded as nightly-f9aeb2b. The license is CC BY-NC 4.0 per the README (no LICENSE file; GitHub reports none). firstRelease is the repository creation year (2015). The build command converts the generated posts for Ink (drops the leading front matter fence, rewrites the date) in one awk pass before ink build."
+}

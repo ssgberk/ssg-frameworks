@@ -1,0 +1,16 @@
+site:
+    title: "SSGBerk"
+    subtitle: "Ink benchmark site"
+    limit: 1000000
+    theme: theme
+    lang: en
+    link: "post/{title}/index.html"
+
+authors:
+    me:
+        name: "SSGBerk"
+
+build:
+    output: "public"
+    copy:
+        - "source/assets"

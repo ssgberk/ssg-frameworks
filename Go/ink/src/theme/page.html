@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{template "head" .}}
+<title>SSGBerk</title>
+</head>
+<body>
+<main>
+<h1>SSGBerk</h1>
+<ul>
+{{range .Articles}}<li><a href="{{$.Site.Root}}/{{.Link}}">{{.Title}}</a></li>
+{{end}}</ul>
+</main>
+</body>
+</html>

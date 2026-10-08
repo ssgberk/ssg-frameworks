@@ -1,0 +1,32 @@
+{
+  "framework": "ink",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "ink",
+      "language": "Go",
+      "display_name": "Ink",
+      "notes": "",
+      "versus": "go"
+    }
+  }],
+  "content": [
+    {
+      "folder": "content/post",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "sh -c 'mkdir -p source/post && awk -f convert.awk content/post/*.md && ink build'",
+      "build_verbose": "sh -c 'mkdir -p source/post && awk -f convert.awk content/post/*.md && ink build'",
+      "output_folder": "public",
+      "output_glob": "post/*/index.html",
+      "cache_folders": ["source/post"]
+    }
+  ]
+}

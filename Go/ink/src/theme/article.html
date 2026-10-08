@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{template "head" .}}
+<title>{{.Title}}</title>
+</head>
+<body>
+<main>
+<h1>{{.Title}}</h1>
+<p>{{.Time.Format "Jan 2, 2006"}}</p>
+{{.Content}}
+</main>
+</body>
+</html>
