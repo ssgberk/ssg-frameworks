@@ -1,0 +1,48 @@
+@{
+    bool isPost = Document.Source.FileName.Extension == ".md";
+}<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@(isPost ? Document.GetString("title") + " | SSGBerk Reference" : Document.GetString("title", "SSGBerk Reference"))</title>
+<link rel="stylesheet" href="/assets/ssgberk.css">
+</head>
+<body>
+<header class="site-header">
+<a class="site-title" href="/">SSGBerk Reference</a>
+<nav class="site-nav">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/#posts">Posts</a></li>
+<li><a href="https://github.com/ssgberk">Source</a></li>
+</ul>
+</nav>
+</header>
+<main class="site-main">
+@if (isPost)
+{
+<article class="post">
+<h1 class="post-title">@Document.GetString("title")</h1>
+<p class="post-meta"><time class="post-date" datetime="@Document.GetDateTime("Published").ToString("yyyy-MM-dd'T'HH:mm:ss'Z'")">@Document.GetDateTime("Published").ToString("yyyy-MM-dd")</time> by <span class="post-author">@Document.GetString("author")</span></p>
+<ul class="post-tags">
+@foreach (string tag in Document.GetList<string>("tags"))
+{
+<li class="post-tag">@tag</li>
+}
+</ul>
+<div class="post-body">
+@RenderBody()
+</div>
+</article>
+}
+else
+{
+@RenderBody()
+}
+</main>
+<footer class="site-footer">
+<p>Built for the SSGBerk build-time benchmark.</p>
+</footer>
+</body>
+</html>

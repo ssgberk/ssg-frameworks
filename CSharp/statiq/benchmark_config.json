@@ -1,0 +1,37 @@
+{
+  "framework": "statiq",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "Statiq",
+        "language": "C#",
+        "display_name": "Statiq",
+        "notes": "",
+        "versus": "csharp"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "input/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "Published",
+      "metadata_layout": "",
+      "build_command": "dotnet /opt/statiq/app/bin/statiq.dll",
+      "build_verbose": "dotnet /opt/statiq/app/bin/statiq.dll --verbose",
+      "output_folder": "output",
+      "output_glob": "posts/*.html",
+      "cache_folders": [
+        "cache",
+        "temp"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+Title: SSGBerk Reference
+---
+<section class="posts" id="posts">
+<h1 class="page-title">Posts</h1>
+<ol class="post-list">
+@foreach (IDocument post in Outputs.FilterSources("posts/*.md").OrderByDescending(x => x.GetDateTime("Published")))
+{
+<li class="post-item">
+<h2 class="post-item-title"><a href="@post.GetLink()">@post.GetString("title")</a></h2>
+<time class="post-item-date" datetime="@post.GetDateTime("Published").ToString("yyyy-MM-dd'T'HH:mm:ss'Z'")">@post.GetDateTime("Published").ToString("yyyy-MM-dd")</time>
+<p class="post-item-summary">@post.GetString("summary")</p>
+</li>
+}
+</ol>
+</section>
