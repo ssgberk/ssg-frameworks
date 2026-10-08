@@ -109,3 +109,121 @@ GHC + cabal (pinned, via ghcup or distro) in a builder stage; compile a `site` e
 ### Task 18: VuePress 2 (`JavaScript/vuepress`, #94)
 
 `vuepress@2` (latest stable or the current release candidate if no 2.x stable exists — report which), with `@vuepress/bundler-vite` and a minimal local theme (no navbar/sidebar/search; layout renders only the page content); posts in `docs/posts/*.md` (`3minus`), `docs/README.md` lists all posts using the pages data (`usePages` / a client data file) without timed pre-processing if possible. `vuepress build docs`, output `docs/.vuepress/dist`. Caches: `docs/.vuepress/.cache`, `docs/.vuepress/.temp`, `node_modules/.vite`.
+
+---
+
+## Wave 4
+
+Same Global Constraints, Standard steps, local smoke and shared-machine rules; the implementer rules learned in waves 1–3 apply (ignored files force-added, no per-post forks in timed steps, caches out of the output folder, `versionFrom` when needed, timed build offline under `--network none`, compile-once toolchains compiled untimed in a builder stage). Upstream repository and the entry point are in each issue.
+
+### Task 19: Lume (`JavaScript/lume`, #104)
+
+Upstream https://github.com/lumeland/lume, entry point `deno task build`. Deno runtime (pinned release binary); `deno task build` with a pinned Lume version in deno.json/import map; vendor or pre-cache Deno deps at image build so the timed build is offline (`DENO_DIR` cache kept, like node_modules).
+
+### Task 20: rspress (`JavaScript/rspress`, #105)
+
+Upstream https://github.com/web-infra-dev/rspress, entry point `rspress build`. rspress (latest stable), docs root with posts; disable search/nav/sidebar via theme config or a minimal custom theme.
+
+### Task 21: Statiq (`CSharp/statiq`, #106)
+
+Upstream https://github.com/statiqdev/Statiq.Web, entry point `dotnet run (Statiq.Web)`. Statiq.Web as a small .NET console app compiled in the image (untimed); the timed build runs the compiled app (`dotnet <app>.dll` or published binary).
+
+### Task 22: Sculpin (`PHP/sculpin`, #107)
+
+Upstream https://github.com/sculpin/sculpin, entry point `vendor/bin/sculpin generate`. PHP + Composer, `composer.lock` generated in the image; `vendor/bin/sculpin generate --env=prod`; output `output_prod`.
+
+### Task 23: Bridgetown (`Ruby/bridgetown`, #108)
+
+Upstream https://github.com/bridgetownrb/bridgetown, entry point `bin/bridgetown build`. Ruby + Bundler, `Gemfile.lock` generated in the image; `bin/bridgetown build` (no esbuild frontend bundling unless required — disable/skip the frontend step if Bridgetown allows).
+
+### Task 24: JBake (`Java/jbake`, #109)
+
+Upstream https://github.com/jbake-org/jbake, entry point `jbake -b`. JBake binary distribution (pinned zip) on a JRE; `jbake -b <src> <out>`; templates in a minimal engine (freemarker/thymeleaf).
+
+### Task 25: Cryogen (`Clojure/cryogen`, #110)
+
+Upstream https://github.com/cryogen-project/cryogen, entry point `lein run / clojure -M:build`. Cryogen via Clojure CLI or Leiningen; dependencies resolved in the image (offline timed build); timed command compiles the site (JVM start included, as real use).
+
+### Task 26: Franklin (`Julia/franklin`, #111)
+
+Upstream https://github.com/tlienart/Franklin.jl, entry point `julia -e 'using Franklin; optimize()'`. Pinned Julia release + Franklin.jl (Manifest.toml), packages precompiled in the image; timed `julia --project -e 'using Franklin; optimize(minify=false, prerender=false)'` or `serve`-free build equivalent.
+
+### Task 27: Antora (`JavaScript/antora`, #112)
+
+Upstream https://gitlab.com/antora/antora, entry point `antora antora-playbook.yml`. Antora reads AsciiDoc from git repositories: build.sh writes markdown, so use a content type and a timed one-loop pre-step only if unavoidable, or use Antora's asciidoc for the generated text (markdown blocks are valid AsciiDoc-ish? check); a local playbook pointing at a local git component created in the image is acceptable; document deviations.
+
+### Task 28: Cecil (`PHP/cecil`, #113)
+
+Upstream https://github.com/Cecilapp/Cecil, entry point `cecil build`. Cecil pinned phar or Composer package; `cecil build`; minimal theme without menus/taxonomies.
+
+### Task 29: soupault (`OCaml/soupault`, #114)
+
+Upstream https://github.com/PataphysicalSociety/soupault, entry point `soupault`. soupault pinned release binary (amd64/arm64) with a markdown preprocessor (cmark/pandoc pinned) as soupault requires; `soupault`.
+
+### Task 30: TanStack Start (`JavaScript/tanstack-start`, #115)
+
+Upstream https://github.com/TanStack/router, entry point `vite build with static prerender`. TanStack Start with static prerender of every post route and a markdown loader; deferred in wave 1 as an app framework — implement if a static prerender path exists, else `_wip` with the reason.
+
+### Task 31: Quarkdown (`Kotlin/quarkdown`, #117)
+
+Upstream https://github.com/iamgio/quarkdown, entry point `quarkdown c (website target)`. Quarkdown pinned release (JVM); website/docs target producing static HTML per post; deferred earlier (typesetting tool) — implement if it can emit one HTML page per post and an index, else `_wip`.
+
+### Task 32: Vike (`JavaScript/vike`, #121)
+
+Upstream https://github.com/vikejs/vike, entry point `vike build with prerender`. Vike with prerender (`vike build` + prerender) and a markdown pipeline; same caveat as TanStack Start.
+
+### Task 33: docmd (`JavaScript/docmd`, #125)
+
+Upstream https://github.com/docmd-io/docmd, entry point `docmd build`. docmd (latest stable), markdown docs; disable navigation/search via config.
+
+### Task 34: Zine (`Zig/zine`, #126)
+
+Upstream https://github.com/kristoff-it/zine, entry point `zine release`. Zine pinned release binary for both arches; content in SuperMD (Zine's markdown dialect with Ziggy front matter: build.sh's front matter may need a timed one-loop conversion — avoid if `3plus`/other type fits); `zine release`.
+
+### Task 35: vite-ssg (`JavaScript/vite-ssg`, #127)
+
+Upstream https://github.com/antfu-collective/vite-ssg, entry point `vite-ssg build (+ unplugin-vue-markdown)`. vite-ssg + Vue + unplugin-vue-markdown, routes generated from the posts directory (vite-plugin-pages or glob), `vite-ssg build`.
+
+### Task 36: Cobalt (`Rust/cobalt`, #128)
+
+Upstream https://github.com/cobalt-org/cobalt.rs, entry point `cobalt build`. cobalt pinned release binary; `cobalt build`; liquid templates minimal.
+
+### Task 37: îles (`JavaScript/iles`, #129)
+
+Upstream https://github.com/ElMassimo/iles, entry point `iles build`. îles (latest stable), pages from markdown, `iles build`.
+
+### Task 38: Ink (`Go/ink`, #130)
+
+Upstream https://github.com/InkProject/ink, entry point `ink build`. InkProject/ink pinned release binary (or `go install` at a tag in a builder stage); `ink build`.
+
+### Task 39: Plenti (`Go/plenti`, #131)
+
+Upstream https://github.com/plentico/plenti, entry point `plenti build`. Plenti pinned release binary; Svelte-based layouts; `plenti build` (it may need Node at build — include pinned Node).
+
+### Task 40: Emanote (`Haskell/emanote`, #132)
+
+Upstream https://github.com/srid/emanote, entry point `emanote gen`. Emanote: prefer a pinned prebuilt binary/static release or nix-free build; `emanote gen <out>`; if no feasible build within the shared-machine limits, `_wip` with the reason.
+
+### Task 41: Marmite (`Rust/marmite`, #133)
+
+Upstream https://github.com/rochacbruno/marmite, entry point `marmite <input> <output>`. marmite pinned release binary; `marmite <input> <output>`; disable feeds/tags/search pages via config if possible.
+
+### Task 42: Nesta (`Ruby/nesta`, #134)
+
+Upstream https://github.com/gma/nesta, entry point `nesta build`. Nesta (Sinatra-based CMS) static export (`nesta build`); Gemfile.lock in the image.
+
+### Task 43: Laika (`Scala/laika`, #135)
+
+Upstream https://github.com/typelevel/Laika, entry point `sbt laikaSite`. Laika as a library via sbt plugin or a small Scala CLI app compiled in the image (untimed); timed run of the compiled app or `sbt laikaSite` with a warm, offline dependency cache (document which and why).
+
+### Task 44: Tableau (`Elixir/tableau`, #136)
+
+Upstream https://github.com/elixir-tools/tableau, entry point `mix tableau.build`. Elixir/Erlang pinned, Tableau project with deps fetched and compiled in the image; timed `mix tableau.build` (offline).
+
+### Task 45: nimib (`Nim/nimib`, #137)
+
+Upstream https://github.com/pietroppeter/nimib, entry point `nim r (nimib publish)`. nimib is a notebook/publishing library: one nimib document per post rendered to HTML via a compiled Nim program (compile untimed); if it cannot render arbitrary markdown files per post, `_wip` with the reason.
+
+### Task 46: Lustre SSG (`Gleam/lustre-ssg`, #138)
+
+Upstream https://github.com/lustre-labs/ssg, entry point `gleam run -m build`. Gleam + Erlang pinned; lustre/ssg project reading the markdown posts at build time; deps fetched and compiled in the image; timed `gleam run -m build` (offline).

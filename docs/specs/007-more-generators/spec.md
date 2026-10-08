@@ -1,10 +1,10 @@
-# More Generators (waves 1 to 3)
+# More Generators (waves 1 to 4)
 
 - **Repo:** `ssgberk/ssg-frameworks`
 - **Date:** 2026-10-05
 - **Status:** aprovado (2026-10-05, maintainer: "implemente os maiores", top 6 by GitHub stars)
 - **Siblings:** `plan.md` (how), `tasks.md` (one task per generator)
-- **Issues:** wave 1 #92, #93, #95, #96, #97, #118; wave 2 #98, #100, #101, #102, #119, #120; wave 3 #94, #99, #103, #122, #123, #124 (tracking #116)
+- **Issues:** wave 1 #92, #93, #95, #96, #97, #118; wave 2 #98, #100, #101, #102, #119, #120; wave 3 #94, #99, #103, #122, #123, #124; wave 4: every remaining `new-generator` issue, #104–#138 (tracking #116)
 
 ## Context
 
@@ -43,6 +43,39 @@ Wave 3:
 | #103 | Hakyll | `Haskell/hakyll` | Haskell | 2.9k |
 | #94 | VuePress 2 | `JavaScript/vuepress` | JavaScript | 2.8k (v2), 23k (v1) |
 
+Wave 4 (maintainer, 2026-10-08: "crie os frameworks, adicione todos que ainda são issues"): every remaining issue, including the earlier-deferred Quarkdown, TanStack Start and Vike. A generator that cannot fit the contract after a genuine attempt goes to `_wip/` with the exact reason (spec 001 procedure) and its issue stays open with that reason.
+
+| Issue | Generator | Directory | Language |
+|---|---|---|---|
+| #104 | Lume | `JavaScript/lume` | Deno |
+| #105 | rspress | `JavaScript/rspress` | JavaScript |
+| #106 | Statiq | `CSharp/statiq` | C# |
+| #107 | Sculpin | `PHP/sculpin` | PHP |
+| #108 | Bridgetown | `Ruby/bridgetown` | Ruby |
+| #109 | JBake | `Java/jbake` | Java |
+| #110 | Cryogen | `Clojure/cryogen` | Clojure |
+| #111 | Franklin | `Julia/franklin` | Julia |
+| #112 | Antora | `JavaScript/antora` | JavaScript |
+| #113 | Cecil | `PHP/cecil` | PHP |
+| #114 | soupault | `OCaml/soupault` | OCaml |
+| #115 | TanStack Start | `JavaScript/tanstack-start` | JavaScript |
+| #117 | Quarkdown | `Kotlin/quarkdown` | Kotlin |
+| #121 | Vike | `JavaScript/vike` | JavaScript |
+| #125 | docmd | `JavaScript/docmd` | JavaScript |
+| #126 | Zine | `Zig/zine` | Zig |
+| #127 | vite-ssg | `JavaScript/vite-ssg` | JavaScript |
+| #128 | Cobalt | `Rust/cobalt` | Rust |
+| #129 | îles | `JavaScript/iles` | JavaScript |
+| #130 | Ink | `Go/ink` | Go |
+| #131 | Plenti | `Go/plenti` | Go |
+| #132 | Emanote | `Haskell/emanote` | Haskell |
+| #133 | Marmite | `Rust/marmite` | Rust |
+| #134 | Nesta | `Ruby/nesta` | Ruby |
+| #135 | Laika | `Scala/laika` | Scala |
+| #136 | Tableau | `Elixir/tableau` | Elixir |
+| #137 | nimib | `Nim/nimib` | Nim |
+| #138 | Lustre SSG | `Gleam/lustre-ssg` | Gleam |
+
 - **R-1** Each generator follows the contract in `docs/specs/001-canonical-build-runner` (dockerfile skeleton, byte-identical `build.sh`, `benchmark_config.json` schema, markers) and the Global Constraints of `docs/specs/003-new-generators/tasks.md`.
 - **R-2** Each site has a base layout, a post page that renders only its own post, and one index page that lists every post (no pagination, tags, archives, feeds, search, sidebar or table of contents listing other posts). Where the generator forces navigation chrome, a minimal custom theme or layout removes it.
 - **R-3** The generator renders the spec 005 rich markdown content without errors at `-cs 0.500` and `-cs 5`, including the image reference `/assets/ssgberk.png`. Each generator ships byte-identical copies of `reference/assets/ssgberk.css` and `reference/assets/ssgberk.png` in its static/public folder so the image resolves.
@@ -60,7 +93,7 @@ Wave 3:
 
 ## Out of scope
 
-- The other 28 issues (later waves).
+- None of the `new-generator` issues remain out of scope after wave 4.
 - The spec 006 conformance check (generators migrate in 006 like the existing 17).
 - Benchmark rounds with the new generators (benchmark-tool, after merge).
 
