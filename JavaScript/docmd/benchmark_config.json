@@ -1,16 +1,18 @@
 {
   "framework": "docmd",
-  "tests": [{
-    "default": {
-      "approach": "Realistic",
-      "classification": "Micro",
-      "framework": "docmd",
-      "language": "JavaScript",
-      "display_name": "docmd",
-      "notes": "",
-      "versus": "javascript"
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "docmd",
+        "language": "JavaScript",
+        "display_name": "docmd",
+        "notes": "",
+        "versus": "javascript"
+      }
     }
-  }],
+  ],
   "content": [
     {
       "folder": "docs/posts",
@@ -22,7 +24,7 @@
     {
       "metadata_dateslug": "date",
       "metadata_layout": "",
-      "build_command": "npx docmd build",
+      "build_command": "sh -c 'for f in docs/posts/*.md; do [ -e \"$f\" ] || continue; b=${f##*/}; b=${b%.md}; printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done > docs/.list && { printf \"# SSGBerk docmd\\n\\n\"; cat docs/.list; } > docs/index.md && rm docs/.list && npx docmd build'",
       "output_folder": "site",
       "output_glob": "posts/*/index.html",
       "cache_folders": []
