@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "antora",
+  "name": "Antora",
+  "description": "Antora is a multi-repository documentation site generator for AsciiDoc content stored in git, built on Asciidoctor.js.",
+  "homepage": "https://antora.org",
+  "repository": "https://gitlab.com/antora/antora",
+  "license": "MPL-2.0",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Handlebars"
+  ],
+  "contentFormats": [
+    "asciidoc"
+  ],
+  "category": "docs",
+  "firstRelease": 2017,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "versionFrom": {
+    "source": "npm",
+    "name": "@antora/cli"
+  },
+  "notes": "Antora reads only AsciiDoc from git content sources. The benchmark posts are the canonical markdown; a local extension (ssgberk-md-adapter.js) converts them to AsciiDoc in memory inside the single Antora process and generates the index page. The UI bundle is a minimal local zip built in the image."
+}

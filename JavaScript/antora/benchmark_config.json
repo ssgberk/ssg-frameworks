@@ -1,0 +1,31 @@
+{
+  "framework": "antora",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "antora",
+      "language": "JavaScript",
+      "display_name": "antora",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "modules/ROOT/pages/posts",
+      "type": "none",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx antora --quiet antora-playbook.yml",
+      "output_folder": "build/site",
+      "output_glob": "posts/*.html",
+      "cache_folders": [".cache/antora"]
+    }
+  ]
+}
