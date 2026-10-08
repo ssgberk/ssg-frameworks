@@ -1,0 +1,31 @@
+{
+  "framework": "iles",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "iles",
+      "language": "JavaScript",
+      "display_name": "îles",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "pages/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx iles build",
+      "output_folder": "dist",
+      "output_glob": "posts/*.html",
+      "cache_folders": ["node_modules/.vite", "node_modules/.cache"]
+    }
+  ]
+}

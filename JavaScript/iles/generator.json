@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "iles",
+  "name": "îles",
+  "description": "îles is a Vite and Vue powered static site generator built on islands architecture, turning Markdown and Vue pages into static HTML.",
+  "homepage": "https://iles-docs.netlify.app",
+  "repository": "https://github.com/ElMassimo/iles",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Vue"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2021,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "firstRelease from npm iles creation (2021-09-09). This setup uses a bare default layout rendering the post title and content, an index page listing every post via import.meta.glob, srcDir set to the project root, and remark-gfm for tables (not enabled by default)."
+}
