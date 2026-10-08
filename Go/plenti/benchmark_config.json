@@ -1,0 +1,32 @@
+{
+  "framework": "plenti",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "plenti",
+      "language": "Go",
+      "display_name": "Plenti",
+      "notes": "",
+      "versus": "go"
+    }
+  }],
+  "content": [
+    {
+      "folder": "md/post",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "sh -c 'mkdir -p content/post && awk -f convert.awk md/post/*.md && plenti build'",
+      "build_verbose": "sh -c 'mkdir -p content/post && awk -f convert.awk md/post/*.md && plenti build --verbose'",
+      "output_folder": "public",
+      "output_glob": "post/*/index.html",
+      "cache_folders": ["content/post", "node_modules"]
+    }
+  ]
+}
