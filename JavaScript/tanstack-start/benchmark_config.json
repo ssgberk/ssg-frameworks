@@ -1,0 +1,31 @@
+{
+  "framework": "tanstack-start",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "tanstack-start",
+      "language": "JavaScript",
+      "display_name": "tanstack-start",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "src/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx vite build --logLevel silent",
+      "output_folder": "dist/client",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [".tanstack", "node_modules/.vite", "dist"]
+    }
+  ]
+}

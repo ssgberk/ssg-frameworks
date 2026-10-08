@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "tanstack-start",
+  "name": "TanStack Start",
+  "description": "TanStack Start is a full-stack React framework built on TanStack Router and Vite; its static prerendering renders every route to HTML at build time.",
+  "homepage": "https://tanstack.com/start",
+  "repository": "https://github.com/TanStack/router",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "React (JSX)"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2024,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "versionFrom": {
+    "source": "npm",
+    "name": "@tanstack/react-start"
+  },
+  "notes": "Application framework used as an SSG through static prerendering (crawlLinks from the index route). Markdown posts are loaded at build time with import.meta.glob and rendered with marked inside server functions. Minimal site: bare root layout, one post route and one index route."
+}
