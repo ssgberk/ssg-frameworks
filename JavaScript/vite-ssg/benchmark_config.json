@@ -1,0 +1,36 @@
+{
+  "framework": "vite-ssg",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "vite-ssg",
+        "language": "JavaScript",
+        "display_name": "vite-ssg",
+        "notes": "",
+        "versus": "javascript"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "src/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx vite-ssg build",
+      "output_folder": "dist",
+      "output_glob": "posts/*.html",
+      "cache_folders": [
+        "node_modules/.vite",
+        "node_modules/.vite-temp"
+      ]
+    }
+  ]
+}

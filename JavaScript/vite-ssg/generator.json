@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "vite-ssg",
+  "name": "vite-ssg",
+  "description": "vite-ssg is a static site generation tool for Vue 3 on Vite that prerenders the routes of a Vue app to static HTML.",
+  "homepage": "https://github.com/antfu-collective/vite-ssg",
+  "repository": "https://github.com/antfu-collective/vite-ssg",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "Vue"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2020,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "versionFrom": {
+    "source": "npm",
+    "name": "vite-ssg"
+  },
+  "notes": "firstRelease from npm vite-ssg creation (2020-12-21). Vue 3 prerenderer used as an SSG; Markdown is compiled to Vue components by unplugin-vue-markdown and routes are built from import.meta.glob over the posts directory. Minimal site: bare app shell, one index route."
+}
