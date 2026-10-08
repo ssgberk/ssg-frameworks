@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "rspress",
+  "name": "Rspress",
+  "description": "Rspress is a Rspack-based static site generator built on React and MDX that turns Markdown into fast static documentation pages.",
+  "homepage": "https://rspress.rs",
+  "repository": "https://github.com/web-infra-dev/rspress",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "React"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2022,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "versionFrom": {
+    "source": "npm",
+    "name": "@rspress/core"
+  },
+  "notes": "firstRelease from npm rspress creation (2022-10-26); the 2.x line is published as @rspress/core (the unscoped rspress package stays on 1.x). This setup pins @rspress/core 2.0.23 and replaces the default theme Layout (theme/index.tsx) with a bare one: no nav, sidebar, outline, search or footer; it renders only the post, and the index page lists all posts."
+}

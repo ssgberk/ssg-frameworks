@@ -1,0 +1,36 @@
+{
+  "framework": "rspress",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "rspress",
+        "language": "JavaScript",
+        "display_name": "rspress",
+        "notes": "",
+        "versus": "javascript"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "docs/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "npx rspress build",
+      "output_folder": "doc_build",
+      "output_glob": "posts/*.html",
+      "cache_folders": [
+        "node_modules/.cache",
+        "node_modules/.rspress"
+      ]
+    }
+  ]
+}
