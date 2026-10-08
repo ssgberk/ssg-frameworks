@@ -1,0 +1,25 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "cryogen",
+  "name": "Cryogen",
+  "description": "Cryogen is a simple static site generator written in Clojure that renders Markdown posts through Selmer templates.",
+  "homepage": "https://cryogenweb.org",
+  "repository": "https://github.com/cryogen-project/cryogen",
+  "license": "EPL-1.0",
+  "language": "Clojure",
+  "runtime": "JVM (Clojure CLI)",
+  "templateEngines": [
+    "Selmer"
+  ],
+  "contentFormats": [
+    "markdown",
+    "asciidoc"
+  ],
+  "category": "blog",
+  "firstRelease": 2014,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Posts start with an EDN metadata map instead of YAML front matter; the timed build converts the generated front matter in one awk pass. Tag, archive, RSS and sitemap output cannot be switched off."
+}

@@ -1,0 +1,15 @@
+{% extends "/html/base.html" %}
+{% block content %}
+<section class="posts" id="posts">
+<h1 class="page-title">Posts</h1>
+<ol class="post-list">
+{% for p in posts|sort-by-reversed:date %}
+<li class="post-item">
+<h2 class="post-item-title"><a href="{{p.uri}}">{{p.title}}</a></h2>
+<time class="post-item-date" datetime="{{p.date|date:"yyyy-MM-dd'T'HH:mm:ss'Z'"}}">{{p.date|date:"yyyy-MM-dd"}}</time>
+<p class="post-item-summary">{{p.summary}}</p>
+</li>
+{% endfor %}
+</ol>
+</section>
+{% endblock %}

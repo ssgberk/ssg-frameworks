@@ -1,0 +1,14 @@
+{% extends "/html/base.html" %}
+{% block title %}{{post.title}} | {{title}}{% endblock %}
+{% block content %}
+<article class="post">
+<h1 class="post-title">{{post.title}}</h1>
+<p class="post-meta"><time class="post-date" datetime="{{post.date|date:"yyyy-MM-dd'T'HH:mm:ss'Z'"}}">{{post.date|date:"yyyy-MM-dd"}}</time> by <span class="post-author">{{post.author}}</span></p>
+<ul class="post-tags">
+{% for t in post.tag-order %}<li class="post-tag">{{t}}</li>
+{% endfor %}</ul>
+<div class="post-body">
+{{post.content|safe}}
+</div>
+</article>
+{% endblock %}

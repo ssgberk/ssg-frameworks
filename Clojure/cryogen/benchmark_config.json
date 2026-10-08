@@ -1,0 +1,33 @@
+{
+  "framework": "cryogen",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "cryogen",
+      "language": "Clojure",
+      "display_name": "cryogen",
+      "notes": "",
+      "versus": "clojure"
+    }
+  }],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "static_folder": "src/content",
+      "build_command": "sh -c 'mkdir -p content/md/posts public && printf \"%s\\n\" posts/*.md | awk -f cryogen-convert.awk && clojure -M:build'",
+      "build_verbose": "sh -c 'mkdir -p content/md/posts public && printf \"%s\\n\" posts/*.md | awk -f cryogen-convert.awk && clojure -M:build'",
+      "output_folder": "public",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": ["content/md/posts"]
+    }
+  ]
+}

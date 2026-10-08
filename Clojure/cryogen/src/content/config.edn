@@ -1,0 +1,32 @@
+{:site-title                   "SSGBerk Reference"
+ :author                       "SSGBerk"
+ :description                  "SSGBerk reference site"
+ :site-url                     "http://localhost/"
+ :post-root                    "posts"
+ :page-root                    "pages"
+ :post-root-uri                "posts"
+ :page-root-uri                "pages"
+ :tag-root-uri                 "tags"
+ :public-dest                  "public"
+ :blog-prefix                  ""
+ :rss-name                     "feed.xml"
+ :recent-posts                 0
+ :post-date-format             "yyyy-MM-dd'T'HH:mm:ss'Z'"
+ :archive-group-format         "yyyy MMMM"
+ :sass-src                     []
+ :sass-path                    "sass"
+ :theme                        "ssgberk"
+ :resources                    ["assets"]
+ :keep-files                   []
+ :disqus?                      false
+ :ignored-files                [#"\.#.*" #".*\.swp$"]
+ ;; previews? true with one huge page makes the index list every post (no pagination)
+ :previews?                    true
+ :posts-per-page               100000000
+ :blocks-per-preview           1
+ :clean-urls                   :trailing-slash
+ :collapse-subdirs?            false
+ :hide-future-posts?           true
+ :klipse                       {}
+ :description-include-elements #{:p :h1 :h2 :h3 :h4 :h5 :h6}
+ :debug?                       false}

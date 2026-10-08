@@ -1,0 +1,7 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.5"}
+        cryogen-flexmark/cryogen-flexmark {:mvn/version "0.1.5"}
+        cryogen-core/cryogen-core {:mvn/version "0.5.1"}}
+ :aliases {;; Compile the site: `clojure -M:build`
+           :build {:jvm-opts ["-Duser.timezone=UTC" "-Djava.awt.headless=true"]
+                   :main-opts ["-m" "cryogen.core"]}}}

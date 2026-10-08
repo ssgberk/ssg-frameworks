@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{title}}{% endblock %}</title>
+<link rel="stylesheet" href="/assets/ssgberk.css">
+</head>
+<body>
+{% include "/html/header.html" %}
+<main class="site-main">
+{% block content %}{% endblock %}
+</main>
+{% include "/html/footer.html" %}
+</body>
+</html>
