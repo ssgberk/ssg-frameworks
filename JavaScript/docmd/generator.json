@@ -1,0 +1,28 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "docmd",
+  "name": "docmd",
+  "description": "docmd is a zero-config documentation generator that compiles a folder of Markdown files into a static documentation website.",
+  "homepage": "https://docmd.io",
+  "repository": "https://github.com/docmd-io/docmd",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Node.js 24.21.0",
+  "templateEngines": [
+    "EJS"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "framework",
+  "firstRelease": 2026,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "versionFrom": {
+    "source": "npm",
+    "name": "@docmd/core"
+  },
+  "notes": "firstRelease from npm @docmd/core creation (2026-02-12). This setup pins @docmd/core 0.9.7 and disables every bundled plugin (search, seo, sitemap, analytics, llms, mermaid, git, openapi, okf, ai), the sidebar, header, breadcrumbs, page navigation and options menu; each post renders as its own page."
+}
