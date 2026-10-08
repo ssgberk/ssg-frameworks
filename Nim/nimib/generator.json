@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "nimib",
+  "name": "nimib",
+  "description": "nimib is a Nim library for notebook-style documents; the benchmark program renders every Markdown post through nimib's nbText into a static HTML page.",
+  "homepage": "https://pietroppeter.github.io/nimib/",
+  "repository": "https://github.com/pietroppeter/nimib",
+  "license": "MIT",
+  "language": "Nim",
+  "runtime": "Nim 2.2 compiled binary",
+  "templateEngines": [
+    "Mustache"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "general",
+  "firstRelease": 2021,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "nimib is a library, not a CLI: a small Nim program (src/ssgrender.nim, compiled once in the image, untimed) reads the posts and calls nbInit/nbText/nbSave per post. The timed build is the compiled binary only."
+}

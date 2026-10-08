@@ -1,0 +1,32 @@
+{
+  "framework": "nimib",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "nimib",
+      "language": "Nim",
+      "display_name": "nimib",
+      "notes": "",
+      "versus": "go"
+    }
+  }],
+  "content": [
+    {
+      "folder": "content/post",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "./ssgrender",
+      "build_verbose": "./ssgrender",
+      "output_folder": "public",
+      "output_glob": "post/*/index.html",
+      "cache_folders": []
+    }
+  ]
+}
