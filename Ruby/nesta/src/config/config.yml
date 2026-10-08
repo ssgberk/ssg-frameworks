@@ -1,0 +1,5 @@
+title: "SSGBerk Reference"
+subtitle: "Build-time benchmark"
+content: content
+build:
+  domain: localhost

@@ -1,0 +1,7 @@
+# Nesta
+
+Nesta 0.18.0 (Sinatra CMS, Ruby 3.2 from apt, Haml views, RDiscount Markdown) on Ubuntu 24.04, benchmarked by SSGBerk. `build.sh` generates the posts into `src/content/pages/posts` (`YYYY-MM-DD-NNN.md`, content type `3minus`), then times `bundle exec nesta build`. Each post renders to `dist/posts/<name>.html` (the verification step checks the count equals the requested number of files); `dist/index.html` lists every post. `nesta build` always adds `404.html`, `articles.xml` (Atom feed), `sitemap.xml` and copies `public/` (the reference assets).
+
+Metadata: Nesta's native format is a `Key: value` header block, not YAML front matter, and no build.sh content type produces it. `src/app.rb` (loaded by Nesta itself as the local app override) prepends a parser so the page loader reads `---` YAML front matter in-process; no conversion pass or per-post process is timed. Views in `src/views` replace the default theme (layout, post, index, 404) with the reference markup. `tilt` is pinned to 2.4.0 because haml-contrib needs `Tilt::MarukuTemplate`, removed in later Tilt. Nesta writes no cache folder. Markdown rendering is RDiscount's (Discount), so list and code markup differ slightly from other generators. Run it with `./ssgberk --test nesta -nf 10` from the toolset repository.
+
+Timed command uses the realistic invocation (`bundle exec …`), which includes ~0.1–0.4 s wrapper startup.

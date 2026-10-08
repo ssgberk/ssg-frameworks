@@ -1,0 +1,5 @@
+source "https://rubygems.org"
+
+gem "nesta", "0.18.0"
+# haml-contrib (a Nesta dependency) needs Tilt::MarukuTemplate, removed in Tilt 2.5.
+gem "tilt", "2.4.0"

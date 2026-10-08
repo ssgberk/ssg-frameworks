@@ -1,0 +1,23 @@
+<!doctype html>
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1")
+    - home = @page && @page.abspath == "/"
+    %title= @page.nil? ? "Page not found | SSGBerk Reference" : (home ? "SSGBerk Reference" : "#{@title} | SSGBerk Reference")
+    %link(rel="stylesheet" href="/assets/ssgberk.css")
+  %body
+    %header.site-header
+      %a.site-title(href="/") SSGBerk Reference
+      %nav.site-nav
+        %ul
+          %li
+            %a{href: "/", "aria-current": (home ? "page" : nil)} Home
+          %li
+            %a(href="/#posts") Posts
+          %li
+            %a(href="https://github.com/ssgberk") Source
+    %main.site-main
+      = yield
+    %footer.site-footer
+      %p Built for the SSGBerk build-time benchmark.

@@ -1,0 +1,12 @@
+- stamp = @page.date.strftime("%Y-%m-%dT%H:%M:%SZ")
+%article.post
+  %h1.post-title= @page.title
+  %p.post-meta
+    %time.post-date(datetime="#{stamp}")= @page.date.strftime("%Y-%m-%d")
+    by
+    %span.post-author= @page.metadata("author")
+  %ul.post-tags
+    - @page.metadata("tags").to_s.split(", ").each do |tag|
+      %li.post-tag= tag
+  .post-body
+    != @page.to_html(self)

@@ -1,0 +1,34 @@
+{
+  "framework": "nesta",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "Nesta",
+        "language": "Ruby",
+        "display_name": "Nesta",
+        "notes": "",
+        "versus": "ruby"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "content/pages/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "bundle exec nesta build",
+      "build_verbose": "bundle exec nesta build",
+      "output_folder": "dist",
+      "output_glob": "posts/*.html",
+      "cache_folders": []
+    }
+  ]
+}
