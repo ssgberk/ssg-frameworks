@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "zine",
+  "name": "Zine",
+  "description": "Zine is a static site generator written in Zig that renders SuperMD content through SuperHTML templates.",
+  "homepage": "https://zine-ssg.io",
+  "repository": "https://github.com/kristoff-it/zine",
+  "license": "MIT",
+  "language": "Zig",
+  "runtime": "Zig binary (pinned release, musl static)",
+  "templateEngines": [
+    "SuperHTML"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "general",
+  "firstRelease": 2023,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Zine reads SuperMD (a Markdown dialect) with Ziggy front matter, which no canonical content type produces, so build.sh generates plain posts into posts/ and the timed build_command converts them in one awk process (zine-convert.awk: front matter plus heading and fence adjustments, no per-post forks) into content/posts/*.smd before zine release. Zine writes no cache between runs."
+}

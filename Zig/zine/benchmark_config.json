@@ -1,0 +1,34 @@
+{
+  "framework": "zine",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "Zine",
+        "language": "Zig",
+        "display_name": "Zine",
+        "notes": "",
+        "versus": "zig"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "none",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "rm -f content/posts/2*.smd; printf \"%s\\n\" posts/*.md | awk -f zine-convert.awk && zine release -o public",
+      "build_verbose": "rm -f content/posts/2*.smd; printf \"%s\\n\" posts/*.md | awk -f zine-convert.awk && zine release -o public",
+      "output_folder": "public",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title :text="$page.title"></title>
+</head>
+<body>
+<h1 :text="$page.title"></h1>
+<ul :loop="$page.subpages()">
+<li><a href="$loop.it.link()" :text="$loop.it.title"></a></li>
+</ul>
+</body>
+</html>
