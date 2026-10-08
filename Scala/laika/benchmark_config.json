@@ -1,0 +1,32 @@
+{
+  "framework": "laika",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "laika",
+      "language": "Scala",
+      "display_name": "laika",
+      "notes": "",
+      "versus": "scala"
+    }
+  }],
+  "content": [
+    {
+      "folder": "site/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "java -Xmx4g -jar /opt/laika/laika-site.jar site public",
+      "build_verbose": "java -Xmx4g -jar /opt/laika/laika-site.jar site public",
+      "output_folder": "public",
+      "output_glob": "posts/*.html",
+      "cache_folders": []
+    }
+  ]
+}

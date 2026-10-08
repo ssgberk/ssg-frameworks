@@ -1,0 +1,25 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "laika",
+  "name": "Laika",
+  "description": "Laika is a Scala library and toolkit for transforming lightweight markup into HTML, EPUB and PDF; a site is a small Scala program built on its transformer API.",
+  "homepage": "https://typelevel.org/Laika/",
+  "repository": "https://github.com/typelevel/Laika",
+  "license": "Apache-2.0",
+  "language": "Scala",
+  "runtime": "Scala 3 fat jar on a JRE (scala-cli, Temurin 21)",
+  "templateEngines": [
+    "Laika templates"
+  ],
+  "contentFormats": [
+    "markdown",
+    "restructuredtext"
+  ],
+  "category": "general",
+  "firstRelease": 2012,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Laika is used as a library through laika-io; the Helium theme is not used."
+}
