@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+<head>
+<meta charset="utf-8">
+<title>{{ site.title }}</title>
+<link rel="stylesheet" href="/assets/ssgberk.css">
+</head>
+<body>
+<h1>{{ site.title }}</h1>
+<ul>
+{% for p in site.pages|filter(p => p.section == 'posts' and p.type == 'page') %}
+<li><a href="/{{ p.path }}/">{{ p.title }}</a></li>
+{% endfor %}
+</ul>
+</body>
+</html>

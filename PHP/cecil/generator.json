@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "cecil",
+  "name": "Cecil",
+  "description": "Cecil is a PHP static site generator that turns Markdown content and Twig templates into a static website.",
+  "homepage": "https://cecil.app",
+  "repository": "https://github.com/Cecilapp/Cecil",
+  "license": "MIT",
+  "language": "PHP",
+  "runtime": "PHP 8.3 (Ubuntu 24.04)",
+  "templateEngines": [
+    "Twig"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "general",
+  "firstRelease": 2013,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Installed from Packagist as cecil/cecil."
+}

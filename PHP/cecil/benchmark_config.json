@@ -1,0 +1,36 @@
+{
+  "framework": "cecil",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "Cecil",
+        "language": "PHP",
+        "display_name": "Cecil",
+        "notes": "",
+        "versus": "php"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "pages/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "vendor/bin/cecil build --quiet",
+      "build_verbose": "vendor/bin/cecil build -v",
+      "output_folder": "_site",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": [
+        ".cache"
+      ]
+    }
+  ]
+}

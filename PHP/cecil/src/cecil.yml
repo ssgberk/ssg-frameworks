@@ -1,0 +1,46 @@
+title: SSGBerk
+description: SSGBerk benchmark site
+baseurl: ''
+language: en
+taxonomies:
+  tags: disabled
+  categories: disabled
+pages:
+  dir: pages
+  default:
+    404:
+      published: false
+    robots:
+      published: false
+    sitemap:
+      published: false
+    xsl/sitemap:
+      published: false
+    xsl/atom:
+      published: false
+    xsl/rss:
+      published: false
+  pagination:
+    max: 100000
+  body:
+    toc: []
+    highlight: false
+    images:
+      lazy: false
+      decoding: false
+output:
+  dir: _site
+  pagetypeformats:
+    page: [html]
+    homepage: [html]
+    section: [html]
+    vocabulary: [html]
+    term: [html]
+assets:
+  fingerprint: false
+  minify: false
+static:
+  dir: static
+cache:
+  enabled: true
+  dir: .cache
