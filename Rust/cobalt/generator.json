@@ -20,5 +20,5 @@
   "benchmark": {
     "status": "active"
   },
-  "notes": "Posts are generated without front matter (Cobalt rejects the canonical keys); date and title come from the file name. firstRelease from the first cobalt-bin crate on crates.io (0.2.0, 2016-06-25); the oldest GitHub release is v0.4.0 (2017)."
+  "notes": "Posts are generated without front matter (Cobalt rejects the canonical keys); date and title come from the file name. firstRelease from the first cobalt-bin crate on crates.io (0.2.0, 2016-06-25)."
 }
