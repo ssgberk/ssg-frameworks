@@ -1,0 +1,3 @@
+src/build/
+src/site/posts/*
+!src/site/posts/.gitkeep

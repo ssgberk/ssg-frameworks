@@ -1,0 +1,18 @@
+[settings]
+site_dir = "site"
+build_dir = "build"
+default_template_file = "templates/main.html"
+default_content_selector = "main"
+page_file_extensions = ["md"]
+clean_urls = true
+generator_mode = true
+ignore_extensions = ["gitkeep"]
+
+[preprocessors]
+md = "cmark-gfm --unsafe -e table"
+
+[widgets.page-title]
+widget = "title"
+selector = "h2"
+default = "SSGBerk Reference"
+append = " | SSGBerk Reference"

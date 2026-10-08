@@ -1,0 +1,34 @@
+{
+  "framework": "soupault",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "soupault",
+        "language": "OCaml",
+        "display_name": "soupault",
+        "notes": "",
+        "versus": "ocaml"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "site/posts",
+      "type": "none",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "soupault",
+      "build_verbose": "soupault --verbose",
+      "output_folder": "build",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": []
+    }
+  ]
+}

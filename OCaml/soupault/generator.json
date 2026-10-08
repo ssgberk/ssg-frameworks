@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "soupault",
+  "name": "soupault",
+  "description": "soupault is a static website generator written in OCaml that treats a site as HTML pages and transforms them with CSS-selector based widgets and external preprocessors.",
+  "homepage": "https://soupault.app",
+  "repository": "https://github.com/PataphysicalSociety/soupault",
+  "license": "MIT",
+  "language": "OCaml",
+  "runtime": "OCaml native binary (release tarball)",
+  "templateEngines": [
+    "HTML page templates with CSS-selector widgets"
+  ],
+  "contentFormats": [
+    "html"
+  ],
+  "category": "general",
+  "firstRelease": 2019,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "soupault processes HTML only; Markdown is converted by an external cmark-gfm preprocessor configured in soupault.toml. Posts use content type none (no front matter) because soupault has no front matter parser."
+}
