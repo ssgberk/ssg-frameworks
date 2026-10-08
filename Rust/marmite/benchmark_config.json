@@ -1,0 +1,34 @@
+{
+  "framework": "marmite",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "marmite",
+        "language": "Rust",
+        "display_name": "Marmite",
+        "notes": "",
+        "versus": "rust"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "content",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "marmite . site",
+      "build_verbose": "marmite . site",
+      "output_folder": "site",
+      "output_glob": "post-*.html",
+      "cache_folders": []
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+name: SSGBerk
+pagination: 100000
+enable_search: false
+json_feed: false
+build_sitemap: false
+publish_urls_json: false
+publish_md: false
+toc: false
+enable_related_content: false
+show_next_prev_links: false
+enable_toolbar: false
+check_internal_links: false
+gallery_create_thumbnails: false
+file_mapping:
+  - source: static/assets/ssgberk.css
+    dest: assets/ssgberk.css
+  - source: static/assets/ssgberk.png
+    dest: assets/ssgberk.png

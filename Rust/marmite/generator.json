@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "marmite",
+  "name": "Marmite",
+  "description": "Marmite is a Rust command-line static site generator for blogs that turns a folder of Markdown files into a site with Tera templates.",
+  "homepage": "https://marmite.blog/",
+  "repository": "https://github.com/rochacbruno/marmite",
+  "license": "AGPL-3.0",
+  "language": "Rust",
+  "runtime": "Rust binary (x86_64 release tarball; built from source on arm64)",
+  "templateEngines": [
+    "Tera"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "blog",
+  "firstRelease": 2024,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Benchmarked with minimal templates (base, content, list, group) and search, JSON feeds, sitemap, urls.json, Markdown sources, table of contents, related posts and next/previous links disabled. Marmite still writes tag, author, archive, stream and series pages, RSS feeds and its stock static files; none can be turned off by configuration. firstRelease from the first GitHub release (0.1.4, 2024-10-20)."
+}
