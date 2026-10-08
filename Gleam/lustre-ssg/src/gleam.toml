@@ -1,0 +1,12 @@
+name = "ssgberk_lustre"
+version = "1.0.0"
+description = "SSGBerk benchmark site built with lustre_ssg"
+target = "erlang"
+
+[dependencies]
+# gleam_stdlib < 0.68: lustre_ssg 0.11.0 requires jot 4.0.0, which still calls result.then (removed in 0.68).
+gleam_stdlib = ">= 0.60.0 and < 0.68.0"
+lustre = ">= 5.0.0 and < 6.0.0"
+lustre_ssg = "0.11.0"
+mork = "1.12.3"
+simplifile = ">= 2.0.1 and < 3.0.0"

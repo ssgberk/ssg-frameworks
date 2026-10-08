@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "lustre-ssg",
+  "name": "Lustre SSG",
+  "description": "Lustre SSG (lustre_ssg) is a static site generator for Lustre projects written in Gleam; a site is a Gleam program that renders Lustre elements to HTML files.",
+  "homepage": "https://lustre.build/",
+  "repository": "https://github.com/lustre-labs/ssg",
+  "license": "MIT",
+  "language": "Gleam",
+  "runtime": "Gleam on Erlang/OTP (BEAM)",
+  "templateEngines": [
+    "Lustre elements"
+  ],
+  "contentFormats": [
+    "djot"
+  ],
+  "category": "general",
+  "firstRelease": 2023,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "lustre_ssg ships a Djot renderer only; Markdown posts are parsed with the mork package and the front matter by the site's own Gleam code."
+}

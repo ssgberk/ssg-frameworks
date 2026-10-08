@@ -1,0 +1,31 @@
+{
+  "framework": "lustre-ssg",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "lustre-ssg",
+      "language": "Gleam",
+      "display_name": "lustre-ssg",
+      "notes": "",
+      "versus": "gleam"
+    }
+  }],
+  "content": [
+    {
+      "folder": "content/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "gleam run -m build --no-print-progress",
+      "build_verbose": "gleam run -m build",
+      "output_folder": "public",
+      "output_glob": "posts/*.html"
+    }
+  ]
+}
