@@ -1,0 +1,34 @@
+{
+  "framework": "tableau",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "tableau",
+        "language": "Elixir",
+        "display_name": "tableau",
+        "notes": "",
+        "versus": "elixir"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "_posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "mix tableau.build",
+      "build_verbose": "mix tableau.build",
+      "output_folder": "_site",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": []
+    }
+  ]
+}

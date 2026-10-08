@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "tableau",
+  "name": "Tableau",
+  "description": "Tableau is a static site generator for Elixir that renders Markdown posts through Elixir layout modules.",
+  "homepage": "https://hexdocs.pm/tableau",
+  "repository": "https://github.com/elixir-tools/tableau",
+  "license": "MIT",
+  "language": "Elixir",
+  "runtime": "Erlang/OTP 28.5.0.7 + Elixir 1.20.4 (hexpm image)",
+  "templateEngines": [
+    "Elixir string interpolation"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "general",
+  "firstRelease": 2023,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "firstRelease from the first Hex release 0.1.0 (2023-06-13). Markdown is rendered by MDEx (precompiled Rust NIF). Layouts are plain Elixir modules returning strings; Tableau also supports EEx, HEEx and Temple."
+}
