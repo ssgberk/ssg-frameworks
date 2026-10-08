@@ -24,8 +24,8 @@
     {
       "metadata_dateslug": "date",
       "metadata_layout": "",
-      "build_command": "sh -c 'mkdir -p content/posts && find raw/posts -name \"*.md\" -print0 | xargs -0 awk -f convert.awk && jbake -b . output'",
-      "build_verbose": "sh -c 'mkdir -p content/posts && find raw/posts -name \"*.md\" -print0 | xargs -0 awk -f convert.awk && jbake -b . output'",
+      "build_command": "sh -c 'mkdir -p content/posts && find raw/posts -name \"*.md\" -print0 | xargs -0 -r awk -f convert.awk && jbake -b . output'",
+      "build_verbose": "sh -c 'mkdir -p content/posts && find raw/posts -name \"*.md\" -print0 | xargs -0 -r awk -f convert.awk && jbake -b . output'",
       "output_folder": "output",
       "output_glob": "posts/*.html",
       "cache_folders": [
