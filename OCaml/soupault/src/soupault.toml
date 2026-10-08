@@ -3,7 +3,7 @@ site_dir = "site"
 build_dir = "build"
 default_template_file = "templates/main.html"
 default_content_selector = "main"
-page_file_extensions = ["md"]
+page_file_extensions = ["md", "html"]
 clean_urls = true
 generator_mode = true
 ignore_extensions = ["gitkeep"]
@@ -16,3 +16,13 @@ widget = "title"
 selector = "h2"
 default = "SSGBerk Reference"
 append = " | SSGBerk Reference"
+exclude_page = "site/posts/index.html"
+
+[index]
+
+[index.fields.title]
+selector = "h2"
+
+[index.views.posts]
+index_selector = "#post-list"
+index_template = """{% for e in entries %}<li class="post-item"><h2 class="post-item-title"><a href="{{e.url}}">{{e.title}}</a></h2></li>{% endfor %}"""
