@@ -1,0 +1,26 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "bridgetown",
+  "name": "Bridgetown",
+  "description": "Bridgetown is a Ruby static site generator that builds sites from Markdown and Liquid or ERB templates, with an optional frontend bundler.",
+  "homepage": "https://www.bridgetownrb.com",
+  "repository": "https://github.com/bridgetownrb/bridgetown",
+  "license": "MIT",
+  "language": "Ruby",
+  "runtime": "Ruby 3.4.9 (built from source on Ubuntu 24.04)",
+  "templateEngines": [
+    "Liquid",
+    "ERB"
+  ],
+  "contentFormats": [
+    "markdown",
+    "html"
+  ],
+  "category": "general",
+  "firstRelease": 2020,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Bridgetown 2.2 requires Ruby 3.3 or newer, so the image builds Ruby 3.4.9 from source (Ubuntu 24.04 ships 3.2). The site has no frontend bundler (no esbuild or Node). Markdown via kramdown with the Rouge highlighter off. firstRelease from the oldest RubyGems version, 0.1.0 (2020-04-07)."
+}

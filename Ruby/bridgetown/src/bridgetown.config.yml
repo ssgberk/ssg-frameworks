@@ -1,0 +1,15 @@
+source: content
+destination: output
+url: ""
+timezone: UTC
+permalink: /posts/:slug/
+template_engine: liquid
+markdown: kramdown
+kramdown:
+  syntax_highlighter: "nil"
+exclude:
+  - build.sh
+  - benchmark_config.json
+  - Gemfile
+  - Gemfile.lock
+  - README.md

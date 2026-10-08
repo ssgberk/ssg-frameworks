@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<article class="post">
+<h1 class="post-title">{{ page.title }}</h1>
+<p class="post-meta"><time class="post-date" datetime="{{ page.date | date: "%Y-%m-%dT%H:%M:%SZ" }}">{{ page.date | date: "%Y-%m-%d" }}</time> by <span class="post-author">{{ page.author }}</span></p>
+<ul class="post-tags">
+{% for tag in page.tags %}<li class="post-tag">{{ tag }}</li>
+{% endfor %}</ul>
+<div class="post-body">
+{{ content }}
+</div>
+</article>

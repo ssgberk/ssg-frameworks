@@ -1,0 +1,33 @@
+{
+  "framework": "bridgetown",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "bridgetown",
+      "language": "Ruby",
+      "display_name": "bridgetown",
+      "notes": "",
+      "versus": "ruby"
+    }
+  }],
+  "content": [
+    {
+      "folder": "content/_posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "layout: post",
+      "build_command": "bundle exec bridgetown build",
+      "build_verbose": "bundle exec bridgetown build --verbose",
+      "output_folder": "output",
+      "output_glob": "posts/*/index.html",
+      "static_folder": "src/content",
+      "cache_folders": [".bridgetown-cache"]
+    }
+  ]
+}

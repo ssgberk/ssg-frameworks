@@ -1,0 +1,16 @@
+---
+layout: default
+title: SSGBerk Reference
+kind: index
+permalink: /
+---
+<section class="posts" id="posts">
+<h1 class="page-title">Posts</h1>
+<ol class="post-list">
+{% assign sorted = collections.posts.resources | sort: "date" | reverse %}{% for post in sorted %}<li class="post-item">
+<h2 class="post-item-title"><a href="{{ post.relative_url }}">{{ post.title }}</a></h2>
+<time class="post-item-date" datetime="{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+<p class="post-item-summary">{{ post.data.summary }}</p>
+</li>
+{% endfor %}</ol>
+</section>

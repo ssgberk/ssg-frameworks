@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.kind == "index" %}SSGBerk Reference{% else %}{{ page.title }} | SSGBerk Reference{% endif %}</title>
+<link rel="stylesheet" href="/assets/ssgberk.css">
+</head>
+<body>
+{% render "header", kind: page.kind %}
+<main class="site-main">
+{{ content }}
+</main>
+{% render "footer" %}
+</body>
+</html>
