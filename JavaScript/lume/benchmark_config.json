@@ -1,0 +1,32 @@
+{
+  "framework": "lume",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "lume",
+      "language": "JavaScript",
+      "display_name": "Lume",
+      "notes": "",
+      "versus": "javascript"
+    }
+  }],
+  "content": [
+    {
+      "folder": "site/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "LUME_LOGS=ERROR deno task build",
+      "build_verbose": "deno task build",
+      "output_folder": "_site",
+      "output_glob": "posts/*/index.html",
+      "cache_folders": []
+    }
+  ]
+}

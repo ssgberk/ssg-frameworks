@@ -1,0 +1,15 @@
+---
+layout: layouts/base.vto
+---
+<article class="post">
+<h1 class="post-title">{{ title }}</h1>
+<p class="post-meta"><time class="post-date" datetime="{{ date.toISOString().slice(0, 19) }}Z">{{ date.toISOString().slice(0, 10) }}</time> by <span class="post-author">{{ author }}</span></p>
+<ul class="post-tags">
+{{ for tag of tags }}
+<li class="post-tag">{{ tag }}</li>
+{{ /for }}
+</ul>
+<div class="post-body">
+{{ content }}
+</div>
+</article>

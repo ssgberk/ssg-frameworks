@@ -1,0 +1,27 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "lume",
+  "name": "Lume",
+  "description": "Lume is a static site generator for Deno that builds sites from Markdown and a choice of template engines.",
+  "homepage": "https://lume.land",
+  "repository": "https://github.com/lumeland/lume",
+  "license": "MIT",
+  "language": "JavaScript",
+  "runtime": "Deno 2.9.7",
+  "templateEngines": [
+    "Vento"
+  ],
+  "contentFormats": [
+    "markdown",
+    "vento",
+    "nunjucks",
+    "liquid",
+    "jsx"
+  ],
+  "category": "general",
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Runs on Deno, not Node.js. Lume is imported from CDN URL https://cdn.jsdelivr.net/gh/lumeland/lume@3.3.2/ (pinned in src/deno.json, lockfile src/deno.lock); all remote and npm modules are cached into DENO_DIR at image build, so the timed `deno task build` (run with --cached-only --frozen) is offline. Post URLs keep the date prefix of the file name (/posts/YYYY-MM-DD-N/). Vento is Lume's default template engine."
+}

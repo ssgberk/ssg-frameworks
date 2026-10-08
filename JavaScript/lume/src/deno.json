@@ -1,0 +1,14 @@
+{
+  "imports": {
+    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.3.2/"
+  },
+  "tasks": {
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+    "build": "deno run -A --frozen --cached-only lume/cli.ts"
+  },
+  "unstable": ["temporal"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "lume"
+  }
+}

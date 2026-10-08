@@ -1,0 +1,16 @@
+---
+layout: layouts/base.vto
+kind: index
+---
+<section class="posts" id="posts">
+<h1 class="page-title">Posts</h1>
+<ol class="post-list">
+{{ for post of search.pages("type=post", "date=desc") }}
+<li class="post-item">
+<h2 class="post-item-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+<time class="post-item-date" datetime="{{ post.date.toISOString().slice(0, 19) }}Z">{{ post.date.toISOString().slice(0, 10) }}</time>
+<p class="post-item-summary">{{ post.summary }}</p>
+</li>
+{{ /for }}
+</ol>
+</section>
