@@ -5,6 +5,6 @@ import Markdown from 'unplugin-vue-markdown/vite';
 export default defineConfig({
   plugins: [
     Vue({ include: [/\.vue$/, /\.md$/] }),
-    Markdown({ headEnabled: false }),
+    Markdown({ headEnabled: false, wrapperComponent: 'Post', wrapperClasses: '' }),
   ],
 });

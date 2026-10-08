@@ -1,5 +1,6 @@
 import { ViteSSG } from 'vite-ssg';
 import App from './App.vue';
+import Post from './Post.vue';
 
 const modules = import.meta.glob('./posts/*.md');
 const routes = [
@@ -10,4 +11,6 @@ const routes = [
   })),
 ];
 
-export const createApp = ViteSSG(App, { routes });
+export const createApp = ViteSSG(App, { routes }, ({ app }) => {
+  app.component('Post', Post);
+});
