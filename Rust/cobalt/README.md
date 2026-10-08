@@ -1,0 +1,5 @@
+# Cobalt
+
+Cobalt 0.20.4 on Ubuntu 24.04, benchmarked by SSGBerk. `build.sh` generates the posts into `src/posts` as plain Markdown (content type `none`), then times `cobalt build`; each post must render to `_site/posts/*.html` (the verification step checks the count equals the requested number of files). The index (`index.liquid`) is a single page listing every post; post pages (`_layouts/post.liquid`) render only their own title and content. Run it with `./ssgberk --test cobalt -nf 10` from the toolset repository.
+
+Deviations: Cobalt rejects unknown front matter keys (`unknown field`) and only accepts dates as `YYYY-MM-DD HH:MM:SS +HH:MM`, so the canonical front matter (`summary`, `author`, ISO `date`) cannot be parsed. Posts are therefore generated without front matter; Cobalt takes the date from the file name and the title from the slug, and `_cobalt.yml` sets the default post layout. `_cobalt.yml` also ignores `build.sh`, `benchmark_config.json` and `README.md` so they are not copied into `_site`, and turns syntax highlighting off. Cobalt writes no cache folder.

@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "cobalt",
+  "name": "Cobalt",
+  "description": "Cobalt is a static site generator written in Rust that renders Markdown with Liquid templates.",
+  "homepage": "https://cobalt-org.github.io/",
+  "repository": "https://github.com/cobalt-org/cobalt.rs",
+  "license": "MIT OR Apache-2.0",
+  "language": "Rust",
+  "runtime": "Rust binary (release tarball)",
+  "templateEngines": [
+    "Liquid"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "general",
+  "firstRelease": 2016,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Posts are generated without front matter (Cobalt rejects the canonical keys); date and title come from the file name. firstRelease from the first cobalt-bin crate on crates.io (0.2.0, 2016-06-25); the oldest GitHub release is v0.4.0 (2017)."
+}

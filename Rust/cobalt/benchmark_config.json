@@ -1,0 +1,31 @@
+{
+  "framework": "cobalt",
+  "tests": [{
+    "default": {
+      "approach": "Realistic",
+      "classification": "Micro",
+      "framework": "cobalt",
+      "language": "Rust",
+      "display_name": "cobalt",
+      "notes": "",
+      "versus": "rust"
+    }
+  }],
+  "content": [
+    {
+      "folder": "posts",
+      "type": "none",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "cobalt build",
+      "build_verbose": "cobalt build",
+      "output_folder": "_site",
+      "output_glob": "posts/*.html"
+    }
+  ]
+}

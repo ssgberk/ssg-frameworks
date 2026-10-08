@@ -1,0 +1,15 @@
+source: .
+destination: ./_site
+ignore:
+  - build.sh
+  - benchmark_config.json
+  - README.md
+posts:
+  dir: posts
+  default:
+    layout: post.liquid
+site:
+  title: SSGBerk Cobalt
+  base_url: /
+syntax_highlight:
+  enabled: false
