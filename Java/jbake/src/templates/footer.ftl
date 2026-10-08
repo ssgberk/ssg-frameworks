@@ -1,0 +1,6 @@
+</main>
+<footer class="site-footer">
+<p>Built for the SSGBerk build-time benchmark.</p>
+</footer>
+</body>
+</html>

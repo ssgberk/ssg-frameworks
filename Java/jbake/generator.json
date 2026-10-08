@@ -1,0 +1,29 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "jbake",
+  "name": "JBake",
+  "description": "JBake is a Java based static site generator that bakes Markdown, AsciiDoc and HTML content through FreeMarker, Thymeleaf, Groovy or Jade templates.",
+  "homepage": "https://jbake.org",
+  "repository": "https://github.com/jbake-org/jbake",
+  "license": "MIT",
+  "language": "Java",
+  "runtime": "JVM (OpenJDK 21, JBake binary distribution)",
+  "templateEngines": [
+    "FreeMarker",
+    "Thymeleaf",
+    "Groovy",
+    "Jade"
+  ],
+  "contentFormats": [
+    "markdown",
+    "asciidoc",
+    "html"
+  ],
+  "category": "blog",
+  "firstRelease": 2013,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Uses a JBake header (key=value then ~~~~~~) rather than YAML front matter."
+}
