@@ -1,0 +1,12 @@
+---
+layout: default
+title: Posts
+use: [posts]
+---
+{% block content %}
+<ul>
+{% for post in data.posts %}
+<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "sculpin",
+  "name": "Sculpin",
+  "description": "Sculpin is a PHP static site generator that builds sites from Markdown and Twig templates, with Jekyll-style conventions.",
+  "homepage": "https://sculpin.io",
+  "repository": "https://github.com/sculpin/sculpin",
+  "license": "MIT",
+  "language": "PHP",
+  "runtime": "PHP 8.4 (ondrej/php PPA)",
+  "templateEngines": [
+    "Twig"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "general",
+  "firstRelease": 2013,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Installed from Packagist as sculpin/sculpin."
+}

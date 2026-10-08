@@ -1,0 +1,34 @@
+{
+  "framework": "sculpin",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "Sculpin",
+        "language": "PHP",
+        "display_name": "Sculpin",
+        "notes": "",
+        "versus": "php"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "source/_posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "layout: post",
+      "build_command": "vendor/bin/sculpin generate --env=prod --quiet",
+      "build_verbose": "vendor/bin/sculpin generate --env=prod -v",
+      "output_folder": "output_prod",
+      "output_glob": "20*/index.html",
+      "cache_folders": []
+    }
+  ]
+}
