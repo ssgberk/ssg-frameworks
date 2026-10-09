@@ -19,7 +19,9 @@ RUN case "$(dpkg --print-architecture)" in amd64) NA=x64 ;; arm64) NA=arm64 ;; e
  && ln -s "/opt/nim-${NIM_VERSION}" /opt/nim
 ENV PATH=/opt/nim/bin:/root/.nimble/bin:$PATH
 ARG NIMIB_VERSION=0.4.2
-RUN nimble install -y "nimib@${NIMIB_VERSION}" && nim --version
+# Transitive dependencies pinned to the versions nimib 0.4.2 resolved.
+RUN nimble install -y fusion@1.2 jsony@1.1.6 markdown@0.8.8 parsetoml@0.7.2 \
+ && nimble install -y "nimib@${NIMIB_VERSION}" && nim --version
 
 WORKDIR /opt/nimib/src
 COPY src/ /opt/nimib/src/
