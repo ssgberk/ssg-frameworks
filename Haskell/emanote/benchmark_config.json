@@ -1,0 +1,34 @@
+{
+  "framework": "emanote",
+  "tests": [
+    {
+      "default": {
+        "approach": "Realistic",
+        "classification": "Micro",
+        "framework": "emanote",
+        "language": "Haskell",
+        "display_name": "emanote",
+        "notes": "",
+        "versus": "haskell"
+      }
+    }
+  ],
+  "content": [
+    {
+      "folder": "site/posts",
+      "type": "3minus",
+      "extension": "md"
+    }
+  ],
+  "config": [
+    {
+      "metadata_dateslug": "date",
+      "metadata_layout": "",
+      "build_command": "mkdir -p _site && emanote -L site gen _site",
+      "build_verbose": "mkdir -p _site && emanote -L site gen _site",
+      "output_folder": "_site",
+      "output_glob": "posts/*.html",
+      "cache_folders": []
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+template:
+  baseUrl: /
+  sidebar:
+    enable: false
+  breadcrumbs:
+    enable: false
+  toc:
+    enable: false

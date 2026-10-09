@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schema/generator.schema.json",
+  "id": "emanote",
+  "name": "Emanote",
+  "description": "Emanote is a structured, Obsidian-style notebook and static site generator written in Haskell; it renders a folder of Markdown notes with YAML front matter into a linked site.",
+  "homepage": "https://emanote.srid.ca/",
+  "repository": "https://github.com/srid/emanote",
+  "license": "AGPL-3.0-only",
+  "language": "Haskell",
+  "runtime": "Compiled Haskell binary (GHC, cabal)",
+  "templateEngines": [
+    "Heist"
+  ],
+  "contentFormats": [
+    "markdown"
+  ],
+  "category": "docs",
+  "firstRelease": 2021,
+  "maintained": true,
+  "benchmark": {
+    "status": "active"
+  },
+  "notes": "Built from the Hackage release with GHC 9.8; the full-text search index is left empty (a stub replaces the Stork binary) and the Tailwind CSS compile step runs as in a normal build."
+}
