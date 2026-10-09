@@ -19,7 +19,7 @@ RUN apt-get -yqq update \
  && apt-get -yqq install --no-install-recommends openjdk-17-jre-headless unzip \
  && rm -rf /var/lib/apt/lists/*
 
-ARG QUARKDOWN_VERSION=2.6.3
+ARG QUARKDOWN_VERSION=2.6.4
 RUN curl -fsSL -o /tmp/quarkdown.zip \
       "https://github.com/iamgio/quarkdown/releases/download/v${QUARKDOWN_VERSION}/quarkdown-linux-x64.zip" \
  && unzip -q /tmp/quarkdown.zip -d /opt \

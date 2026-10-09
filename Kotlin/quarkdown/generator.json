@@ -7,7 +7,7 @@
   "repository": "https://github.com/iamgio/quarkdown",
   "license": "GPL-3.0",
   "language": "Kotlin",
-  "runtime": "JVM (Quarkdown 2.6.3 release zip, OpenJDK 17 JRE)",
+  "runtime": "JVM (Quarkdown 2.6.4 release zip, OpenJDK 17 JRE)",
   "templateEngines": [
     "Quarkdown functions"
   ],

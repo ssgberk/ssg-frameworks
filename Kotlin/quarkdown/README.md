@@ -1,6 +1,6 @@
 # Quarkdown
 
-Quarkdown 2.6.3 (release zip, JVM) on Ubuntu 24.04, benchmarked by SSGBerk. `build.sh` generates the posts into `posts/` (content type `none`: body only), then times a single `quarkdown c index.qd -o output --timeout 0` process. `index.qd` lists `posts/` with `.listfiles` and links each post with `.subdocument`; Quarkdown compiles every referenced post as a subdocument of the same project, writing `output/SSGBerk/<date>-<NNN>/index.html` per post plus `output/SSGBerk/index.html`. Output glob: `*/20*/index.html`. Run it with `./ssgberk --test quarkdown -nf 10` from the toolset repository.
+Quarkdown 2.6.4 (release zip, JVM) on Ubuntu 24.04, benchmarked by SSGBerk. `build.sh` generates the posts into `posts/` (content type `none`: body only), then times a single `quarkdown c index.qd -o output --timeout 0` process. `index.qd` lists `posts/` with `.listfiles` and links each post with `.subdocument`; Quarkdown compiles every referenced post as a subdocument of the same project, writing `output/SSGBerk/<date>-<NNN>/index.html` per post plus `output/SSGBerk/index.html`. Output glob: `*/20*/index.html`. Run it with `./ssgberk --test quarkdown -nf 10` from the toolset repository.
 
 Deviations:
 - The Linux release zip only exists for x64 and bundles an x64 JRE. The jars are platform independent, so the image deletes the bundled runtime and uses Ubuntu's `openjdk-17-jre-headless` (same major as the bundled JRE 17) on amd64 and arm64.
