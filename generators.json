@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "c91e07b70fe07afe52e3b662c73e5fd589e196a3",
+  "generatedFrom": "d20b4a56cd4da8734fc1db6811b3b1c92afae6ff",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -647,6 +647,48 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/lektor/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/lektor/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Python/lektor/generator.json"
+      }
+    },
+    {
+      "id": "lume",
+      "path": "JavaScript/lume",
+      "version": "3.3.2",
+      "name": "Lume",
+      "description": "Lume is a static site generator for Deno that builds sites from Markdown and a choice of template engines.",
+      "homepage": "https://lume.land",
+      "repository": "https://github.com/lumeland/lume",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Deno 2.9.7",
+      "templateEngines": [
+        "Vento"
+      ],
+      "contentFormats": [
+        "markdown",
+        "vento",
+        "nunjucks",
+        "liquid",
+        "jsx"
+      ],
+      "category": "general",
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Lume",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "site/posts",
+        "buildCommand": "LUME_LOGS=ERROR deno task build",
+        "outputFolder": "_site",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": []
+      },
+      "notes": "Runs on Deno, not Node.js. Lume is imported from CDN URL https://cdn.jsdelivr.net/gh/lumeland/lume@3.3.2/ (pinned in src/deno.json, lockfile src/deno.lock); all remote and npm modules are cached into DENO_DIR at image build, so the timed `deno task build` (run with --cached-only --frozen) is offline. Post URLs keep the date prefix of the file name (/posts/YYYY-MM-DD-N/). Vento is Lume's default template engine.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/lume/lume.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/lume/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/lume/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/lume/generator.json"
       }
     },
     {
@@ -1680,14 +1722,6 @@
       "repository": "https://github.com/typelevel/Laika",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/135"
-    },
-    {
-      "id": "lume",
-      "name": "Lume",
-      "language": "JavaScript (Deno)",
-      "repository": "https://github.com/lumeland/lume",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/104"
     },
     {
       "id": "lustre-ssg",

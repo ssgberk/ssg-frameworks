@@ -81,14 +81,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/135"
   },
   {
-    "id": "lume",
-    "name": "Lume",
-    "language": "JavaScript (Deno)",
-    "repository": "https://github.com/lumeland/lume",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/104"
-  },
-  {
     "id": "lustre-ssg",
     "name": "Lustre SSG",
     "language": "Gleam",
