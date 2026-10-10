@@ -1,10 +1,1 @@
-[
-  {
-    "id": "soupault",
-    "name": "soupault",
-    "language": "OCaml",
-    "repository": "https://github.com/PataphysicalSociety/soupault",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
-  }
-]
+[]

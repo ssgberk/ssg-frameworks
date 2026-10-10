@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "cce8f0809fdbf376e9a7897b6021f8685b7a9102",
+  "generatedFrom": "327bd5e6816dce7e4e1e4063a5c15126fa919e20",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -2081,6 +2081,45 @@
       }
     },
     {
+      "id": "soupault",
+      "path": "OCaml/soupault",
+      "version": "5.3.0",
+      "name": "soupault",
+      "description": "soupault is a static website generator written in OCaml that treats a site as HTML pages and transforms them with CSS-selector based widgets and external preprocessors.",
+      "homepage": "https://soupault.app",
+      "repository": "https://github.com/PataphysicalSociety/soupault",
+      "license": "MIT",
+      "language": "OCaml",
+      "runtime": "OCaml native binary (release tarball)",
+      "templateEngines": [
+        "HTML page templates with CSS-selector widgets"
+      ],
+      "contentFormats": [
+        "html"
+      ],
+      "category": "general",
+      "firstRelease": 2019,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "soupault",
+        "versus": "ocaml",
+        "contentType": "none",
+        "contentFolder": "site/posts",
+        "buildCommand": "soupault",
+        "outputFolder": "build",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": []
+      },
+      "notes": "soupault processes HTML only; Markdown is converted by an external cmark-gfm preprocessor configured in soupault.toml. Posts use content type none (no front matter) because soupault has no front matter parser.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/OCaml/soupault/soupault.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/OCaml/soupault/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/OCaml/soupault/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/OCaml/soupault/generator.json"
+      }
+    },
+    {
       "id": "sphinx",
       "path": "Python/sphinx",
       "version": "9.1.0",
@@ -2644,14 +2683,5 @@
       }
     }
   ],
-  "proposed": [
-    {
-      "id": "soupault",
-      "name": "soupault",
-      "language": "OCaml",
-      "repository": "https://github.com/PataphysicalSociety/soupault",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
-    }
-  ]
+  "proposed": []
 }
