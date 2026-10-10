@@ -73,14 +73,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/129"
   },
   {
-    "id": "ink",
-    "name": "Ink",
-    "language": "Go",
-    "repository": "https://github.com/InkProject/ink",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/130"
-  },
-  {
     "id": "jbake",
     "name": "JBake",
     "language": "Java",
