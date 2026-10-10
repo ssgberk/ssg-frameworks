@@ -120,13 +120,5 @@
     "repository": "https://github.com/vikejs/vike",
     "status": "proposed",
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/121"
-  },
-  {
-    "id": "vite-ssg",
-    "name": "vite-ssg",
-    "language": "JavaScript",
-    "repository": "https://github.com/antfu-collective/vite-ssg",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/127"
   }
 ]

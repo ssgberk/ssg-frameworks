@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "8a96a607ad4d2f33a354cf2674b841aaee2b6677",
+  "generatedFrom": "fa8e8d389c0fe97f7252d0ac76a087d46527d48e",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -1812,6 +1812,52 @@
       }
     },
     {
+      "id": "vite-ssg",
+      "path": "JavaScript/vite-ssg",
+      "version": "28.3.0",
+      "name": "vite-ssg",
+      "description": "vite-ssg is a static site generation tool for Vue 3 on Vite that prerenders the routes of a Vue app to static HTML.",
+      "homepage": "https://github.com/antfu-collective/vite-ssg",
+      "repository": "https://github.com/antfu-collective/vite-ssg",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "Vue"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "framework",
+      "firstRelease": 2020,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "vite-ssg"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "vite-ssg",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "src/posts",
+        "buildCommand": "npx vite-ssg build",
+        "outputFolder": "dist",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": [
+          "node_modules/.vite",
+          "node_modules/.vite-temp"
+        ]
+      },
+      "notes": "firstRelease from npm vite-ssg creation (2020-12-21). Vue 3 prerenderer used as an SSG; Markdown is compiled to Vue components by unplugin-vue-markdown and routes are built from import.meta.glob over the posts directory. Minimal site: bare app shell, one index route.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vite-ssg/vite-ssg.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vite-ssg/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vite-ssg/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vite-ssg/generator.json"
+      }
+    },
+    {
       "id": "vitepress",
       "path": "JavaScript/vitepress",
       "version": "1.6.4",
@@ -2142,14 +2188,6 @@
       "repository": "https://github.com/vikejs/vike",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/121"
-    },
-    {
-      "id": "vite-ssg",
-      "name": "vite-ssg",
-      "language": "JavaScript",
-      "repository": "https://github.com/antfu-collective/vite-ssg",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/127"
     }
   ]
 }
