@@ -8,14 +8,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/132"
   },
   {
-    "id": "laika",
-    "name": "Laika",
-    "language": "Scala",
-    "repository": "https://github.com/typelevel/Laika",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/135"
-  },
-  {
     "id": "nimib",
     "name": "nimib",
     "language": "Nim",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "4b8dbfd001e0e25fdb833e0c96c08dd42e03af9b",
+  "generatedFrom": "2bb234968f50de429f7b3cb0f442a53b52f04d4b",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -948,6 +948,46 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/jigsaw/generator.json"
+      }
+    },
+    {
+      "id": "laika",
+      "path": "Scala/laika",
+      "version": "1.3.2",
+      "name": "Laika",
+      "description": "Laika is a Scala library and toolkit for transforming lightweight markup into HTML, EPUB and PDF; a site is a small Scala program built on its transformer API.",
+      "homepage": "https://typelevel.org/Laika/",
+      "repository": "https://github.com/typelevel/Laika",
+      "license": "Apache-2.0",
+      "language": "Scala",
+      "runtime": "Scala 3 fat jar on a JRE (scala-cli, Temurin 21)",
+      "templateEngines": [
+        "Laika templates"
+      ],
+      "contentFormats": [
+        "markdown",
+        "restructuredtext"
+      ],
+      "category": "general",
+      "firstRelease": 2012,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "laika",
+        "versus": "scala",
+        "contentType": "3minus",
+        "contentFolder": "site/posts",
+        "buildCommand": "java -Xmx4g -jar /opt/laika/laika-site.jar site public",
+        "outputFolder": "public",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": []
+      },
+      "notes": "Laika is used as a library through laika-io; the Helium theme is not used.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Scala/laika/laika.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Scala/laika/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Scala/laika/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Scala/laika/generator.json"
       }
     },
     {
@@ -2495,14 +2535,6 @@
       "repository": "https://github.com/srid/emanote",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/132"
-    },
-    {
-      "id": "laika",
-      "name": "Laika",
-      "language": "Scala",
-      "repository": "https://github.com/typelevel/Laika",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/135"
     },
     {
       "id": "nimib",
