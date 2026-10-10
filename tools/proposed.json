@@ -33,14 +33,6 @@
     "notes": "The issue links tlienart/Franklin.jl; GitHub redirects it to JuliaDocs/Franklin.jl (checked 2026-10-04)."
   },
   {
-    "id": "jbake",
-    "name": "JBake",
-    "language": "Java",
-    "repository": "https://github.com/jbake-org/jbake",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/109"
-  },
-  {
     "id": "laika",
     "name": "Laika",
     "language": "Scala",

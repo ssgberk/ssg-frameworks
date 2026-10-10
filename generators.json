@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "290f600d2e6627fbdf311d1ad63fbc73db5e18a6",
+  "generatedFrom": "8a96a607ad4d2f33a354cf2674b841aaee2b6677",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -690,6 +690,53 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/ink/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/ink/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/ink/generator.json"
+      }
+    },
+    {
+      "id": "jbake",
+      "path": "Java/jbake",
+      "version": "2.7.0",
+      "name": "JBake",
+      "description": "JBake is a Java based static site generator that bakes Markdown, AsciiDoc and HTML content through FreeMarker, Thymeleaf, Groovy or Jade templates.",
+      "homepage": "https://jbake.org",
+      "repository": "https://github.com/jbake-org/jbake",
+      "license": "MIT",
+      "language": "Java",
+      "runtime": "JVM (OpenJDK 21, JBake binary distribution)",
+      "templateEngines": [
+        "FreeMarker",
+        "Thymeleaf",
+        "Groovy",
+        "Jade"
+      ],
+      "contentFormats": [
+        "markdown",
+        "asciidoc",
+        "html"
+      ],
+      "category": "blog",
+      "firstRelease": 2013,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "JBake",
+        "versus": "java",
+        "contentType": "3minus",
+        "contentFolder": "raw/posts",
+        "buildCommand": "sh -c 'mkdir -p content/posts && find raw/posts -name \"*.md\" -print0 | xargs -0 -r awk -f convert.awk && jbake -b . output'",
+        "outputFolder": "output",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": [
+          "cache",
+          "content"
+        ]
+      },
+      "notes": "Uses a JBake header (key=value then ~~~~~~) rather than YAML front matter.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Java/jbake/jbake.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Java/jbake/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Java/jbake/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Java/jbake/generator.json"
       }
     },
     {
@@ -2006,14 +2053,6 @@
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/111",
       "notes": "The issue links tlienart/Franklin.jl; GitHub redirects it to JuliaDocs/Franklin.jl (checked 2026-10-04)."
-    },
-    {
-      "id": "jbake",
-      "name": "JBake",
-      "language": "Java",
-      "repository": "https://github.com/jbake-org/jbake",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/109"
     },
     {
       "id": "laika",
