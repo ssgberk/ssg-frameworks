@@ -8,14 +8,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/112"
   },
   {
-    "id": "bridgetown",
-    "name": "Bridgetown",
-    "language": "Ruby",
-    "repository": "https://github.com/bridgetownrb/bridgetown",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/108"
-  },
-  {
     "id": "cryogen",
     "name": "Cryogen",
     "language": "Clojure",
