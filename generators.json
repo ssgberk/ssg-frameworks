@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "d20b4a56cd4da8734fc1db6811b3b1c92afae6ff",
+  "generatedFrom": "b40d171f838b41380fedac5111b8220199ffb760",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -93,6 +93,47 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/generator.json"
+      }
+    },
+    {
+      "id": "cecil",
+      "path": "PHP/cecil",
+      "version": "9.9.1",
+      "name": "Cecil",
+      "description": "Cecil is a PHP static site generator that turns Markdown content and Twig templates into a static website.",
+      "homepage": "https://cecil.app",
+      "repository": "https://github.com/Cecilapp/Cecil",
+      "license": "MIT",
+      "language": "PHP",
+      "runtime": "PHP 8.3 (Ubuntu 24.04)",
+      "templateEngines": [
+        "Twig"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "general",
+      "firstRelease": 2013,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Cecil",
+        "versus": "php",
+        "contentType": "3minus",
+        "contentFolder": "pages/posts",
+        "buildCommand": "vendor/bin/cecil build --quiet",
+        "outputFolder": "_site",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          ".cache"
+        ]
+      },
+      "notes": "Installed from Packagist as cecil/cecil.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/cecil/cecil.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/cecil/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/cecil/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/cecil/generator.json"
       }
     },
     {
@@ -1657,14 +1698,6 @@
       "repository": "https://github.com/bridgetownrb/bridgetown",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/108"
-    },
-    {
-      "id": "cecil",
-      "name": "Cecil",
-      "language": "PHP",
-      "repository": "https://github.com/Cecilapp/Cecil",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/113"
     },
     {
       "id": "cryogen",

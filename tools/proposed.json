@@ -16,14 +16,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/108"
   },
   {
-    "id": "cecil",
-    "name": "Cecil",
-    "language": "PHP",
-    "repository": "https://github.com/Cecilapp/Cecil",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/113"
-  },
-  {
     "id": "cryogen",
     "name": "Cryogen",
     "language": "Clojure",
