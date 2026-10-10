@@ -8,14 +8,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/132"
   },
   {
-    "id": "quarkdown",
-    "name": "Quarkdown",
-    "language": "Kotlin",
-    "repository": "https://github.com/iamgio/quarkdown",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/117"
-  },
-  {
     "id": "soupault",
     "name": "soupault",
     "language": "OCaml",
