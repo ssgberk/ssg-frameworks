@@ -16,13 +16,16 @@ widget = "title"
 selector = "h2"
 default = "SSGBerk Reference"
 append = " | SSGBerk Reference"
-exclude_page = "site/posts/index.html"
+exclude_page = "site/index.html"
 
 [index]
+sort_type = "lexicographic"
+sort_descending = false
 
 [index.fields.title]
 selector = "h2"
 
 [index.views.posts]
 index_selector = "#post-list"
+section = "posts"
 index_template = """{% for e in entries %}<li class="post-item"><h2 class="post-item-title"><a href="{{e.url}}">{{e.title}}</a></h2></li>{% endfor %}"""
