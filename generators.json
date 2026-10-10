@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "eddc05c09bc5f8318950d41e822c6c531e601c28",
+  "generatedFrom": "e6ce512f6286ccd9e315a7bb77177c4ecce59708",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -484,6 +484,45 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/eleventy/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/eleventy/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/eleventy/generator.json"
+      }
+    },
+    {
+      "id": "franklin",
+      "path": "Julia/franklin",
+      "version": "0.10.97",
+      "name": "Franklin",
+      "description": "Franklin.jl is a static site generator written in Julia that renders Markdown with embedded Julia code through HTML layouts.",
+      "homepage": "https://franklinjl.org",
+      "repository": "https://github.com/tlienart/Franklin.jl",
+      "license": "MIT",
+      "language": "Julia",
+      "runtime": "Julia 1.13.1 (official tarball)",
+      "templateEngines": [
+        "Franklin HTML layouts with Julia hfun functions"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "general",
+      "firstRelease": 2019,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "franklin",
+        "versus": "julia",
+        "contentType": "none",
+        "contentFolder": "posts",
+        "buildCommand": "julia --project -e 'using Franklin; optimize(minify=false, prerender=false)'",
+        "outputFolder": "__site",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": []
+      },
+      "notes": "Franklin evaluates +++ front matter as Julia code, so the benchmark posts carry no front matter and titles come from file names.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Julia/franklin/franklin.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Julia/franklin/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Julia/franklin/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Julia/franklin/generator.json"
       }
     },
     {
@@ -2169,15 +2208,6 @@
       "repository": "https://github.com/srid/emanote",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/132"
-    },
-    {
-      "id": "franklin",
-      "name": "Franklin",
-      "language": "Julia",
-      "repository": "https://github.com/JuliaDocs/Franklin.jl",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/111",
-      "notes": "The issue links tlienart/Franklin.jl; GitHub redirects it to JuliaDocs/Franklin.jl (checked 2026-10-04)."
     },
     {
       "id": "laika",

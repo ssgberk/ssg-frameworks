@@ -16,15 +16,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/132"
   },
   {
-    "id": "franklin",
-    "name": "Franklin",
-    "language": "Julia",
-    "repository": "https://github.com/JuliaDocs/Franklin.jl",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/111",
-    "notes": "The issue links tlienart/Franklin.jl; GitHub redirects it to JuliaDocs/Franklin.jl (checked 2026-10-04)."
-  },
-  {
     "id": "laika",
     "name": "Laika",
     "language": "Scala",
