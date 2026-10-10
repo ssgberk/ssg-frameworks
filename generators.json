@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "4e704e710beb2da901bc3da4d8961be7c94b8511",
+  "generatedFrom": "06a429ab603289c37d3a33f6e05ffbffc593cec1",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -1771,6 +1771,45 @@
       }
     },
     {
+      "id": "zine",
+      "path": "Zig/zine",
+      "version": "0.14.0",
+      "name": "Zine",
+      "description": "Zine is a static site generator written in Zig that renders SuperMD content through SuperHTML templates.",
+      "homepage": "https://zine-ssg.io",
+      "repository": "https://github.com/kristoff-it/zine",
+      "license": "MIT",
+      "language": "Zig",
+      "runtime": "Zig binary (pinned release, musl static)",
+      "templateEngines": [
+        "SuperHTML"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "general",
+      "firstRelease": 2023,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Zine",
+        "versus": "zig",
+        "contentType": "none",
+        "contentFolder": "posts",
+        "buildCommand": "rm -f content/posts/2*.smd; printf \"%s\\n\" posts/*.md | awk -f zine-convert.awk && zine release -o public",
+        "outputFolder": "public",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": []
+      },
+      "notes": "Zine reads SuperMD (a Markdown dialect) with Ziggy front matter, which no canonical content type produces, so build.sh generates plain posts into posts/ and the timed build_command converts them in one awk process (zine-convert.awk: front matter plus heading and fence adjustments, no per-post forks) into content/posts/*.smd before zine release. Zine writes no cache between runs.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Zig/zine/zine.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Zig/zine/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Zig/zine/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Zig/zine/generator.json"
+      }
+    },
+    {
       "id": "zola",
       "path": "Rust/zola",
       "version": "0.23.6",
@@ -1972,14 +2011,6 @@
       "repository": "https://github.com/antfu-collective/vite-ssg",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/127"
-    },
-    {
-      "id": "zine",
-      "name": "Zine",
-      "language": "Zig",
-      "repository": "https://github.com/kristoff-it/zine",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/126"
     }
   ]
 }

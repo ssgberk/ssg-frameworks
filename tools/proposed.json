@@ -160,13 +160,5 @@
     "repository": "https://github.com/antfu-collective/vite-ssg",
     "status": "proposed",
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/127"
-  },
-  {
-    "id": "zine",
-    "name": "Zine",
-    "language": "Zig",
-    "repository": "https://github.com/kristoff-it/zine",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/126"
   }
 ]
