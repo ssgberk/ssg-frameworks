@@ -81,14 +81,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/138"
   },
   {
-    "id": "marmite",
-    "name": "Marmite",
-    "language": "Rust",
-    "repository": "https://github.com/rochacbruno/marmite",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/133"
-  },
-  {
     "id": "nesta",
     "name": "Nesta",
     "language": "Ruby",

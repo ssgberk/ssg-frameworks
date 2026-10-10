@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "b40d171f838b41380fedac5111b8220199ffb760",
+  "generatedFrom": "5c55b75211e7e06a92fc831f5a340fca569fcb4c",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -730,6 +730,45 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/lume/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/lume/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/lume/generator.json"
+      }
+    },
+    {
+      "id": "marmite",
+      "path": "Rust/marmite",
+      "version": "0.4.2",
+      "name": "Marmite",
+      "description": "Marmite is a Rust command-line static site generator for blogs that turns a folder of Markdown files into a site with Tera templates.",
+      "homepage": "https://marmite.blog/",
+      "repository": "https://github.com/rochacbruno/marmite",
+      "license": "AGPL-3.0",
+      "language": "Rust",
+      "runtime": "Rust binary (x86_64 release tarball; built from source on arm64)",
+      "templateEngines": [
+        "Tera"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "blog",
+      "firstRelease": 2024,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Marmite",
+        "versus": "rust",
+        "contentType": "3minus",
+        "contentFolder": "content",
+        "buildCommand": "marmite . site",
+        "outputFolder": "site",
+        "outputGlob": "post-*.html",
+        "cacheFolders": []
+      },
+      "notes": "Benchmarked with minimal templates (base, content, list, group) and search, JSON feeds, sitemap, urls.json, Markdown sources, table of contents, related posts and next/previous links disabled. Marmite still writes tag, author, archive, stream and series pages, RSS feeds and its stock static files; none can be turned off by configuration. firstRelease from the first GitHub release (0.1.4, 2024-10-20).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/marmite/marmite.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/marmite/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/marmite/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/marmite/generator.json"
       }
     },
     {
@@ -1763,14 +1802,6 @@
       "repository": "https://github.com/lustre-labs/ssg",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/138"
-    },
-    {
-      "id": "marmite",
-      "name": "Marmite",
-      "language": "Rust",
-      "repository": "https://github.com/rochacbruno/marmite",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/133"
     },
     {
       "id": "nesta",
