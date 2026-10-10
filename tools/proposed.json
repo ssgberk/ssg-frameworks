@@ -89,15 +89,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
   },
   {
-    "id": "statiq",
-    "name": "Statiq",
-    "language": "C#",
-    "repository": "https://github.com/statiqdev/Statiq",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/106",
-    "notes": "The issue links statiqdev/Statiq.Web; GitHub redirects it to statiqdev/Statiq (checked 2026-10-04)."
-  },
-  {
     "id": "tanstack-start",
     "name": "TanStack Start",
     "language": "JavaScript",

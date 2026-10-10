@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "8afeaea19e623709558b90f6c88bca14ddd70664",
+  "generatedFrom": "eddc05c09bc5f8318950d41e822c6c531e601c28",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -1772,6 +1772,48 @@
       }
     },
     {
+      "id": "statiq",
+      "path": "CSharp/statiq",
+      "version": "1.0.0-beta.60",
+      "name": "Statiq",
+      "description": "Statiq.Web is a .NET static site generator, a library composed into a small console app, that renders Markdown with front matter through Razor layouts.",
+      "homepage": "https://www.statiq.dev/web",
+      "repository": "https://github.com/statiqdev/Statiq.Web",
+      "license": "MIT",
+      "language": "C#",
+      "runtime": ".NET 10 SDK (tarball), Statiq.Web NuGet library",
+      "templateEngines": [
+        "Razor"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "blog",
+      "firstRelease": 2019,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Statiq",
+        "versus": "csharp",
+        "contentType": "3minus",
+        "contentFolder": "input/posts",
+        "buildCommand": "dotnet /opt/statiq/app/bin/statiq.dll",
+        "outputFolder": "output",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": [
+          "cache",
+          "temp"
+        ]
+      },
+      "notes": "Statiq.Web 1.0.0-beta.60 is the latest release (no stable 1.0 exists) and targets netcoreapp3.1; the app targets net10.0 and the image sets DOTNET_ROLL_FORWARD=Major. The app is restored and built in the image; the timed build runs the compiled app with no restore or network. Sitemap generation is disabled and links keep the .html extension.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/statiq/statiq.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/statiq/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/statiq/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/statiq/generator.json"
+      }
+    },
+    {
       "id": "sveltekit",
       "path": "JavaScript/sveltekit",
       "version": "3.0.0",
@@ -2200,15 +2242,6 @@
       "repository": "https://github.com/PataphysicalSociety/soupault",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
-    },
-    {
-      "id": "statiq",
-      "name": "Statiq",
-      "language": "C#",
-      "repository": "https://github.com/statiqdev/Statiq",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/106",
-      "notes": "The issue links statiqdev/Statiq.Web; GitHub redirects it to statiqdev/Statiq (checked 2026-10-04)."
     },
     {
       "id": "tanstack-start",
