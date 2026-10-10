@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "2bb234968f50de429f7b3cb0f442a53b52f04d4b",
+  "generatedFrom": "9c6f817e09305a987f54e17973cff388d9c96421",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -1577,6 +1577,45 @@
       }
     },
     {
+      "id": "nimib",
+      "path": "Nim/nimib",
+      "version": "0.4.2",
+      "name": "nimib",
+      "description": "nimib is a Nim library for notebook-style documents; the benchmark program renders every Markdown post through nimib's nbText into a static HTML page.",
+      "homepage": "https://pietroppeter.github.io/nimib/",
+      "repository": "https://github.com/pietroppeter/nimib",
+      "license": "MIT",
+      "language": "Nim",
+      "runtime": "Nim 2.2 compiled binary",
+      "templateEngines": [
+        "Mustache"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "general",
+      "firstRelease": 2021,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "nimib",
+        "versus": "go",
+        "contentType": "3minus",
+        "contentFolder": "content/post",
+        "buildCommand": "./ssgrender",
+        "outputFolder": "public",
+        "outputGlob": "post/*/index.html",
+        "cacheFolders": []
+      },
+      "notes": "nimib is a library, not a CLI: a small Nim program (src/ssgrender.nim, compiled once in the image, untimed) reads the posts and calls nbInit/nbText/nbSave per post. The timed build is the compiled binary only.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Nim/nimib/nimib.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Nim/nimib/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Nim/nimib/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Nim/nimib/generator.json"
+      }
+    },
+    {
       "id": "nuxt-content",
       "path": "JavaScript/nuxt-content",
       "version": "4.5.2",
@@ -2535,14 +2574,6 @@
       "repository": "https://github.com/srid/emanote",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/132"
-    },
-    {
-      "id": "nimib",
-      "name": "nimib",
-      "language": "Nim",
-      "repository": "https://github.com/pietroppeter/nimib",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/137"
     },
     {
       "id": "quarkdown",

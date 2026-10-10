@@ -8,14 +8,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/132"
   },
   {
-    "id": "nimib",
-    "name": "nimib",
-    "language": "Nim",
-    "repository": "https://github.com/pietroppeter/nimib",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/137"
-  },
-  {
     "id": "quarkdown",
     "name": "Quarkdown",
     "language": "Kotlin",
