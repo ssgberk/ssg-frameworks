@@ -122,14 +122,6 @@
     "notes": "The issue links statiqdev/Statiq.Web; GitHub redirects it to statiqdev/Statiq (checked 2026-10-04)."
   },
   {
-    "id": "tableau",
-    "name": "Tableau",
-    "language": "Elixir",
-    "repository": "https://github.com/elixir-tools/tableau",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/136"
-  },
-  {
     "id": "tanstack-start",
     "name": "TanStack Start",
     "language": "JavaScript",
