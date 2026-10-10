@@ -80,14 +80,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
   },
   {
-    "id": "tanstack-start",
-    "name": "TanStack Start",
-    "language": "JavaScript",
-    "repository": "https://github.com/TanStack/router",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/115"
-  },
-  {
     "id": "vike",
     "name": "Vike",
     "language": "JavaScript",

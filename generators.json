@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "e6ce512f6286ccd9e315a7bb77177c4ecce59708",
+  "generatedFrom": "9028e065100f7a5ca4a6719b6707f0b2119dcd52",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -1938,6 +1938,53 @@
       }
     },
     {
+      "id": "tanstack-start",
+      "path": "JavaScript/tanstack-start",
+      "version": "1.168.60",
+      "name": "TanStack Start",
+      "description": "TanStack Start is a full-stack React framework built on TanStack Router and Vite; its static prerendering renders every route to HTML at build time.",
+      "homepage": "https://tanstack.com/start",
+      "repository": "https://github.com/TanStack/router",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "React (JSX)"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "framework",
+      "firstRelease": 2024,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "@tanstack/react-start"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "tanstack-start",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "src/posts",
+        "buildCommand": "npx vite build --logLevel silent",
+        "outputFolder": "dist/client",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          ".tanstack",
+          "node_modules/.vite",
+          "dist"
+        ]
+      },
+      "notes": "Application framework used as an SSG through static prerendering (crawlLinks from the index route). Markdown posts are loaded at build time with import.meta.glob and rendered with marked inside server functions. Minimal site: bare root layout, one post route and one index route.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/tanstack-start/tanstack-start.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/tanstack-start/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/tanstack-start/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/tanstack-start/generator.json"
+      }
+    },
+    {
       "id": "vite-ssg",
       "path": "JavaScript/vite-ssg",
       "version": "28.3.0",
@@ -2272,14 +2319,6 @@
       "repository": "https://github.com/PataphysicalSociety/soupault",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
-    },
-    {
-      "id": "tanstack-start",
-      "name": "TanStack Start",
-      "language": "JavaScript",
-      "repository": "https://github.com/TanStack/router",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/115"
     },
     {
       "id": "vike",
