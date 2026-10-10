@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "1bdb54d7fe47a0a4c457c8431e75033e62a9f841",
+  "generatedFrom": "aaf73a19fa4e795a8d0ef6cedf1a13ec3729c1c2",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -2068,6 +2068,51 @@
       }
     },
     {
+      "id": "vike",
+      "path": "JavaScript/vike",
+      "version": "0.4.267",
+      "name": "Vike",
+      "description": "Vike is a Vite-based framework with a flexible, UI-agnostic architecture; with prerendering enabled it emits fully static HTML for every route.",
+      "homepage": "https://vike.dev",
+      "repository": "https://github.com/vikejs/vike",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "React"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "framework",
+      "firstRelease": 2021,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "vike"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "vike",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "src/posts",
+        "buildCommand": "npx vike build --logLevel silent",
+        "outputFolder": "dist/client",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          "node_modules/.vite"
+        ]
+      },
+      "notes": "Application framework used as an SSG through prerender: true and vike-react. Markdown is read at build time with import.meta.glob and rendered with marked inside the page data hook; a post route (/posts/@slug) with onBeforePrerenderStart lists every post URL. firstRelease from the first public vite-plugin-ssr release (2021), Vike's predecessor name.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vike/vike.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vike/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vike/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/vike/generator.json"
+      }
+    },
+    {
       "id": "vite-ssg",
       "path": "JavaScript/vite-ssg",
       "version": "28.3.0",
@@ -2386,14 +2431,6 @@
       "repository": "https://github.com/PataphysicalSociety/soupault",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
-    },
-    {
-      "id": "vike",
-      "name": "Vike",
-      "language": "JavaScript",
-      "repository": "https://github.com/vikejs/vike",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/121"
     }
   ]
 }

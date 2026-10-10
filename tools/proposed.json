@@ -62,13 +62,5 @@
     "repository": "https://github.com/PataphysicalSociety/soupault",
     "status": "proposed",
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/114"
-  },
-  {
-    "id": "vike",
-    "name": "Vike",
-    "language": "JavaScript",
-    "repository": "https://github.com/vikejs/vike",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/121"
   }
 ]
