@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "26c884dc42cd00faff6876bdb6d6da103cf25bf8",
+  "generatedFrom": "290f600d2e6627fbdf311d1ad63fbc73db5e18a6",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -607,6 +607,48 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/hugo/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/hugo/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/hugo/generator.json"
+      }
+    },
+    {
+      "id": "iles",
+      "path": "JavaScript/iles",
+      "version": "0.10.0",
+      "name": "îles",
+      "description": "îles is a Vite and Vue powered static site generator built on islands architecture, turning Markdown and Vue pages into static HTML.",
+      "homepage": "https://iles-docs.netlify.app",
+      "repository": "https://github.com/ElMassimo/iles",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "Vue"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "framework",
+      "firstRelease": 2021,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "îles",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "pages/posts",
+        "buildCommand": "npx iles build",
+        "outputFolder": "dist",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": [
+          "node_modules/.vite",
+          "node_modules/.cache"
+        ]
+      },
+      "notes": "firstRelease from npm iles creation (2021-09-09). This setup uses a bare default layout rendering the post title and content, an index page listing every post via import.meta.glob, srcDir set to the project root, and remark-gfm for tables (not enabled by default).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/iles/iles.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/iles/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/iles/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/iles/generator.json"
       }
     },
     {
@@ -1964,14 +2006,6 @@
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/111",
       "notes": "The issue links tlienart/Franklin.jl; GitHub redirects it to JuliaDocs/Franklin.jl (checked 2026-10-04)."
-    },
-    {
-      "id": "iles",
-      "name": "îles",
-      "language": "JavaScript",
-      "repository": "https://github.com/ElMassimo/iles",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/129"
     },
     {
       "id": "jbake",

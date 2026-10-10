@@ -33,14 +33,6 @@
     "notes": "The issue links tlienart/Franklin.jl; GitHub redirects it to JuliaDocs/Franklin.jl (checked 2026-10-04)."
   },
   {
-    "id": "iles",
-    "name": "îles",
-    "language": "JavaScript",
-    "repository": "https://github.com/ElMassimo/iles",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/129"
-  },
-  {
     "id": "jbake",
     "name": "JBake",
     "language": "Java",
