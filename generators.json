@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "5fe1a10e8dde833c8b6a2be241a1180ed002e2cb",
+  "generatedFrom": "4b8dbfd001e0e25fdb833e0c96c08dd42e03af9b",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -261,6 +261,48 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/cobalt/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/cobalt/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/cobalt/generator.json"
+      }
+    },
+    {
+      "id": "cryogen",
+      "path": "Clojure/cryogen",
+      "version": "0.5.1",
+      "name": "Cryogen",
+      "description": "Cryogen is a simple static site generator written in Clojure that renders Markdown posts through Selmer templates.",
+      "homepage": "https://cryogenweb.org",
+      "repository": "https://github.com/cryogen-project/cryogen",
+      "license": "EPL-1.0",
+      "language": "Clojure",
+      "runtime": "JVM (Clojure CLI)",
+      "templateEngines": [
+        "Selmer"
+      ],
+      "contentFormats": [
+        "markdown",
+        "asciidoc"
+      ],
+      "category": "blog",
+      "firstRelease": 2014,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "cryogen",
+        "versus": "clojure",
+        "contentType": "3minus",
+        "contentFolder": "posts",
+        "buildCommand": "sh -c 'mkdir -p content/md/posts public && printf \"%s\\n\" posts/*.md | awk -f cryogen-convert.awk && clojure -M:build'",
+        "outputFolder": "public",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": [
+          "content/md/posts"
+        ]
+      },
+      "notes": "Posts start with an EDN metadata map instead of YAML front matter; the timed build converts the generated front matter in one awk pass. Tag, archive, RSS and sitemap output cannot be switched off.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Clojure/cryogen/cryogen.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Clojure/cryogen/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Clojure/cryogen/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Clojure/cryogen/generator.json"
       }
     },
     {
@@ -2446,14 +2488,6 @@
     }
   ],
   "proposed": [
-    {
-      "id": "cryogen",
-      "name": "Cryogen",
-      "language": "Clojure",
-      "repository": "https://github.com/cryogen-project/cryogen",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/110"
-    },
     {
       "id": "emanote",
       "name": "Emanote",

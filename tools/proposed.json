@@ -1,13 +1,5 @@
 [
   {
-    "id": "cryogen",
-    "name": "Cryogen",
-    "language": "Clojure",
-    "repository": "https://github.com/cryogen-project/cryogen",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/110"
-  },
-  {
     "id": "emanote",
     "name": "Emanote",
     "language": "Haskell",
