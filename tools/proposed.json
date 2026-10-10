@@ -48,14 +48,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/117"
   },
   {
-    "id": "sculpin",
-    "name": "Sculpin",
-    "language": "PHP",
-    "repository": "https://github.com/sculpin/sculpin",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/107"
-  },
-  {
     "id": "soupault",
     "name": "soupault",
     "language": "OCaml",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "aaf73a19fa4e795a8d0ef6cedf1a13ec3729c1c2",
+  "generatedFrom": "d887e1ff60108741fea28542c29e259f4de1d651",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -1804,6 +1804,45 @@
       }
     },
     {
+      "id": "sculpin",
+      "path": "PHP/sculpin",
+      "version": "3.3.1",
+      "name": "Sculpin",
+      "description": "Sculpin is a PHP static site generator that builds sites from Markdown and Twig templates, with Jekyll-style conventions.",
+      "homepage": "https://sculpin.io",
+      "repository": "https://github.com/sculpin/sculpin",
+      "license": "MIT",
+      "language": "PHP",
+      "runtime": "PHP 8.4 (ondrej/php PPA)",
+      "templateEngines": [
+        "Twig"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "general",
+      "firstRelease": 2013,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Sculpin",
+        "versus": "php",
+        "contentType": "3minus",
+        "contentFolder": "source/_posts",
+        "buildCommand": "vendor/bin/sculpin generate --env=prod --quiet",
+        "outputFolder": "output_prod",
+        "outputGlob": "20*/index.html",
+        "cacheFolders": []
+      },
+      "notes": "Installed from Packagist as sculpin/sculpin.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/sculpin/sculpin.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/sculpin/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/sculpin/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/PHP/sculpin/generator.json"
+      }
+    },
+    {
       "id": "sphinx",
       "path": "Python/sphinx",
       "version": "9.1.0",
@@ -2415,14 +2454,6 @@
       "repository": "https://github.com/iamgio/quarkdown",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/117"
-    },
-    {
-      "id": "sculpin",
-      "name": "Sculpin",
-      "language": "PHP",
-      "repository": "https://github.com/sculpin/sculpin",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/107"
     },
     {
       "id": "soupault",
