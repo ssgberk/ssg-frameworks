@@ -1,13 +1,5 @@
 [
   {
-    "id": "antora",
-    "name": "Antora",
-    "language": "JavaScript",
-    "repository": "https://gitlab.com/antora/antora",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/112"
-  },
-  {
     "id": "cryogen",
     "name": "Cryogen",
     "language": "Clojure",

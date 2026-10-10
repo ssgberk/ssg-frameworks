@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "fa8e8d389c0fe97f7252d0ac76a087d46527d48e",
+  "generatedFrom": "8afeaea19e623709558b90f6c88bca14ddd70664",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -49,6 +49,51 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/analog/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/analog/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/analog/generator.json"
+      }
+    },
+    {
+      "id": "antora",
+      "path": "JavaScript/antora",
+      "version": "3.2.1",
+      "name": "Antora",
+      "description": "Antora is a multi-repository documentation site generator for AsciiDoc content stored in git, built on Asciidoctor.js.",
+      "homepage": "https://antora.org",
+      "repository": "https://gitlab.com/antora/antora",
+      "license": "MPL-2.0",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "Handlebars"
+      ],
+      "contentFormats": [
+        "asciidoc"
+      ],
+      "category": "docs",
+      "firstRelease": 2017,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "@antora/cli"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "antora",
+        "versus": "javascript",
+        "contentType": "none",
+        "contentFolder": "modules/ROOT/pages/posts",
+        "buildCommand": "npx antora --quiet antora-playbook.yml",
+        "outputFolder": "build/site",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": [
+          ".cache/antora"
+        ]
+      },
+      "notes": "Antora reads only AsciiDoc from git content sources. The benchmark posts are the canonical markdown; a local extension (ssgberk-md-adapter.js) converts them to AsciiDoc in memory inside the single Antora process and generates the index page. The UI bundle is a minimal local zip built in the image.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/antora/antora.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/antora/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/antora/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/antora/generator.json"
       }
     },
     {
@@ -2067,14 +2112,6 @@
     }
   ],
   "proposed": [
-    {
-      "id": "antora",
-      "name": "Antora",
-      "language": "JavaScript",
-      "repository": "https://gitlab.com/antora/antora",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/112"
-    },
     {
       "id": "cryogen",
       "name": "Cryogen",
