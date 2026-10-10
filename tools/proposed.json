@@ -24,14 +24,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/135"
   },
   {
-    "id": "lustre-ssg",
-    "name": "Lustre SSG",
-    "language": "Gleam",
-    "repository": "https://github.com/lustre-labs/ssg",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/138"
-  },
-  {
     "id": "nimib",
     "name": "nimib",
     "language": "Nim",
