@@ -16,14 +16,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/110"
   },
   {
-    "id": "docmd",
-    "name": "docmd",
-    "language": "JavaScript",
-    "repository": "https://github.com/docmd-io/docmd",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/125"
-  },
-  {
     "id": "emanote",
     "name": "Emanote",
     "language": "Haskell",

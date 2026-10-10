@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "06a429ab603289c37d3a33f6e05ffbffc593cec1",
+  "generatedFrom": "7b49292c71608c77c4f4acc390afaba331bf31ee",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -257,6 +257,49 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/docfx/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/docfx/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/CSharp/docfx/generator.json"
+      }
+    },
+    {
+      "id": "docmd",
+      "path": "JavaScript/docmd",
+      "version": "0.9.7",
+      "name": "docmd",
+      "description": "docmd is a zero-config documentation generator that compiles a folder of Markdown files into a static documentation website.",
+      "homepage": "https://docmd.io",
+      "repository": "https://github.com/docmd-io/docmd",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "EJS"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "framework",
+      "firstRelease": 2026,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "@docmd/core"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "docmd",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "docs/posts",
+        "buildCommand": "sh -c 'for f in docs/posts/*.md; do [ -e \"$f\" ] || continue; b=${f##*/}; b=${b%.md}; printf \"%s\\n\" \"- [$b](posts/$b.md)\"; done > docs/.list && { printf \"# SSGBerk docmd\\n\\n\"; cat docs/.list; } > docs/index.md && rm docs/.list && npx docmd build'",
+        "outputFolder": "site",
+        "outputGlob": "posts/*/index.html",
+        "cacheFolders": []
+      },
+      "notes": "firstRelease from npm @docmd/core creation (2026-02-12). This setup pins @docmd/core 0.9.7 and disables every bundled plugin (search, seo, sitemap, analytics, llms, mermaid, git, openapi, okf, ai), the sidebar, header, breadcrumbs, page navigation and options menu; each post renders as its own page.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/docmd/docmd.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/docmd/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/docmd/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/docmd/generator.json"
       }
     },
     {
@@ -1865,14 +1908,6 @@
       "repository": "https://github.com/cryogen-project/cryogen",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/110"
-    },
-    {
-      "id": "docmd",
-      "name": "docmd",
-      "language": "JavaScript",
-      "repository": "https://github.com/docmd-io/docmd",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/125"
     },
     {
       "id": "emanote",
