@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "3c6b6ba270a5081fb4d0434837318bd44c2d126f",
+  "generatedFrom": "c91e07b70fe07afe52e3b662c73e5fd589e196a3",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -93,6 +93,45 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/astro/generator.json"
+      }
+    },
+    {
+      "id": "cobalt",
+      "path": "Rust/cobalt",
+      "version": "0.20.4",
+      "name": "Cobalt",
+      "description": "Cobalt is a static site generator written in Rust that renders Markdown with Liquid templates.",
+      "homepage": "https://cobalt-org.github.io/",
+      "repository": "https://github.com/cobalt-org/cobalt.rs",
+      "license": "MIT OR Apache-2.0",
+      "language": "Rust",
+      "runtime": "Rust binary (release tarball)",
+      "templateEngines": [
+        "Liquid"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "general",
+      "firstRelease": 2016,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "cobalt",
+        "versus": "rust",
+        "contentType": "none",
+        "contentFolder": "posts",
+        "buildCommand": "cobalt build",
+        "outputFolder": "_site",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": []
+      },
+      "notes": "Posts are generated without front matter (Cobalt rejects the canonical keys); date and title come from the file name. firstRelease from the first cobalt-bin crate on crates.io (0.2.0, 2016-06-25).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/cobalt/cobalt.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/cobalt/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/cobalt/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Rust/cobalt/generator.json"
       }
     },
     {
@@ -1584,14 +1623,6 @@
       "repository": "https://github.com/Cecilapp/Cecil",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/113"
-    },
-    {
-      "id": "cobalt",
-      "name": "Cobalt",
-      "language": "Rust",
-      "repository": "https://github.com/cobalt-org/cobalt.rs",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/128"
     },
     {
       "id": "cryogen",
