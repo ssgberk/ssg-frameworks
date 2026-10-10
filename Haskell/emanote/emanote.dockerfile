@@ -13,17 +13,21 @@ RUN curl -fsSL -o /usr/local/bin/ghcup "https://downloads.haskell.org/~ghcup/0.1
  && ghcup install ghc 9.8.4 --set \
  && ln -sf /opt/ghcup/.ghcup/bin/ghc-9.8.4 /usr/local/bin/ghc && ghc --version && ghc --info | grep -i 'C compiler command'
 ENV PATH=/opt/ghcup/.ghcup/bin:$PATH
+WORKDIR /build
 # tailwind and emanote use Template Haskell splices (staticWhich "tailwind" / "stork") that need the executables
 # at compile time; empty stubs satisfy them (the real tools serve live reload and full-text search only). The cabal store is a BuildKit cache mount
 # so a failed attempt resumes instead of recompiling ~280 packages.
 RUN --mount=type=cache,target=/root/.local/state/cabal/store,id=ssgberk-emanote-cabal-store \
     for t in tailwind stork; do printf '#!/bin/sh\nexit 0\n' > /usr/local/bin/$t && chmod +x /usr/local/bin/$t; done \
  && cabal update --index-state=2026-10-01T00:00:00Z \
- && cabal install "emanote-${EMANOTE_VERSION}" -j1 --ghc-options=-j1 --allow-newer=tailwind:base \
-      --install-method=copy --installdir=/out/bin --overwrite-policy=always \
- && strip /out/bin/emanote \
- && mkdir -p /out/share \
- && cp -r "$(find /root/.local/state/cabal/store -type d -path "*/emanote-${EMANOTE_VERSION}-*/share" | head -1)" /out/share/emanote \
+ && cabal get "emanote-${EMANOTE_VERSION}"
+# The solver plan is pinned by cabal.project (index-state, allow-newer) and cabal.project.freeze.
+COPY src/cabal.project src/cabal.project.freeze /build/
+RUN --mount=type=cache,target=/root/.local/state/cabal/store,id=ssgberk-emanote-cabal-store \
+    cabal build exe:emanote -j1 --ghc-options=-j1 \
+ && mkdir -p /out/bin /out/share \
+ && cp "$(cabal list-bin exe:emanote)" /out/bin/emanote && strip /out/bin/emanote \
+ && cp -r "emanote-${EMANOTE_VERSION}/default" /out/share/emanote \
  && ls /out/share/emanote && ldd /out/bin/emanote
 
 # Runtime stage: stripped binary, its data files (default templates) and the benchmark skeleton.
