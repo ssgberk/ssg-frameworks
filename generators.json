@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "e23705fe1a0362f452d09c56336261a67f7c384f",
+  "generatedFrom": "cce8f0809fdbf376e9a7897b6021f8685b7a9102",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -526,6 +526,45 @@
         "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/eleventy/benchmark_config.json",
         "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/eleventy/README.md",
         "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/eleventy/generator.json"
+      }
+    },
+    {
+      "id": "emanote",
+      "path": "Haskell/emanote",
+      "version": "1.4.0.0",
+      "name": "Emanote",
+      "description": "Emanote is a structured, Obsidian-style notebook and static site generator written in Haskell; it renders a folder of Markdown notes with YAML front matter into a linked site.",
+      "homepage": "https://emanote.srid.ca/",
+      "repository": "https://github.com/srid/emanote",
+      "license": "AGPL-3.0-only",
+      "language": "Haskell",
+      "runtime": "Compiled Haskell binary (GHC, cabal)",
+      "templateEngines": [
+        "Heist"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "docs",
+      "firstRelease": 2021,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "emanote",
+        "versus": "haskell",
+        "contentType": "3minus",
+        "contentFolder": "site/posts",
+        "buildCommand": "mkdir -p _site && emanote -L site gen _site",
+        "outputFolder": "_site",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": []
+      },
+      "notes": "Built from the Hackage release with GHC 9.8; the full-text search index is left empty (a stub replaces the Stork binary) and the Tailwind CSS compile step runs as in a normal build.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Haskell/emanote/emanote.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Haskell/emanote/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Haskell/emanote/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Haskell/emanote/generator.json"
       }
     },
     {
@@ -2606,14 +2645,6 @@
     }
   ],
   "proposed": [
-    {
-      "id": "emanote",
-      "name": "Emanote",
-      "language": "Haskell",
-      "repository": "https://github.com/srid/emanote",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/132"
-    },
     {
       "id": "soupault",
       "name": "soupault",

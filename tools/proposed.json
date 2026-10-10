@@ -1,13 +1,5 @@
 [
   {
-    "id": "emanote",
-    "name": "Emanote",
-    "language": "Haskell",
-    "repository": "https://github.com/srid/emanote",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/132"
-  },
-  {
     "id": "soupault",
     "name": "soupault",
     "language": "OCaml",
