@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "984105b37c51007fcdf3be6131fbba7de130fb0f",
+  "generatedFrom": "1bdb54d7fe47a0a4c457c8431e75033e62a9f841",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -1274,6 +1274,47 @@
       }
     },
     {
+      "id": "nesta",
+      "path": "Ruby/nesta",
+      "version": "0.18.0",
+      "name": "Nesta",
+      "description": "Nesta is a lightweight Ruby CMS built on Sinatra that serves Markdown and Haml pages and can export them as a static site with nesta build.",
+      "homepage": "https://nestacms.com",
+      "repository": "https://github.com/gma/nesta",
+      "license": "MIT",
+      "language": "Ruby",
+      "runtime": "Ruby 3.2 (Ubuntu 24.04 apt)",
+      "templateEngines": [
+        "Haml"
+      ],
+      "contentFormats": [
+        "markdown",
+        "haml",
+        "textile"
+      ],
+      "category": "blog",
+      "firstRelease": 2010,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Nesta",
+        "versus": "ruby",
+        "contentType": "3minus",
+        "contentFolder": "content/pages/posts",
+        "buildCommand": "bundle exec nesta build",
+        "outputFolder": "dist",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": []
+      },
+      "notes": "Static export through nesta build. Nesta reads Key: value header blocks, so a local app.rb teaches its page loader YAML front matter (3minus); tilt is pinned to 2.4.0 because haml-contrib needs Tilt::MarukuTemplate. firstRelease from the first RubyGems release (2010-12-20).",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/nesta/nesta.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/nesta/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/nesta/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Ruby/nesta/generator.json"
+      }
+    },
+    {
       "id": "nextjs-export",
       "path": "JavaScript/nextjs-export",
       "version": "16.3.8",
@@ -2313,14 +2354,6 @@
       "repository": "https://github.com/lustre-labs/ssg",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/138"
-    },
-    {
-      "id": "nesta",
-      "name": "Nesta",
-      "language": "Ruby",
-      "repository": "https://github.com/gma/nesta",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/134"
     },
     {
       "id": "nimib",

@@ -32,14 +32,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/138"
   },
   {
-    "id": "nesta",
-    "name": "Nesta",
-    "language": "Ruby",
-    "repository": "https://github.com/gma/nesta",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/134"
-  },
-  {
     "id": "nimib",
     "name": "nimib",
     "language": "Nim",
