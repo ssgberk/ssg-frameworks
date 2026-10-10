@@ -113,14 +113,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/117"
   },
   {
-    "id": "rspress",
-    "name": "rspress",
-    "language": "JavaScript",
-    "repository": "https://github.com/web-infra-dev/rspress",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/105"
-  },
-  {
     "id": "sculpin",
     "name": "Sculpin",
     "language": "PHP",

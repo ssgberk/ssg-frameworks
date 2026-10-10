@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "5c55b75211e7e06a92fc831f5a340fca569fcb4c",
+  "generatedFrom": "433c4d01b83d39545160afb59f51db16532574f3",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -1416,6 +1416,52 @@
       }
     },
     {
+      "id": "rspress",
+      "path": "JavaScript/rspress",
+      "version": "2.0.23",
+      "name": "Rspress",
+      "description": "Rspress is a Rspack-based static site generator built on React and MDX that turns Markdown into fast static documentation pages.",
+      "homepage": "https://rspress.rs",
+      "repository": "https://github.com/web-infra-dev/rspress",
+      "license": "MIT",
+      "language": "JavaScript",
+      "runtime": "Node.js 24.21.0",
+      "templateEngines": [
+        "React"
+      ],
+      "contentFormats": [
+        "markdown"
+      ],
+      "category": "framework",
+      "firstRelease": 2022,
+      "maintained": true,
+      "versionFrom": {
+        "source": "npm",
+        "name": "@rspress/core"
+      },
+      "benchmark": {
+        "status": "active",
+        "displayName": "rspress",
+        "versus": "javascript",
+        "contentType": "3minus",
+        "contentFolder": "docs/posts",
+        "buildCommand": "npx rspress build",
+        "outputFolder": "doc_build",
+        "outputGlob": "posts/*.html",
+        "cacheFolders": [
+          "node_modules/.cache",
+          "node_modules/.rspress"
+        ]
+      },
+      "notes": "firstRelease from npm rspress creation (2022-10-26); the 2.x line is published as @rspress/core (the unscoped rspress package stays on 1.x). This setup pins @rspress/core 2.0.23 and replaces the default theme Layout (theme/index.tsx) with a bare one: no nav, sidebar, outline, search or footer; it renders only the post, and the index page lists all posts.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/rspress/rspress.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/rspress/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/rspress/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/JavaScript/rspress/generator.json"
+      }
+    },
+    {
       "id": "sphinx",
       "path": "Python/sphinx",
       "version": "9.1.0",
@@ -1834,14 +1880,6 @@
       "repository": "https://github.com/iamgio/quarkdown",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/117"
-    },
-    {
-      "id": "rspress",
-      "name": "rspress",
-      "language": "JavaScript",
-      "repository": "https://github.com/web-infra-dev/rspress",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/105"
     },
     {
       "id": "sculpin",
