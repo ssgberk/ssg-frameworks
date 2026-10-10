@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedFrom": "9028e065100f7a5ca4a6719b6707f0b2119dcd52",
+  "generatedFrom": "984105b37c51007fcdf3be6131fbba7de130fb0f",
   "source": "https://github.com/ssgberk/ssg-frameworks",
   "generators": [
     {
@@ -1550,6 +1550,48 @@
       }
     },
     {
+      "id": "plenti",
+      "path": "Go/plenti",
+      "version": "0.7.25",
+      "name": "Plenti",
+      "description": "Plenti is a static site generator with a Go backend and a Svelte frontend that renders JSON content through Svelte layouts.",
+      "homepage": "https://plenti.co",
+      "repository": "https://github.com/plentico/plenti",
+      "license": "Apache-2.0",
+      "language": "Go",
+      "runtime": "Go binary (built from the pinned upstream tag)",
+      "templateEngines": [
+        "Svelte"
+      ],
+      "contentFormats": [
+        "json"
+      ],
+      "category": "general",
+      "firstRelease": 2020,
+      "maintained": true,
+      "benchmark": {
+        "status": "active",
+        "displayName": "Plenti",
+        "versus": "go",
+        "contentType": "3minus",
+        "contentFolder": "md/post",
+        "buildCommand": "sh -c 'mkdir -p content/post && awk -f convert.awk md/post/*.md && plenti build'",
+        "outputFolder": "public",
+        "outputGlob": "post/*/index.html",
+        "cacheFolders": [
+          "content/post",
+          "node_modules"
+        ]
+      },
+      "notes": "Plenti reads JSON content only (content/<type>/*.json) and has no markdown support, so the build command converts the generated posts to JSON in one awk pass and the markdown body is rendered to HTML by marked inside the Svelte post layout. Upstream publishes linux amd64 release binaries only, so the image compiles the pinned tag v0.7.25 (cgo, bundled V8 from v8go) for amd64 and arm64. firstRelease is the repository creation year.",
+      "files": {
+        "dockerfile": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/plenti/plenti.dockerfile",
+        "benchmarkConfig": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/plenti/benchmark_config.json",
+        "readme": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/plenti/README.md",
+        "generatorJson": "https://raw.githubusercontent.com/ssgberk/ssg-frameworks/master/Go/plenti/generator.json"
+      }
+    },
+    {
       "id": "publish",
       "path": "Swift/publish",
       "version": "0.9.0",
@@ -2287,14 +2329,6 @@
       "repository": "https://github.com/pietroppeter/nimib",
       "status": "proposed",
       "issue": "https://github.com/ssgberk/ssg-frameworks/issues/137"
-    },
-    {
-      "id": "plenti",
-      "name": "Plenti",
-      "language": "Go",
-      "repository": "https://github.com/plentico/plenti",
-      "status": "proposed",
-      "issue": "https://github.com/ssgberk/ssg-frameworks/issues/131"
     },
     {
       "id": "quarkdown",

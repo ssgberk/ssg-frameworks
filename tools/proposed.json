@@ -48,14 +48,6 @@
     "issue": "https://github.com/ssgberk/ssg-frameworks/issues/137"
   },
   {
-    "id": "plenti",
-    "name": "Plenti",
-    "language": "Go",
-    "repository": "https://github.com/plentico/plenti",
-    "status": "proposed",
-    "issue": "https://github.com/ssgberk/ssg-frameworks/issues/131"
-  },
-  {
     "id": "quarkdown",
     "name": "Quarkdown",
     "language": "Kotlin",
